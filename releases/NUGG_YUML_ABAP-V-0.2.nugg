@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nugget name="YUML_ABAP-V-0.2">
+ <DOMA DOMNAME="ZYUML_DIAGRAM_DIRECTION" DDLANGUAGE="E" DATATYPE="CHAR" LENG="000003" OUTPUTLEN="000003" DECIMALS="000000" VALEXI="X" MASKLEN="0000" DDTEXT="YUML - Diagram direction" AUTHCLASS="00" OUTPUTSTYLE="00">
+  <dd07v DOMNAME="ZYUML_DIAGRAM_DIRECTION" VALPOS="0001" DDLANGUAGE="E" DOMVALUE_L="LR" DDTEXT="Left-right"/>
+  <dd07v DOMNAME="ZYUML_DIAGRAM_DIRECTION" VALPOS="0002" DDLANGUAGE="E" DOMVALUE_L="RL" DDTEXT="Right-left"/>
+  <dd07v DOMNAME="ZYUML_DIAGRAM_DIRECTION" VALPOS="0003" DDLANGUAGE="E" DOMVALUE_L="TB" DDTEXT="Top-button"/>
+ </DOMA>
+ <DOMA DOMNAME="ZYUML_DIAGRAM_SCALE" DDLANGUAGE="E" DATATYPE="INT1" LENG="000003" OUTPUTLEN="000003" DECIMALS="000000" MASKLEN="0000" DDTEXT="YUML - Diagram Scale" AUTHCLASS="00" OUTPUTSTYLE="00"/>
+ <DOMA DOMNAME="ZYUML_DIAGRAM_TYPE" DDLANGUAGE="E" DATATYPE="CHAR" LENG="000020" OUTPUTLEN="000020" DECIMALS="000000" LOWERCASE="X" VALEXI="X" MASKLEN="0000" DDTEXT="YUML - Diagram Type" AUTHCLASS="00" OUTPUTSTYLE="00">
+  <dd07v DOMNAME="ZYUML_DIAGRAM_TYPE" VALPOS="0001" DDLANGUAGE="E" DOMVALUE_L="0" DDTEXT="Plain"/>
+  <dd07v DOMNAME="ZYUML_DIAGRAM_TYPE" VALPOS="0002" DDLANGUAGE="E" DOMVALUE_L="1" DDTEXT="Boring"/>
+  <dd07v DOMNAME="ZYUML_DIAGRAM_TYPE" VALPOS="0003" DDLANGUAGE="E" DOMVALUE_L="2" DDTEXT="Scruffy"/>
+ </DOMA>
+ <DTEL ROLLNAME="ZYUML_DIAGRAM_DIRECTION" DDLANGUAGE="E" DOMNAME="ZYUML_DIAGRAM_DIRECTION" ROUTPUTLEN="000000" HEADLEN="17" SCRLEN1="10" SCRLEN2="17" SCRLEN3="20" DDTEXT="YUML - Diagram direction" REPTEXT="Diagram Direction" SCRTEXT_S="D. Direct" SCRTEXT_M="Diagram Direction" SCRTEXT_L="Diagram Direction" AUTHCLASS="00" DTELMASTER="E" DATATYPE="CHAR" LENG="000003" DECIMALS="000000" OUTPUTLEN="000003" VALEXI="X" REFKIND="D">
+  <tpara/>
+ </DTEL>
+ <DTEL ROLLNAME="ZYUML_DIAGRAM_SCALE" DDLANGUAGE="E" DOMNAME="ZYUML_DIAGRAM_SCALE" ROUTPUTLEN="000000" HEADLEN="13" SCRLEN1="10" SCRLEN2="15" SCRLEN3="20" DDTEXT="YUML - Diagram scale" REPTEXT="Diagram Scale" SCRTEXT_S="D. Scale" SCRTEXT_M="Diagram Scale" SCRTEXT_L="Diagram Scale" AUTHCLASS="00" DTELMASTER="E" DATATYPE="INT1" LENG="000003" DECIMALS="000000" OUTPUTLEN="000003" REFKIND="D">
+  <tpara/>
+ </DTEL>
+ <DTEL ROLLNAME="ZYUML_DIAGRAM_TYPE" DDLANGUAGE="E" DOMNAME="ZYUML_DIAGRAM_TYPE" ROUTPUTLEN="000000" HEADLEN="20" SCRLEN1="10" SCRLEN2="15" SCRLEN3="20" DDTEXT="YUML - Diagram type" REPTEXT="Diagram Type" SCRTEXT_S="D. Type" SCRTEXT_M="Diagram Type" SCRTEXT_L="Diagram Type" AUTHCLASS="00" DTELMASTER="E" DATATYPE="CHAR" LENG="000020" DECIMALS="000000" OUTPUTLEN="000020" LOWERCASE="X" VALEXI="X" REFKIND="D">
+  <tpara/>
+ </DTEL>
+ <PROG NAME="ZYUML_CLASS_DIAGRAM_BUILDER" VARCL="X" SUBC="1" RSTAT="K" RMAND="800" RLOAD="E" FIXPT="X" UCCHECK="X">
+  <textPool>
+   <language SPRAS="E">
+    <textElement ID="I" KEY="100" ENTRY="Single Class" LENGTH="12 "/>
+    <textElement ID="I" KEY="800" ENTRY="Options" LENGTH="7 "/>
+    <textElement ID="I" KEY="900" ENTRY="Output" LENGTH="6 "/>
+    <textElement ID="R" ENTRY="Report Z_YUML_CLASS_DIAGRAM_BUILDER" LENGTH="35 "/>
+    <textElement ID="S" KEY="P_ADEF" ENTRY="        Show Attributes Types" LENGTH="29 "/>
+    <textElement ID="S" KEY="P_ATTR" ENTRY="        Show Attributes" LENGTH="23 "/>
+    <textElement ID="S" KEY="P_CLASS" ENTRY="D       ." LENGTH="23 "/>
+    <textElement ID="S" KEY="P_EVEN" ENTRY="        Show Events" LENGTH="19 "/>
+    <textElement ID="S" KEY="P_FILE" ENTRY="        Filename" LENGTH="16 "/>
+    <textElement ID="S" KEY="P_METH" ENTRY="        Show Methods" LENGTH="20 "/>
+    <textElement ID="S" KEY="P_MPAR" ENTRY="        Show Method Parameters" LENGTH="30 "/>
+   </language>
+  </textPool>
+  <source>*&amp;---------------------------------------------------------------------*
+*&amp; Report  Z_YUML_CLASS_DIAGRAM_BUILDER
+*&amp;
+*&amp;---------------------------------------------------------------------*
+*&amp;
+*&amp;
+*&amp;---------------------------------------------------------------------*
+
+REPORT  z_yuml_class_diagram_builder NO STANDARD PAGE HEADING LINE-SIZE 1023.
+
+
+*SELECTION-SCREEN BEGIN OF SCREEN 1100 AS SUBSCREEN.
+SELECTION-SCREEN BEGIN OF BLOCK b1100 WITH FRAME TITLE text-100. &quot; Single Class
+PARAMETERS p_class TYPE seoclass-clsname MATCHCODE OBJECT zyuml_class_name.
+SELECTION-SCREEN END OF BLOCK b1100.
+*SELECTION-SCREEN END OF SCREEN 1100.
+
+SELECTION-SCREEN BEGIN OF BLOCK b1800 WITH FRAME TITLE text-800. &quot; Options
+PARAMETERS p_attr AS CHECKBOX DEFAULT abap_true.
+PARAMETERS p_meth AS CHECKBOX DEFAULT abap_true.
+PARAMETERS p_even AS CHECKBOX DEFAULT abap_true.
+PARAMETERS p_adef AS CHECKBOX.
+PARAMETERS p_mpar AS CHECKBOX.
+SELECTION-SCREEN END OF BLOCK b1800.
+
+SELECTION-SCREEN BEGIN OF BLOCK b1900 WITH FRAME TITLE text-900. &quot; Output
+PARAMETERS p_file TYPE string DEFAULT &apos;C:\TEMP\yUML\code.txt&apos;.
+SELECTION-SCREEN END OF BLOCK b1900.
+
+*CONTROLS tabstrip TYPE TABSTRIP.
+
+*----------------------------------------------------------------------*
+*       INTERFACE zif_yuml_diagram
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+INTERFACE zif_yuml_diagram.
+
+  DATA name TYPE string.
+  METHODS generate_url.
+
+ENDINTERFACE.                    &quot;zif_yuml_diagram
+
+*----------------------------------------------------------------------*
+*       CLASS zcl_yuml_class_diagram DEFINITION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS zcl_yuml_class_diagram DEFINITION.
+  PUBLIC SECTION.
+    INTERFACES zif_yuml_diagram.
+ENDCLASS.                    &quot;zcl_yuml_class_diagram DEFINITION
+
+*----------------------------------------------------------------------*
+*       CLASS zcl_yuml_class_diagram IMPLEMENTATION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS zcl_yuml_class_diagram IMPLEMENTATION.
+  METHOD zif_yuml_diagram~generate_url.
+  ENDMETHOD.                    &quot;zif_yuml_diagram~generate_url
+ENDCLASS.                    &quot;zcl_yuml_class_diagram IMPLEMENTATION
+
+*----------------------------------------------------------------------*
+*       CLASS zcl_yuml_activity_diagram DEFINITION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS zcl_yuml_activity_diagram DEFINITION.
+  PUBLIC SECTION.
+    INTERFACES zif_yuml_diagram.
+ENDCLASS.                    &quot;zcl_yuml_activity_diagram DEFINITION
+
+*----------------------------------------------------------------------*
+*       CLASS zcl_yuml_activity_diagram IMPLEMENTATION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS zcl_yuml_activity_diagram IMPLEMENTATION.
+  METHOD zif_yuml_diagram~generate_url.
+  ENDMETHOD.                    &quot;zif_yuml_diagram~generate_url
+ENDCLASS.                    &quot;zcl_yuml_activity_diagram IMPLEMENTATION
+
+*----------------------------------------------------------------------*
+*       CLASS zcl_yuml_usecase_diagram DEFINITION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS zcl_yuml_usecase_diagram DEFINITION.
+  PUBLIC SECTION.
+    INTERFACES zif_yuml_diagram.
+ENDCLASS.                    &quot;zcl_yuml_usecase_diagram DEFINITION
+
+*----------------------------------------------------------------------*
+*       CLASS zcl_yuml_usecase_diagram IMPLEMENTATION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS zcl_yuml_usecase_diagram IMPLEMENTATION.
+  METHOD zif_yuml_diagram~generate_url.
+  ENDMETHOD.                    &quot;zif_yuml_diagram~generate_url
+ENDCLASS.                    &quot;zcl_yuml_usecase_diagram IMPLEMENTATION
+
+
+*----------------------------------------------------------------------*
+*       INTERFACE zif_yuml_concept IMPLEMENTATION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+INTERFACE zif_yuml_concept.
+
+  METHODS generate_code RETURNING value(re_code) TYPE string.
+
+ENDINTERFACE.                    &quot;zif_yuml_concept IMPLEMENTATION
+
+*----------------------------------------------------------------------*
+*       INTERFACE zif_yuml_class_concept IMPLEMENTATION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+INTERFACE zif_yuml_class_concept.
+  INTERFACES zif_yuml_concept.
+ENDINTERFACE.                    &quot;zif_yuml_class_concept IMPLEMENTATION
+
+*----------------------------------------------------------------------*
+*       INTERFACE zif_yuml_activity_concept IMPLEMENTATION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+INTERFACE zif_yuml_activity_concept.
+  INTERFACES zif_yuml_concept.
+ENDINTERFACE.                    &quot;zif_yuml_activity_concept IMPLEMENTATION
+
+*----------------------------------------------------------------------*
+*       INTERFACE zif_yuml_usecase_concept IMPLEMENTATION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+INTERFACE zif_yuml_usecase_concept.
+  INTERFACES zif_yuml_concept.
+ENDINTERFACE.                    &quot;zif_yuml_usecase_concept IMPLEMENTATION
+*----------------------------------------------------------------------*
+*       CLASS zcl_yuml_class DEFINITION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS zcl_yuml_class DEFINITION.
+
+  PUBLIC SECTION.
+    INTERFACES zif_yuml_class_concept.
+
+    METHODS constructor
+      IMPORTING im_wb_class TYPE REF TO zcl_wb_class.
+
+    METHODS set_code_settings
+      IMPORTING
+        im_show_attributes    TYPE abap_bool DEFAULT abap_true
+        im_show_attr_types    TYPE abap_bool DEFAULT abap_true
+        im_show_methods       TYPE abap_bool DEFAULT abap_true
+        im_show_meth_param    TYPE abap_bool DEFAULT abap_true
+        im_show_events  TYPE abap_bool DEFAULT abap_false.
+
+  PROTECTED SECTION.
+
+*--------------------------------------------------------------------*
+* WB object (data source)
+    DATA o_class TYPE REF TO zcl_wb_class.
+
+*--------------------------------------------------------------------*
+* Code settings
+    DATA:
+          code_setting_show_attributes  TYPE abap_bool,
+          code_setting_show_attr_types  TYPE abap_bool,
+          code_setting_show_methods     TYPE abap_bool,
+          code_setting_show_meth_param  TYPE abap_bool,
+          code_setting_show_events      TYPE abap_bool.
+
+*--------------------------------------------------------------------*
+* Code generation
+
+    METHODS generate_code_attributes RETURNING value(re_code) TYPE string.
+    METHODS generate_code_attr_types
+      IMPORTING
+        im_wa_attribute TYPE seoo_attribute_r
+      RETURNING
+        value(re_code) TYPE string.
+    METHODS generate_code_methods RETURNING value(re_code) TYPE string.
+    METHODS generate_code_method_param
+      IMPORTING
+        im_wa_method    TYPE seoo_method_r
+    RETURNING value(re_code) TYPE string.
+
+    METHODS generate_code_events RETURNING value(re_code) TYPE string.
+
+ENDCLASS.                    &quot;zcl_yuml_class DEFINITION
+
+*----------------------------------------------------------------------*
+*       CLASS zcl_yuml_class IMPLEMENTATION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS zcl_yuml_class IMPLEMENTATION.
+
+  METHOD constructor.
+    me-&gt;o_class = im_wb_class.
+
+    me-&gt;set_code_settings(
+        im_show_attributes = abap_true
+        im_show_attr_types = abap_true
+        im_show_methods    = abap_true
+        im_show_meth_param = abap_true
+        im_show_events     = abap_false
+    ).
+
+  ENDMETHOD.                    &quot;constructor
+
+  METHOD zif_yuml_concept~generate_code.
+    DATA lv_attributes_code TYPE string.
+    DATA lv_methods_code TYPE string.
+    DATA lv_events_code TYPE string.
+
+    lv_attributes_code  = me-&gt;generate_code_attributes( ).
+    lv_methods_code     = me-&gt;generate_code_methods( ).
+    lv_events_code      = me-&gt;generate_code_events( ).
+
+    CONCATENATE:
+    `[`
+     me-&gt;o_class-&gt;class-clsname &quot; Class name
+     lv_attributes_code
+     lv_methods_code
+     lv_events_code
+     `]`
+     INTO re_code.
+
+
+  ENDMETHOD.                    &quot;zif_yuml_concept
+
+  METHOD set_code_settings.
+
+    me-&gt;code_setting_show_attributes  = im_show_attributes.
+    me-&gt;code_setting_show_attr_types  = im_show_attr_types.
+    me-&gt;code_setting_show_methods     = im_show_methods.
+    me-&gt;code_setting_show_meth_param  = im_show_meth_param.
+    me-&gt;code_setting_show_events      = im_show_events.
+
+  ENDMETHOD.                    &quot;set_code_settings
+
+  METHOD generate_code_attributes.
+    DATA lv_wa_attribute  TYPE seoo_attribute_r.
+    DATA lv_exposure_code TYPE string.
+    DATA lv_attr_type     TYPE string. &quot; Code of attribute types
+
+    IF me-&gt;code_setting_show_attributes = abap_true.
+      re_code = &apos;|&apos;.
+      LOOP AT me-&gt;o_class-&gt;attributes INTO lv_wa_attribute.
+        CASE lv_wa_attribute-exposure.
+          WHEN 0.
+            lv_exposure_code = &apos;-&apos;.
+          WHEN 1.
+            lv_exposure_code = &apos;#&apos;.
+          WHEN 2.
+            lv_exposure_code = &apos;+&apos;.
+        ENDCASE.
+
+        IF me-&gt;code_setting_show_attr_types = abap_true.
+          lv_attr_type = me-&gt;generate_code_attr_types( lv_wa_attribute ).
+        ENDIF.
+
+        CONCATENATE: re_code lv_exposure_code lv_wa_attribute-cmpname lv_attr_type &apos;;&apos; INTO re_code.
+
+      ENDLOOP.
+
+    ENDIF.
+
+  ENDMETHOD.                    &quot;generate_code_attributes
+
+  METHOD generate_code_attr_types.
+    CONCATENATE &apos; : (&apos; im_wa_attribute-type &apos;)&apos; INTO re_code.
+  ENDMETHOD.                    &quot;generate_code_attr_types
+
+  METHOD generate_code_methods.
+
+    DATA lv_wa_method TYPE seoo_method_r.
+    DATA lv_exposure_code TYPE string.
+    DATA lv_meth_param TYPE string. &quot; Code of method parameters
+
+    IF me-&gt;code_setting_show_methods = abap_true.
+      re_code = &apos;|&apos;.
+      LOOP AT me-&gt;o_class-&gt;methods INTO lv_wa_method.
+        CASE lv_wa_method-exposure.
+          WHEN 0.
+            lv_exposure_code = &apos;-&apos;.
+          WHEN 1.
+            lv_exposure_code = &apos;#&apos;.
+          WHEN 2.
+            lv_exposure_code = &apos;+&apos;.
+        ENDCASE.
+
+        IF me-&gt;code_setting_show_meth_param = abap_true.
+          lv_meth_param = me-&gt;generate_code_method_param( lv_wa_method ).
+        ENDIF.
+
+        CONCATENATE: re_code lv_exposure_code lv_wa_method-cmpname lv_meth_param &apos;;&apos; INTO re_code.
+
+      ENDLOOP.
+
+    ENDIF.
+
+  ENDMETHOD.                    &quot;generate_code_methods
+
+  METHOD generate_code_method_param.
+    DATA lv_wa_parameter TYPE vseoparam.
+    DATA lv_param_code   TYPE string.
+
+    LOOP AT me-&gt;o_class-&gt;parameters INTO lv_wa_parameter WHERE cmpname = im_wa_method-cmpname.
+      CONCATENATE lv_param_code lv_wa_parameter-sconame lv_wa_parameter-type INTO lv_param_code SEPARATED BY space.
+    ENDLOOP.
+
+    IF lv_param_code IS NOT INITIAL.
+      CONCATENATE &apos; : (&apos; lv_param_code &apos;)&apos; INTO re_code.
+    ELSE.
+      re_code = &apos;()&apos;.
+    ENDIF.
+
+  ENDMETHOD.                    &quot;generate_code_method_param
+
+
+  METHOD generate_code_events.
+
+    DATA lv_wa_event TYPE seoo_event_r.
+    DATA lv_exposure_code TYPE string.
+
+    IF me-&gt;code_setting_show_events = abap_true.
+      re_code = &apos;|&apos;.
+      LOOP AT me-&gt;o_class-&gt;events INTO lv_wa_event.
+        CASE lv_wa_event-exposure.
+          WHEN 0.
+            lv_exposure_code = &apos;-&apos;.
+          WHEN 1.
+            lv_exposure_code = &apos;#&apos;.
+          WHEN 2.
+            lv_exposure_code = &apos;+&apos;.
+        ENDCASE.
+
+        CONCATENATE: re_code lv_exposure_code lv_wa_event-cmpname &apos;;&apos; INTO re_code.
+      ENDLOOP.
+
+    ENDIF.
+
+  ENDMETHOD.                    &quot;generate_code_events
+
+ENDCLASS.                    &quot;zcl_yuml_class IMPLEMENTATION
+
+START-OF-SELECTION.
+
+
+  DATA o_class TYPE REF TO zcl_wb_class_global.
+  DATA o_yuml_class TYPE REF TO zcl_yuml_class.
+
+  DATA lv_seoclskey TYPE seoclskey.
+  lv_seoclskey-clsname = p_class.
+  CREATE OBJECT o_class
+    EXPORTING
+      im_clskey                    = lv_seoclskey
+*     im_version                   = seoc_version_inactive
+*     im_state                     = &apos;1&apos;
+*     im_with_descriptions         = seox_true
+*     im_resolve_eventhandler_info = seox_false
+*     im_with_master_language      = seox_false
+*     im_with_enhancements         = seox_false
+*     im_read_active_enha          = seox_false
+*     im_enha_action               = seox_false
+*     im_ignore_switches           = &apos;x&apos;
+    .
+
+  o_class-&gt;zif_wb_object~load( ).
+
+  CREATE OBJECT o_yuml_class
+    EXPORTING
+      im_wb_class = o_class.
+
+  o_yuml_class-&gt;set_code_settings(
+    EXPORTING
+      im_show_attributes = p_attr
+      im_show_attr_types = p_adef
+      im_show_methods    = p_meth
+      im_show_meth_param = p_mpar
+      im_show_events     = p_even
+  ).
+
+  DATA code TYPE string.
+  code = o_yuml_class-&gt;zif_yuml_concept~generate_code( ).
+
+  DATA t_code TYPE table_of_strings.
+
+  APPEND code TO t_code.
+  CALL FUNCTION &apos;GUI_DOWNLOAD&apos;
+    EXPORTING
+*     BIN_FILESIZE                    =
+      filename                        = p_file
+*     FILETYPE                        = &apos;ASC&apos;
+*     APPEND                          = &apos; &apos;
+*     WRITE_FIELD_SEPARATOR           = &apos; &apos;
+*     HEADER                          = &apos;00&apos;
+*     TRUNC_TRAILING_BLANKS           = &apos; &apos;
+*     WRITE_LF                        = &apos;X&apos;
+*     COL_SELECT                      = &apos; &apos;
+*     COL_SELECT_MASK                 = &apos; &apos;
+*     DAT_MODE                        = &apos; &apos;
+*     CONFIRM_OVERWRITE               = &apos; &apos;
+*     NO_AUTH_CHECK                   = &apos; &apos;
+*     CODEPAGE                        = &apos; &apos;
+*     IGNORE_CERR                     = ABAP_TRUE
+*     REPLACEMENT                     = &apos;#&apos;
+*     WRITE_BOM                       = &apos; &apos;
+*     TRUNC_TRAILING_BLANKS_EOL       = &apos;X&apos;
+*     WK1_N_FORMAT                    = &apos; &apos;
+*     WK1_N_SIZE                      = &apos; &apos;
+*     WK1_T_FORMAT                    = &apos; &apos;
+*     WK1_T_SIZE                      = &apos; &apos;
+*     WRITE_LF_AFTER_LAST_LINE        = ABAP_TRUE
+*     SHOW_TRANSFER_STATUS            = ABAP_TRUE
+*   IMPORTING
+*     FILELENGTH                      =
+    TABLES
+      data_tab                        = t_code
+*     FIELDNAMES                      =
+*   EXCEPTIONS
+*     FILE_WRITE_ERROR                = 1
+*     NO_BATCH                        = 2
+*     GUI_REFUSE_FILETRANSFER         = 3
+*     INVALID_TYPE                    = 4
+*     NO_AUTHORITY                    = 5
+*     UNKNOWN_ERROR                   = 6
+*     HEADER_NOT_ALLOWED              = 7
+*     SEPARATOR_NOT_ALLOWED           = 8
+*     FILESIZE_NOT_ALLOWED            = 9
+*     HEADER_TOO_LONG                 = 10
+*     DP_ERROR_CREATE                 = 11
+*     DP_ERROR_SEND                   = 12
+*     DP_ERROR_WRITE                  = 13
+*     UNKNOWN_DP_ERROR                = 14
+*     ACCESS_DENIED                   = 15
+*     DP_OUT_OF_MEMORY                = 16
+*     DISK_FULL                       = 17
+*     DP_TIMEOUT                      = 18
+*     FILE_NOT_FOUND                  = 19
+*     DATAPROVIDER_EXCEPTION          = 20
+*     CONTROL_FLUSH_ERROR             = 21
+*     OTHERS                          = 22
+            .
+  IF sy-subrc &lt;&gt; 0.
+* Implement suitable error handling here
+  ENDIF.</source>
+ </PROG>
+ <SHLP SHLPNAME="ZYUML_CLASS" DDLANGUAGE="E" DDTEXT="Class Names" ISSIMPLE="X" SELMETHOD="SEOCLASS" SELMTYPE="X" TEXTTAB="SEOCLASSTX" DIALOGTYPE="D">
+  <dd32p SHLPNAME="ZYUML_CLASS" FIELDNAME="CLSNAME" FLPOSITION="0001" ROLLNAME="SEOCLSNAME" SHLPINPUT="X" SHLPOUTPUT="X" SHLPSELPOS="01" SHLPLISPOS="01" DOMNAME="SEOCLSNAME" HEADLEN="30" SCRLEN1="10" SCRLEN2="15" SCRLEN3="20" DATATYPE="CHAR" LENG="000030" OUTPUTLEN="000030" DECIMALS="000000"/>
+  <dd32p SHLPNAME="ZYUML_CLASS" FIELDNAME="DESCRIPT" FLPOSITION="0002" ROLLNAME="SEODESCR" SHLPINPUT="X" SHLPSELPOS="02" SHLPLISPOS="02" DOMNAME="AS4TEXT" HEADLEN="60" SCRLEN1="10" SCRLEN2="15" SCRLEN3="20" DATATYPE="CHAR" LENG="000060" OUTPUTLEN="000060" DECIMALS="000000" LOWERCASE="X"/>
+ </SHLP>
+</nugget>
