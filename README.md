@@ -8,3 +8,7 @@ This project aims to solve a technical issue for ABAP developers who like UML as
 * Links
 
 http://yuml.me
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fabiopagoti/yuml-abap/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
