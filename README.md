@@ -42,7 +42,7 @@ CREATE OBJECT o_yuml_any_class
 
 DATA v_yuml_code TYPE string.
 
-v_code = o_yuml_any_class->zif_yuml_concept~generate_code( ).
+v_yuml_code = o_yuml_any_class->zif_yuml_concept~generate_code( ).
 
 WRITE: v_yuml_code.
 ```
