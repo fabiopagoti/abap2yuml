@@ -1,0 +1,2143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nugget name="YUML_ABAP-V-1.0">
+ <CLAS CLSNAME="ZCL_YUML_ACTIVITY_DIAGRAM" VERSION="1" LANGU="E" DESCRIPT="ZCL_YUML_ACTIVITY_DIAGRAM" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" CLSCCINCL="X" FIXPT="X" UNICODE="X" CLSBCCAT="00" DURATION_TYPE="0 " RISK_LEVEL="0 ">
+  <implementing CLSNAME="ZCL_YUML_ACTIVITY_DIAGRAM" REFCLSNAME="ZIF_YUML_DIAGRAM" VERSION="1" EXPOSURE="2" STATE="1" RELTYPE="1" EDITORDER="0 "/>
+  <localImplementation>*&quot;* use this source file for the definition and implementation of
+*&quot;* local helper classes, interface definitions and type
+*&quot;* declarations</localImplementation>
+  <localTypes>*&quot;* use this source file for any type of declarations (class
+*&quot;* definitions, interfaces or type declarations) you need for
+*&quot;* components in the private section</localTypes>
+  <localMacros>*&quot;* use this source file for any macro definitions you need
+*&quot;* in the implementation part of the class</localMacros>
+  <interfaceMethod CLSNAME="ZCL_YUML_ACTIVITY_DIAGRAM" CPDNAME="ZIF_YUML_DIAGRAM~GENERATE_CODE">
+   <source>method ZIF_YUML_DIAGRAM~GENERATE_CODE.
+
+
+endmethod.</source>
+  </interfaceMethod>
+  <interfaceMethod CLSNAME="ZCL_YUML_ACTIVITY_DIAGRAM" CPDNAME="ZIF_YUML_DIAGRAM~GENERATE_URL">
+   <source>method ZIF_YUML_DIAGRAM~GENERATE_URL.
+
+
+endmethod.</source>
+  </interfaceMethod>
+ </CLAS>
+ <CLAS CLSNAME="ZCL_YUML_CLASS" VERSION="1" LANGU="E" DESCRIPT="ZCL_YUML_CLASS" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" CLSCCINCL="X" FIXPT="X" UNICODE="X" CLSBCCAT="00" DURATION_TYPE="0 " RISK_LEVEL="0 ">
+  <implementing CLSNAME="ZCL_YUML_CLASS" REFCLSNAME="ZIF_YUML_CONCEPT_CLASS" VERSION="1" EXPOSURE="2" STATE="1" RELTYPE="1" EDITORDER="2 "/>
+  <localImplementation>*&quot;* use this source file for the definition and implementation of
+*&quot;* local helper classes, interface definitions and type
+*&quot;* declarations</localImplementation>
+  <localTypes>*&quot;* use this source file for any type of declarations (class
+*&quot;* definitions, interfaces or type declarations) you need for
+*&quot;* components in the private section</localTypes>
+  <localMacros>*&quot;* use this source file for any macro definitions you need
+*&quot;* in the implementation part of the class</localMacros>
+  <attribute CLSNAME="ZCL_YUML_CLASS" CMPNAME="CODE_SETTING_SHOW_ATTRIBUTES" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_ATTRIBUTES" EXPOSURE="1" STATE="1" EDITORDER="2 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_YUML_CLASS" CMPNAME="CODE_SETTING_SHOW_ATTR_TYPES" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_ATTR_TYPES" EXPOSURE="1" STATE="1" EDITORDER="3 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_YUML_CLASS" CMPNAME="CODE_SETTING_SHOW_EVENTS" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_EVENTS" EXPOSURE="1" STATE="1" EDITORDER="6 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_YUML_CLASS" CMPNAME="CODE_SETTING_SHOW_IMPL" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_IMPL" EXPOSURE="1" STATE="1" EDITORDER="8 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_YUML_CLASS" CMPNAME="CODE_SETTING_SHOW_INHE" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_INHE" EXPOSURE="1" STATE="1" EDITORDER="7 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_YUML_CLASS" CMPNAME="CODE_SETTING_SHOW_METHODS" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_METHODS" EXPOSURE="1" STATE="1" EDITORDER="4 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_YUML_CLASS" CMPNAME="CODE_SETTING_SHOW_METH_PARAM" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_METH_PARAM" EXPOSURE="1" STATE="1" EDITORDER="5 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_YUML_CLASS" CMPNAME="O_CLASS" VERSION="1" LANGU="E" DESCRIPT="O_CLASS" EXPOSURE="1" STATE="1" EDITORDER="1 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="3" TYPE="ZCL_WB_CLASS" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <interfaceMethod CLSNAME="ZCL_YUML_CLASS" CPDNAME="ZIF_YUML_CONCEPT~GENERATE_CODE">
+   <source>method ZIF_YUML_CONCEPT~GENERATE_CODE.
+
+    DATA lv_attributes_code TYPE string.
+    DATA lv_methods_code TYPE string.
+    DATA lv_events_code TYPE string.
+    DATA lv_inheritance_code TYPE string.
+    DATA lv_implementings_code TYPE string.
+
+    IF me-&gt;code_setting_show_attributes = abap_true.
+      lv_attributes_code  = me-&gt;generate_code_attributes( ).
+    ENDIF.
+
+    IF me-&gt;code_setting_show_methods = abap_true.
+      lv_methods_code     = me-&gt;generate_code_methods( ).
+    ENDIF.
+
+    IF me-&gt;code_setting_show_events = abap_true.
+      lv_events_code      = me-&gt;generate_code_events( ).
+    ENDIF.
+
+    IF me-&gt;code_setting_show_inhe = abap_true.
+      lv_inheritance_code = me-&gt;generate_code_inheritance( ).
+    ENDIF.
+
+    IF me-&gt;code_setting_show_impl = abap_true.
+      lv_implementings_code = me-&gt;generate_code_implementations( ).
+    ENDIF.
+
+    CONCATENATE:
+    `[`
+     me-&gt;o_class-&gt;class-clsname &quot; Class name
+     lv_attributes_code
+     lv_methods_code
+     lv_events_code
+     `]`
+     INTO re_code.
+
+    IF lv_inheritance_code IS NOT INITIAL.
+      CONCATENATE re_code lv_inheritance_code INTO re_code SEPARATED BY &apos;,&apos;.
+    ENDIF.
+
+    IF lv_implementings_code IS NOT INITIAL.
+      CONCATENATE re_code lv_implementings_code INTO re_code SEPARATED BY &apos;,&apos;.
+    ENDIF.
+
+
+endmethod.</source>
+  </interfaceMethod>
+  <method CLSNAME="ZCL_YUML_CLASS" CMPNAME="CONSTRUCTOR" VERSION="1" LANGU="E" DESCRIPT="CONSTRUCTOR" EXPOSURE="2" STATE="1" EDITORDER="1 " DISPID="0 " MTDTYPE="2" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="CONSTRUCTOR" SCONAME="IM_WB_CLASS" VERSION="1" LANGU="E" DESCRIPT="IM_WB_CLASS" CMPTYPE="1" MTDTYPE="2" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="3" TYPE="ZCL_WB_CLASS"/>
+   <source>method CONSTRUCTOR.
+
+    me-&gt;o_class = im_wb_class.
+
+    me-&gt;set_code_settings(
+        im_show_attributes      = abap_true
+        im_show_attr_types      = abap_true
+        im_show_methods         = abap_true
+        im_show_meth_param      = abap_false
+        im_show_events          = abap_false
+        im_show_inherintance    = abap_true
+        im_show_implementations = abap_false
+    ).
+
+
+endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_YUML_CLASS" CMPNAME="GENERATE_CODE_ATTRIBUTES" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE_ATTRIBUTES" EXPOSURE="1" STATE="1" EDITORDER="1 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="GENERATE_CODE_ATTRIBUTES" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="9 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+   <source>method GENERATE_CODE_ATTRIBUTES.
+
+    DATA lv_wa_attribute  TYPE seoo_attribute_r.
+    DATA lv_exposure_code TYPE string.
+    DATA lv_attr_type     TYPE string. &quot; Code of attribute types
+
+    IF me-&gt;code_setting_show_attributes = abap_true.
+      re_code = &apos;|&apos;.
+      LOOP AT me-&gt;o_class-&gt;attributes INTO lv_wa_attribute.
+        CASE lv_wa_attribute-exposure.
+          WHEN 0.
+            lv_exposure_code = &apos;-&apos;.
+          WHEN 1.
+            lv_exposure_code = &apos;+-&apos;.
+          WHEN 2.
+            lv_exposure_code = &apos;+&apos;.
+        ENDCASE.
+
+        IF me-&gt;code_setting_show_attr_types = abap_true.
+          lv_attr_type = me-&gt;generate_code_attr_types( lv_wa_attribute ).
+        ENDIF.
+
+        CONCATENATE: re_code lv_exposure_code lv_wa_attribute-cmpname lv_attr_type &apos;;&apos; INTO re_code.
+
+      ENDLOOP.
+
+    ENDIF.
+
+
+endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_YUML_CLASS" CMPNAME="GENERATE_CODE_ATTR_TYPES" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE_ATTR_TYPES" EXPOSURE="1" STATE="1" EDITORDER="2 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="GENERATE_CODE_ATTR_TYPES" SCONAME="IM_WA_ATTRIBUTE" VERSION="1" LANGU="E" DESCRIPT="IM_WA_ATTRIBUTE" CMPTYPE="1" MTDTYPE="0" EDITORDER="11 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="SEOO_ATTRIBUTE_R"/>
+   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="GENERATE_CODE_ATTR_TYPES" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="12 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+   <source>method GENERATE_CODE_ATTR_TYPES.
+
+    CONCATENATE &apos; : (&apos; im_wa_attribute-type &apos;)&apos; INTO re_code.
+
+endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_YUML_CLASS" CMPNAME="GENERATE_CODE_EVENTS" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE_EVENTS" EXPOSURE="1" STATE="1" EDITORDER="5 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="GENERATE_CODE_EVENTS" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="19 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+   <source>method GENERATE_CODE_EVENTS.
+
+
+    DATA lv_wa_event TYPE seoo_event_r.
+    DATA lv_exposure_code TYPE string.
+
+    IF me-&gt;code_setting_show_events = abap_true.
+      re_code = &apos;|&apos;.
+      LOOP AT me-&gt;o_class-&gt;events INTO lv_wa_event.
+        CASE lv_wa_event-exposure.
+          WHEN 0.
+            lv_exposure_code = &apos;-&apos;.
+          WHEN 1.
+            lv_exposure_code = &apos;+-&apos;.
+          WHEN 2.
+            lv_exposure_code = &apos;+&apos;.
+        ENDCASE.
+
+        CONCATENATE: re_code lv_exposure_code lv_wa_event-cmpname &apos;;&apos; INTO re_code.
+      ENDLOOP.
+
+    ENDIF.
+
+
+endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_YUML_CLASS" CMPNAME="GENERATE_CODE_IMPLEMENTATIONS" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE_IMPLEMENTATIONS" EXPOSURE="1" STATE="1" EDITORDER="7 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="GENERATE_CODE_IMPLEMENTATIONS" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="23 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+   <source>method GENERATE_CODE_IMPLEMENTATIONS.
+
+    DATA lv_wa_implementings TYPE vseoimplem.
+    DATA lv_implementations_code TYPE string.
+
+    IF me-&gt;o_class-&gt;implementings IS NOT INITIAL.
+      LOOP AT me-&gt;o_class-&gt;implementings INTO lv_wa_implementings.
+        CONCATENATE &apos;[&apos; lv_wa_implementings-clsname &apos;]-.-^[&apos; lv_wa_implementings-refclsname &apos;]&apos; INTO lv_implementations_code.
+        CONCATENATE re_code &apos;,&apos; lv_implementations_code INTO re_code.
+      ENDLOOP.
+
+    ENDIF.
+
+
+endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_YUML_CLASS" CMPNAME="GENERATE_CODE_INHERITANCE" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE_INHERITANCE" EXPOSURE="1" STATE="1" EDITORDER="6 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="GENERATE_CODE_INHERITANCE" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="21 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+   <source>method GENERATE_CODE_INHERITANCE.
+
+    IF me-&gt;o_class-&gt;inheritance-refclsname IS NOT INITIAL.
+      CONCATENATE &apos;[&apos; me-&gt;o_class-&gt;inheritance-clsname &apos;]-^[&apos; me-&gt;o_class-&gt;inheritance-refclsname &apos;]&apos; INTO re_code.
+    ENDIF.
+
+
+endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_YUML_CLASS" CMPNAME="GENERATE_CODE_METHODS" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE_METHODS" EXPOSURE="1" STATE="1" EDITORDER="3 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="GENERATE_CODE_METHODS" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="14 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+   <source>method GENERATE_CODE_METHODS.
+
+
+    DATA lv_wa_method TYPE seoo_method_r.
+    DATA lv_exposure_code TYPE string.
+    DATA lv_meth_param TYPE string. &quot; Code of method parameters
+
+    IF me-&gt;code_setting_show_methods = abap_true.
+      re_code = &apos;|&apos;.
+      LOOP AT me-&gt;o_class-&gt;methods INTO lv_wa_method.
+        CASE lv_wa_method-exposure.
+          WHEN 0.
+            lv_exposure_code = &apos;-&apos;.
+          WHEN 1.
+            lv_exposure_code = &apos;+-&apos;.
+          WHEN 2.
+            lv_exposure_code = &apos;+&apos;.
+        ENDCASE.
+
+        IF me-&gt;code_setting_show_meth_param = abap_true.
+          lv_meth_param = me-&gt;generate_code_method_param( lv_wa_method ).
+        ENDIF.
+
+        CONCATENATE: re_code lv_exposure_code lv_wa_method-cmpname lv_meth_param &apos;;&apos; INTO re_code.
+
+      ENDLOOP.
+
+    ENDIF.
+
+
+endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_YUML_CLASS" CMPNAME="GENERATE_CODE_METHOD_PARAM" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE_METHOD_PARAM" EXPOSURE="1" STATE="1" EDITORDER="4 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="GENERATE_CODE_METHOD_PARAM" SCONAME="IM_WA_METHOD" VERSION="1" LANGU="E" DESCRIPT="IM_WA_METHOD" CMPTYPE="1" MTDTYPE="0" EDITORDER="16 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="SEOO_METHOD_R"/>
+   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="GENERATE_CODE_METHOD_PARAM" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="17 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+   <source>method GENERATE_CODE_METHOD_PARAM.
+
+    DATA lv_wa_parameter TYPE vseoparam.
+    DATA lv_param_code   TYPE string.
+
+    LOOP AT me-&gt;o_class-&gt;parameters INTO lv_wa_parameter WHERE cmpname = im_wa_method-cmpname.
+      CONCATENATE lv_param_code lv_wa_parameter-sconame lv_wa_parameter-type INTO lv_param_code SEPARATED BY space.
+    ENDLOOP.
+
+    IF lv_param_code IS NOT INITIAL.
+      CONCATENATE &apos; : (&apos; lv_param_code &apos;)&apos; INTO re_code.
+    ELSE.
+      re_code = &apos;()&apos;.
+    ENDIF.
+
+
+endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_YUML_CLASS" CMPNAME="SET_CODE_SETTINGS" VERSION="1" LANGU="E" DESCRIPT="SET_CODE_SETTINGS" EXPOSURE="2" STATE="1" EDITORDER="2 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_ATTRIBUTES" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_ATTRIBUTES" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_TRUE"/>
+   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_ATTR_TYPES" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_ATTR_TYPES" CMPTYPE="1" MTDTYPE="0" EDITORDER="4 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_TRUE"/>
+   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_METHODS" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_METHODS" CMPTYPE="1" MTDTYPE="0" EDITORDER="5 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_TRUE"/>
+   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_METH_PARAM" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_METH_PARAM" CMPTYPE="1" MTDTYPE="0" EDITORDER="6 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_FALSE"/>
+   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_EVENTS" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_EVENTS" CMPTYPE="1" MTDTYPE="0" EDITORDER="7 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_FALSE"/>
+   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_INHERINTANCE" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_INHERINTANCE" CMPTYPE="1" MTDTYPE="0" EDITORDER="8 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_TRUE"/>
+   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_IMPLEMENTATIONS" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_IMPLEMENTATIONS" CMPTYPE="1" MTDTYPE="0" EDITORDER="9 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_TRUE"/>
+   <source>method SET_CODE_SETTINGS.
+
+
+    me-&gt;code_setting_show_attributes  = im_show_attributes.
+    me-&gt;code_setting_show_attr_types  = im_show_attr_types.
+    me-&gt;code_setting_show_methods     = im_show_methods.
+    me-&gt;code_setting_show_meth_param  = im_show_meth_param.
+    me-&gt;code_setting_show_events      = im_show_events.
+    me-&gt;code_setting_show_inhe        = im_show_inherintance.
+    me-&gt;code_setting_show_impl        = im_show_implementations.
+
+
+endmethod.</source>
+  </method>
+ </CLAS>
+ <CLAS CLSNAME="ZCL_YUML_CLASS_DIAGRAM" VERSION="1" LANGU="E" DESCRIPT="ZCL_YUML_CLASS_DIAGRAM" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" CLSCCINCL="X" FIXPT="X" UNICODE="X" CLSBCCAT="00" DURATION_TYPE="0 " RISK_LEVEL="0 ">
+  <implementing CLSNAME="ZCL_YUML_CLASS_DIAGRAM" REFCLSNAME="ZIF_YUML_DIAGRAM" VERSION="1" EXPOSURE="2" STATE="1" RELTYPE="1" EDITORDER="0 "/>
+  <localImplementation>*&quot;* use this source file for the definition and implementation of
+*&quot;* local helper classes, interface definitions and type
+*&quot;* declarations</localImplementation>
+  <localTypes>*&quot;* use this source file for any type of declarations (class
+*&quot;* definitions, interfaces or type declarations) you need for
+*&quot;* components in the private section</localTypes>
+  <localMacros>*&quot;* use this source file for any macro definitions you need
+*&quot;* in the implementation part of the class</localMacros>
+  <attribute CLSNAME="ZCL_YUML_CLASS_DIAGRAM" CMPNAME="O_WB_OBJECTS_SET_ITAB" VERSION="1" LANGU="E" DESCRIPT="O_WB_OBJECTS_SET_ITAB" EXPOSURE="1" STATE="1" EDITORDER="2 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="3" TYPE="ZIF_WB_SET_ITAB" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <interfaceMethod CLSNAME="ZCL_YUML_CLASS_DIAGRAM" CPDNAME="ZIF_YUML_DIAGRAM~GENERATE_CODE">
+   <source>METHOD zif_yuml_diagram~generate_code.
+
+
+  DATA lo_wb_object TYPE REF TO zif_wb_object.
+  DATA lo_yuml_concept TYPE REF TO zif_yuml_concept.
+
+  DATA lo_wb_class TYPE REF TO zcl_wb_class.
+  DATA lo_wb_interface TYPE REF TO zcl_wb_interface.
+
+  LOOP AT me-&gt;o_wb_objects_set_itab-&gt;t_wb_objects INTO lo_wb_object.
+
+* Class
+    TRY .
+        lo_wb_class ?= lo_wb_object.
+
+        CREATE OBJECT lo_yuml_concept TYPE zcl_yuml_class
+          EXPORTING
+            im_wb_class = lo_wb_class.
+        re_code = re_code &amp;&amp; |,| &amp;&amp; lo_yuml_concept-&gt;generate_code( ).
+        CONTINUE.
+      CATCH cx_sy_move_cast_error.
+    ENDTRY.
+
+* Interface
+    TRY .
+        lo_wb_interface ?= lo_wb_object.
+
+        CREATE OBJECT lo_yuml_concept TYPE zcl_yuml_interface
+          EXPORTING
+            im_wb_interface = lo_wb_interface.
+
+        re_code = re_code &amp;&amp; |,| &amp;&amp; lo_yuml_concept-&gt;generate_code( ).
+        CONTINUE.
+      CATCH cx_sy_move_cast_error.
+    ENDTRY.
+
+
+
+
+  ENDLOOP.
+
+ENDMETHOD.</source>
+  </interfaceMethod>
+  <interfaceMethod CLSNAME="ZCL_YUML_CLASS_DIAGRAM" CPDNAME="ZIF_YUML_DIAGRAM~GENERATE_URL">
+   <source>method ZIF_YUML_DIAGRAM~GENERATE_URL.
+
+
+endmethod.</source>
+  </interfaceMethod>
+  <method CLSNAME="ZCL_YUML_CLASS_DIAGRAM" CMPNAME="CONSTRUCTOR" VERSION="1" LANGU="E" DESCRIPT="CONSTRUCTOR" EXPOSURE="2" STATE="1" EDITORDER="2 " DISPID="0 " MTDTYPE="2" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_YUML_CLASS_DIAGRAM" CMPNAME="CONSTRUCTOR" SCONAME="IM_WB_OBJECT_SET_ITAB" VERSION="1" LANGU="E" DESCRIPT="IM_WB_OBJECT_SET_ITAB" CMPTYPE="1" MTDTYPE="2" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="3" TYPE="ZIF_WB_SET_ITAB"/>
+   <source>method CONSTRUCTOR.
+
+    o_wb_objects_set_itab ?= im_wb_object_set_itab.
+
+endmethod.</source>
+  </method>
+ </CLAS>
+ <CLAS CLSNAME="ZCL_YUML_INTERFACE" VERSION="1" LANGU="E" DESCRIPT="ZCL_YUML_INTERFACE" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" CLSCCINCL="X" FIXPT="X" UNICODE="X" CLSBCCAT="00" DURATION_TYPE="0 " RISK_LEVEL="0 ">
+  <implementing CLSNAME="ZCL_YUML_INTERFACE" REFCLSNAME="ZIF_YUML_CONCEPT_INTERFACE" VERSION="1" EXPOSURE="2" STATE="1" RELTYPE="1" EDITORDER="2 "/>
+  <localImplementation>*&quot;* use this source file for the definition and implementation of
+*&quot;* local helper classes, interface definitions and type
+*&quot;* declarations</localImplementation>
+  <localTypes>*&quot;* use this source file for any type of declarations (class
+*&quot;* definitions, interfaces or type declarations) you need for
+*&quot;* components in the private section</localTypes>
+  <localMacros>*&quot;* use this source file for any macro definitions you need
+*&quot;* in the implementation part of the class</localMacros>
+  <attribute CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="CODE_SETTING_SHOW_ATTRIBUTES" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_ATTRIBUTES" EXPOSURE="1" STATE="1" EDITORDER="2 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="CODE_SETTING_SHOW_ATTR_TYPES" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_ATTR_TYPES" EXPOSURE="1" STATE="1" EDITORDER="3 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="CODE_SETTING_SHOW_EVENTS" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_EVENTS" EXPOSURE="1" STATE="1" EDITORDER="6 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="CODE_SETTING_SHOW_IMPL" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_IMPL" EXPOSURE="1" STATE="1" EDITORDER="8 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="CODE_SETTING_SHOW_INHE" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_INHE" EXPOSURE="1" STATE="1" EDITORDER="7 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="CODE_SETTING_SHOW_METHODS" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_METHODS" EXPOSURE="1" STATE="1" EDITORDER="4 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="CODE_SETTING_SHOW_METH_PARAM" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_METH_PARAM" EXPOSURE="1" STATE="1" EDITORDER="5 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="O_INTERFACE" VERSION="1" LANGU="E" DESCRIPT="O_CLASS" EXPOSURE="1" STATE="1" EDITORDER="1 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="3" TYPE="ZCL_WB_INTERFACE" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <interfaceMethod CLSNAME="ZCL_YUML_INTERFACE" CPDNAME="ZIF_YUML_CONCEPT~GENERATE_CODE">
+   <source>method ZIF_YUML_CONCEPT~GENERATE_CODE.
+
+    DATA lv_attributes_code TYPE string.
+    DATA lv_methods_code TYPE string.
+    DATA lv_events_code TYPE string.
+    DATA lv_inheritance_code TYPE string.
+    DATA lv_implementings_code TYPE string.
+
+    IF me-&gt;code_setting_show_attributes = abap_true.
+      lv_attributes_code  = me-&gt;generate_code_attributes( ).
+    ENDIF.
+
+    IF me-&gt;code_setting_show_methods = abap_true.
+      lv_methods_code     = me-&gt;generate_code_methods( ).
+    ENDIF.
+
+    IF me-&gt;code_setting_show_events = abap_true.
+      lv_events_code      = me-&gt;generate_code_events( ).
+    ENDIF.
+
+    IF me-&gt;code_setting_show_inhe = abap_true.
+      lv_inheritance_code = me-&gt;generate_code_inheritance( ).
+    ENDIF.
+
+    IF me-&gt;code_setting_show_impl = abap_true.
+      lv_implementings_code = me-&gt;generate_code_implementations( ).
+    ENDIF.
+
+    CONCATENATE:
+    `[`
+     me-&gt;o_interface-&gt;interface-clsname &quot; Interface name
+     lv_attributes_code
+     lv_methods_code
+     lv_events_code
+     `]`
+     INTO re_code.
+
+    IF lv_inheritance_code IS NOT INITIAL.
+      CONCATENATE re_code lv_inheritance_code INTO re_code SEPARATED BY &apos;,&apos;.
+    ENDIF.
+
+    IF lv_implementings_code IS NOT INITIAL.
+      CONCATENATE re_code lv_implementings_code INTO re_code SEPARATED BY &apos;,&apos;.
+    ENDIF.
+
+
+endmethod.</source>
+  </interfaceMethod>
+  <method CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="CONSTRUCTOR" VERSION="1" LANGU="E" DESCRIPT="CONSTRUCTOR" EXPOSURE="2" STATE="1" EDITORDER="1 " DISPID="0 " MTDTYPE="2" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="CONSTRUCTOR" SCONAME="IM_WB_INTERFACE" VERSION="1" LANGU="E" DESCRIPT="Generic Interface" CMPTYPE="1" MTDTYPE="2" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="3" TYPE="ZCL_WB_INTERFACE"/>
+   <source>method CONSTRUCTOR.
+
+    me-&gt;o_interface = im_wb_interface.
+
+    me-&gt;set_code_settings(
+        im_show_attributes      = abap_true
+        im_show_attr_types      = abap_true
+        im_show_methods         = abap_true
+        im_show_meth_param      = abap_false
+        im_show_events          = abap_false
+        im_show_inherintance    = abap_true
+        im_show_implementations = abap_true
+    ).
+
+
+endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_ATTRIBUTES" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE_ATTRIBUTES" EXPOSURE="1" STATE="1" EDITORDER="1 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_ATTRIBUTES" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="9 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+   <source>method GENERATE_CODE_ATTRIBUTES.
+
+    DATA lv_wa_attribute  TYPE seoo_attribute_r.
+    DATA lv_exposure_code TYPE string.
+    DATA lv_attr_type     TYPE string. &quot; Code of attribute types
+
+    IF me-&gt;code_setting_show_attributes = abap_true.
+      re_code = &apos;|&apos;.
+      LOOP AT me-&gt;o_interface-&gt;attributes INTO lv_wa_attribute.
+        CASE lv_wa_attribute-exposure.
+          WHEN 0.
+            lv_exposure_code = &apos;-&apos;.
+          WHEN 1.
+            lv_exposure_code = &apos;+-&apos;.
+          WHEN 2.
+            lv_exposure_code = &apos;+&apos;.
+        ENDCASE.
+
+        IF me-&gt;code_setting_show_attr_types = abap_true.
+          lv_attr_type = me-&gt;generate_code_attr_types( lv_wa_attribute ).
+        ENDIF.
+
+        CONCATENATE: re_code lv_exposure_code lv_wa_attribute-cmpname lv_attr_type &apos;;&apos; INTO re_code.
+
+      ENDLOOP.
+
+    ENDIF.
+
+
+endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_ATTR_TYPES" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE_ATTR_TYPES" EXPOSURE="1" STATE="1" EDITORDER="2 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_ATTR_TYPES" SCONAME="IM_WA_ATTRIBUTE" VERSION="1" LANGU="E" DESCRIPT="IM_WA_ATTRIBUTE" CMPTYPE="1" MTDTYPE="0" EDITORDER="11 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="SEOO_ATTRIBUTE_R"/>
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_ATTR_TYPES" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="12 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+   <source>method GENERATE_CODE_ATTR_TYPES.
+
+    CONCATENATE &apos; : (&apos; im_wa_attribute-type &apos;)&apos; INTO re_code.
+
+endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_EVENTS" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE_EVENTS" EXPOSURE="1" STATE="1" EDITORDER="5 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_EVENTS" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="19 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+   <source>method GENERATE_CODE_EVENTS.
+
+
+    DATA lv_wa_event TYPE seoo_event_r.
+    DATA lv_exposure_code TYPE string.
+
+    IF me-&gt;code_setting_show_events = abap_true.
+      re_code = &apos;|&apos;.
+      LOOP AT me-&gt;o_interface-&gt;events INTO lv_wa_event.
+        CASE lv_wa_event-exposure.
+          WHEN 0.
+            lv_exposure_code = &apos;-&apos;.
+          WHEN 1.
+            lv_exposure_code = &apos;+-&apos;.
+          WHEN 2.
+            lv_exposure_code = &apos;+&apos;.
+        ENDCASE.
+
+        CONCATENATE: re_code lv_exposure_code lv_wa_event-cmpname &apos;;&apos; INTO re_code.
+      ENDLOOP.
+
+    ENDIF.
+
+
+endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_IMPLEMENTATIONS" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE_IMPLEMENTATIONS" EXPOSURE="1" STATE="1" EDITORDER="7 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_IMPLEMENTATIONS" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="23 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+   <source>method GENERATE_CODE_IMPLEMENTATIONS.
+
+    DATA lv_wa_implementings TYPE vseoimplem.
+    DATA lv_implementations_code TYPE string.
+
+*    IF me-&gt;o_interface-&gt;implementings IS NOT INITIAL.
+*      LOOP AT me-&gt;o_class-&gt;implementings INTO lv_wa_implementings.
+*        CONCATENATE &apos;[&apos; lv_wa_implementings-clsname &apos;]-.-^[&apos; lv_wa_implementings-refclsname &apos;]&apos; INTO lv_implementations_code.
+*        CONCATENATE re_code &apos;,&apos; lv_implementations_code INTO re_code.
+*      ENDLOOP.
+*
+*    ENDIF.
+
+
+endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_INHERITANCE" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE_INHERITANCE" EXPOSURE="1" STATE="1" EDITORDER="6 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_INHERITANCE" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="21 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+   <source>method GENERATE_CODE_INHERITANCE.
+
+*    IF me-&gt;o_interface-&gt;inheritance-refclsname IS NOT INITIAL.
+*      CONCATENATE &apos;[&apos; me-&gt;o_class-&gt;inheritance-clsname &apos;]-^[&apos; me-&gt;o_class-&gt;inheritance-refclsname &apos;]&apos; INTO re_code.
+*    ENDIF.
+
+endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_METHODS" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE_METHODS" EXPOSURE="1" STATE="1" EDITORDER="3 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_METHODS" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="14 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+   <source>method GENERATE_CODE_METHODS.
+
+
+    DATA lv_wa_method TYPE seoo_method_r.
+    DATA lv_exposure_code TYPE string.
+    DATA lv_meth_param TYPE string. &quot; Code of method parameters
+
+    IF me-&gt;code_setting_show_methods = abap_true.
+      re_code = &apos;|&apos;.
+      LOOP AT me-&gt;o_interface-&gt;methods INTO lv_wa_method.
+        CASE lv_wa_method-exposure.
+          WHEN 0.
+            lv_exposure_code = &apos;-&apos;.
+          WHEN 1.
+            lv_exposure_code = &apos;+-&apos;.
+          WHEN 2.
+            lv_exposure_code = &apos;+&apos;.
+        ENDCASE.
+
+        IF me-&gt;code_setting_show_meth_param = abap_true.
+          lv_meth_param = me-&gt;generate_code_method_param( lv_wa_method ).
+        ENDIF.
+
+        CONCATENATE: re_code lv_exposure_code lv_wa_method-cmpname lv_meth_param &apos;;&apos; INTO re_code.
+
+      ENDLOOP.
+
+    ENDIF.
+
+
+endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_METHOD_PARAM" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE_METHOD_PARAM" EXPOSURE="1" STATE="1" EDITORDER="4 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_METHOD_PARAM" SCONAME="IM_WA_METHOD" VERSION="1" LANGU="E" DESCRIPT="IM_WA_METHOD" CMPTYPE="1" MTDTYPE="0" EDITORDER="16 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="SEOO_METHOD_R"/>
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_METHOD_PARAM" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="17 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+   <source>method GENERATE_CODE_METHOD_PARAM.
+
+    DATA lv_wa_parameter TYPE vseoparam.
+    DATA lv_param_code   TYPE string.
+
+    LOOP AT me-&gt;o_interface-&gt;parameters INTO lv_wa_parameter WHERE cmpname = im_wa_method-cmpname.
+      CONCATENATE lv_param_code lv_wa_parameter-sconame lv_wa_parameter-type INTO lv_param_code SEPARATED BY space.
+    ENDLOOP.
+
+    IF lv_param_code IS NOT INITIAL.
+      CONCATENATE &apos; : (&apos; lv_param_code &apos;)&apos; INTO re_code.
+    ELSE.
+      re_code = &apos;()&apos;.
+    ENDIF.
+
+
+endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="SET_CODE_SETTINGS" VERSION="1" LANGU="E" DESCRIPT="SET_CODE_SETTINGS" EXPOSURE="2" STATE="1" EDITORDER="2 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_ATTRIBUTES" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_ATTRIBUTES" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_TRUE"/>
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_ATTR_TYPES" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_ATTR_TYPES" CMPTYPE="1" MTDTYPE="0" EDITORDER="4 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_TRUE"/>
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_METHODS" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_METHODS" CMPTYPE="1" MTDTYPE="0" EDITORDER="5 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_TRUE"/>
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_METH_PARAM" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_METH_PARAM" CMPTYPE="1" MTDTYPE="0" EDITORDER="6 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_FALSE"/>
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_EVENTS" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_EVENTS" CMPTYPE="1" MTDTYPE="0" EDITORDER="7 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_FALSE"/>
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_INHERINTANCE" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_INHERINTANCE" CMPTYPE="1" MTDTYPE="0" EDITORDER="8 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_TRUE"/>
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_IMPLEMENTATIONS" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_IMPLEMENTATIONS" CMPTYPE="1" MTDTYPE="0" EDITORDER="9 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_TRUE"/>
+   <source>method SET_CODE_SETTINGS.
+
+
+    me-&gt;code_setting_show_attributes  = im_show_attributes.
+    me-&gt;code_setting_show_attr_types  = im_show_attr_types.
+    me-&gt;code_setting_show_methods     = im_show_methods.
+    me-&gt;code_setting_show_meth_param  = im_show_meth_param.
+    me-&gt;code_setting_show_events      = im_show_events.
+    me-&gt;code_setting_show_inhe        = im_show_inherintance.
+    me-&gt;code_setting_show_impl        = im_show_implementations.
+
+
+endmethod.</source>
+  </method>
+ </CLAS>
+ <CLAS CLSNAME="ZCL_YUML_USECASE_DIAGRAM" VERSION="1" LANGU="E" DESCRIPT="ZCL_YUML_USECASE_DIAGRAM" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" CLSCCINCL="X" FIXPT="X" UNICODE="X" CLSBCCAT="00" DURATION_TYPE="0 " RISK_LEVEL="0 ">
+  <implementing CLSNAME="ZCL_YUML_USECASE_DIAGRAM" REFCLSNAME="ZIF_YUML_DIAGRAM" VERSION="1" EXPOSURE="2" STATE="1" RELTYPE="1" EDITORDER="0 "/>
+  <localImplementation>*&quot;* use this source file for the definition and implementation of
+*&quot;* local helper classes, interface definitions and type
+*&quot;* declarations</localImplementation>
+  <localTypes>*&quot;* use this source file for any type of declarations (class
+*&quot;* definitions, interfaces or type declarations) you need for
+*&quot;* components in the private section</localTypes>
+  <localMacros>*&quot;* use this source file for any macro definitions you need
+*&quot;* in the implementation part of the class</localMacros>
+  <interfaceMethod CLSNAME="ZCL_YUML_USECASE_DIAGRAM" CPDNAME="ZIF_YUML_DIAGRAM~GENERATE_CODE">
+   <source>method ZIF_YUML_DIAGRAM~GENERATE_CODE.
+
+
+endmethod.</source>
+  </interfaceMethod>
+  <interfaceMethod CLSNAME="ZCL_YUML_USECASE_DIAGRAM" CPDNAME="ZIF_YUML_DIAGRAM~GENERATE_URL">
+   <source>method ZIF_YUML_DIAGRAM~GENERATE_URL.
+
+
+endmethod.</source>
+  </interfaceMethod>
+ </CLAS>
+ <DOMA DOMNAME="ZYUML_DIAGRAM_DIRECTION" DDLANGUAGE="E" DATATYPE="CHAR" LENG="000003" OUTPUTLEN="000003" DECIMALS="000000" VALEXI="X" MASKLEN="0000" DDTEXT="YUML - Diagram Direction" AUTHCLASS="00" OUTPUTSTYLE="00">
+  <dd07v DOMNAME="ZYUML_DIAGRAM_DIRECTION" VALPOS="0001" DDLANGUAGE="E" DOMVALUE_L="LR" DDTEXT="Left-right"/>
+  <dd07v DOMNAME="ZYUML_DIAGRAM_DIRECTION" VALPOS="0002" DDLANGUAGE="E" DOMVALUE_L="RL" DDTEXT="Right-left"/>
+  <dd07v DOMNAME="ZYUML_DIAGRAM_DIRECTION" VALPOS="0003" DDLANGUAGE="E" DOMVALUE_L="TB" DDTEXT="Top-button"/>
+ </DOMA>
+ <DOMA DOMNAME="ZYUML_DIAGRAM_FORMAT" DDLANGUAGE="E" DATATYPE="CHAR" LENG="000020" OUTPUTLEN="000020" DECIMALS="000000" LOWERCASE="X" VALEXI="X" MASKLEN="0000" DDTEXT="YUML - Diagram Format" AUTHCLASS="00" OUTPUTSTYLE="00">
+  <dd07v DOMNAME="ZYUML_DIAGRAM_FORMAT" VALPOS="0001" DDLANGUAGE="E" DOMVALUE_L="0" DDTEXT="Plain"/>
+  <dd07v DOMNAME="ZYUML_DIAGRAM_FORMAT" VALPOS="0002" DDLANGUAGE="E" DOMVALUE_L="1" DDTEXT="Boring"/>
+  <dd07v DOMNAME="ZYUML_DIAGRAM_FORMAT" VALPOS="0003" DDLANGUAGE="E" DOMVALUE_L="2" DDTEXT="Scruffy"/>
+ </DOMA>
+ <DOMA DOMNAME="ZYUML_DIAGRAM_SCALE" DDLANGUAGE="E" DATATYPE="INT1" LENG="000003" OUTPUTLEN="000003" DECIMALS="000000" MASKLEN="0000" DDTEXT="YUML - Diagram Scale" AUTHCLASS="00" OUTPUTSTYLE="00"/>
+ <DOMA DOMNAME="ZYUML_DIAGRAM_TYPE" DDLANGUAGE="E" DATATYPE="CHAR" LENG="000020" OUTPUTLEN="000020" DECIMALS="000000" LOWERCASE="X" VALEXI="X" MASKLEN="0000" DDTEXT="YUML - Diagram Type" AUTHCLASS="00" OUTPUTSTYLE="00">
+  <dd07v DOMNAME="ZYUML_DIAGRAM_TYPE" VALPOS="0001" DDLANGUAGE="E" DOMVALUE_L="0" DDTEXT="Class Diagram"/>
+  <dd07v DOMNAME="ZYUML_DIAGRAM_TYPE" VALPOS="0002" DDLANGUAGE="E" DOMVALUE_L="1" DDTEXT="Activity Diagram"/>
+  <dd07v DOMNAME="ZYUML_DIAGRAM_TYPE" VALPOS="0003" DDLANGUAGE="E" DOMVALUE_L="2" DDTEXT="User Case Diagram"/>
+ </DOMA>
+ <DTEL ROLLNAME="ZYUML_DIAGRAM_TYPE" DDLANGUAGE="E" DOMNAME="ZYUML_DIAGRAM_TYPE" ROUTPUTLEN="000000" HEADLEN="20" SCRLEN1="10" SCRLEN2="15" SCRLEN3="20" DDTEXT="YUML - Diagram type" REPTEXT="Diagram Type" SCRTEXT_S="D. Type" SCRTEXT_M="Diagram Type" SCRTEXT_L="Diagram Type" AUTHCLASS="00" DTELMASTER="E" DATATYPE="CHAR" LENG="000020" DECIMALS="000000" OUTPUTLEN="000020" LOWERCASE="X" VALEXI="X" REFKIND="D">
+  <tpara/>
+ </DTEL>
+ <DTEL ROLLNAME="ZYUML_DIAGRAM_SCALE" DDLANGUAGE="E" DOMNAME="ZYUML_DIAGRAM_SCALE" ROUTPUTLEN="000000" HEADLEN="13" SCRLEN1="10" SCRLEN2="15" SCRLEN3="20" DDTEXT="YUML - Diagram Scale" REPTEXT="Diagram Scale" SCRTEXT_S="D. Scale" SCRTEXT_M="Diagram Scale" SCRTEXT_L="Diagram Scale" AUTHCLASS="00" DTELMASTER="E" DATATYPE="INT1" LENG="000003" DECIMALS="000000" OUTPUTLEN="000003" REFKIND="D">
+  <tpara/>
+ </DTEL>
+ <DTEL ROLLNAME="ZYUML_DIAGRAM_FORMAT" DDLANGUAGE="E" DOMNAME="ZYUML_DIAGRAM_FORMAT" ROUTPUTLEN="000000" HEADLEN="20" SCRLEN1="10" SCRLEN2="15" SCRLEN3="20" DDTEXT="YUML - Diagram Format" REPTEXT="Diagram Format" SCRTEXT_S="D. Format" SCRTEXT_M="Diagram Format" SCRTEXT_L="Diagram Format" AUTHCLASS="00" DTELMASTER="E" DATATYPE="CHAR" LENG="000020" DECIMALS="000000" OUTPUTLEN="000020" LOWERCASE="X" VALEXI="X" REFKIND="D">
+  <tpara/>
+ </DTEL>
+ <DTEL ROLLNAME="ZYUML_DIAGRAM_DIRECTION" DDLANGUAGE="E" DOMNAME="ZYUML_DIAGRAM_DIRECTION" ROUTPUTLEN="000000" HEADLEN="17" SCRLEN1="10" SCRLEN2="17" SCRLEN3="20" DDTEXT="YUML - Diagram Direction" REPTEXT="Diagram Direction" SCRTEXT_S="D. Direct" SCRTEXT_M="Diagram Direction" SCRTEXT_L="Diagram Direction" AUTHCLASS="00" DTELMASTER="E" DATATYPE="CHAR" LENG="000003" DECIMALS="000000" OUTPUTLEN="000003" VALEXI="X" REFKIND="D">
+  <tpara/>
+ </DTEL>
+ <INTF CLSNAME="ZIF_YUML_CONCEPT" VERSION="1" LANGU="E" DESCRIPT="ZIF_YUML_CONCEPT" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" UNICODE="X">
+  <method CLSNAME="ZIF_YUML_CONCEPT" CMPNAME="GENERATE_CODE" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE" EXPOSURE="2" STATE="1" EDITORDER="2 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZIF_YUML_CONCEPT" CMPNAME="GENERATE_CODE" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+  </method>
+ </INTF>
+ <INTF CLSNAME="ZIF_YUML_CONCEPT_CLASS" VERSION="1" LANGU="E" DESCRIPT="ZIF_YUML_CLASS_CONCEPT" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" UNICODE="X">
+  <include CLSNAME="ZIF_YUML_CONCEPT_CLASS" REFCLSNAME="ZIF_YUML_CONCEPT" VERSION="1" STATE="1"/>
+ </INTF>
+ <INTF CLSNAME="ZIF_YUML_CONCEPT_INTERFACE" VERSION="1" LANGU="E" DESCRIPT="ZIF_YUML_CONCEPT_INTERFACE" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" UNICODE="X">
+  <include CLSNAME="ZIF_YUML_CONCEPT_INTERFACE" REFCLSNAME="ZIF_YUML_CONCEPT" VERSION="1" STATE="1"/>
+ </INTF>
+ <INTF CLSNAME="ZIF_YUML_DIAGRAM" VERSION="1" LANGU="E" DESCRIPT="ZIF_YUML_DIAGRAM" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" UNICODE="X">
+  <attribute CLSNAME="ZIF_YUML_DIAGRAM" CMPNAME="NAME" VERSION="1" LANGU="E" DESCRIPT="NAME" EXPOSURE="2" STATE="1" EDITORDER="1 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="STRING" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <method CLSNAME="ZIF_YUML_DIAGRAM" CMPNAME="GENERATE_CODE" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE" EXPOSURE="2" STATE="1" EDITORDER="5 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZIF_YUML_DIAGRAM" CMPNAME="GENERATE_CODE" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="4 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+  </method>
+  <method CLSNAME="ZIF_YUML_DIAGRAM" CMPNAME="GENERATE_URL" VERSION="1" LANGU="E" DESCRIPT="GENERATE_URL" EXPOSURE="2" STATE="1" EDITORDER="3 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZIF_YUML_DIAGRAM" CMPNAME="GENERATE_URL" SCONAME="RE_URL" VERSION="1" LANGU="E" DESCRIPT="RE_URL" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+  </method>
+ </INTF>
+ <PROG NAME="ZUYML_CONCEPTS" VARCL="X" SUBC="I" RMAND="001" RLOAD="E" UCCHECK="X">
+  <textPool>
+   <language SPRAS="E">
+    <textElement ID="R" ENTRY="YUML Concepts" LENGTH="13 "/>
+   </language>
+  </textPool>
+  <source>***
+***
+****----------------------------------------------------------------------*
+****       INTERFACE zif_yuml_concept IMPLEMENTATION
+****----------------------------------------------------------------------*
+****
+****----------------------------------------------------------------------*
+***INTERFACE zif_yuml_concept.
+***
+***  METHODS generate_code RETURNING value(re_code) TYPE string.
+***
+***ENDINTERFACE.                    &quot;zif_yuml_concept IMPLEMENTATION
+***
+****----------------------------------------------------------------------*
+****       INTERFACE zif_yuml_class_concept IMPLEMENTATION
+****----------------------------------------------------------------------*
+****
+****----------------------------------------------------------------------*
+***INTERFACE zif_yuml_class_concept.
+***  INTERFACES zif_yuml_concept.
+***ENDINTERFACE.                    &quot;zif_yuml_class_concept IMPLEMENTATION
+***
+****----------------------------------------------------------------------*
+****       CLASS zcl_yuml_class DEFINITION
+****----------------------------------------------------------------------*
+****
+****----------------------------------------------------------------------*
+***CLASS zcl_yuml_class DEFINITION.
+***
+***  PUBLIC SECTION.
+***    INTERFACES zif_yuml_class_concept.
+***
+***    METHODS constructor
+***      IMPORTING
+***        im_wb_class TYPE REF TO zcl_wb_class.
+***
+***    METHODS set_code_settings
+***      IMPORTING
+***        im_show_attributes        TYPE abap_bool DEFAULT abap_true
+***        im_show_attr_types        TYPE abap_bool DEFAULT abap_true
+***        im_show_methods           TYPE abap_bool DEFAULT abap_true
+***        im_show_meth_param        TYPE abap_bool DEFAULT abap_false
+***        im_show_events            TYPE abap_bool DEFAULT abap_false
+***        im_show_inherintance      TYPE abap_bool DEFAULT abap_true
+***        im_show_implementations   TYPE abap_bool DEFAULT abap_true.
+***
+***  PROTECTED SECTION.
+***
+****--------------------------------------------------------------------*
+**** WB object (data source)
+***    DATA o_class TYPE REF TO zcl_wb_class.
+***
+****--------------------------------------------------------------------*
+**** Code settings
+***    DATA:
+***          code_setting_show_attributes  TYPE abap_bool,
+***          code_setting_show_attr_types  TYPE abap_bool,
+***          code_setting_show_methods     TYPE abap_bool,
+***          code_setting_show_meth_param  TYPE abap_bool,
+***          code_setting_show_events      TYPE abap_bool,
+***          code_setting_show_inhe        TYPE abap_bool,
+***          code_setting_show_impl        TYPE abap_bool.
+***
+****--------------------------------------------------------------------*
+**** Code generation
+***
+***    METHODS generate_code_attributes RETURNING value(re_code) TYPE string.
+***    METHODS generate_code_attr_types
+***      IMPORTING
+***        im_wa_attribute TYPE seoo_attribute_r
+***      RETURNING
+***        value(re_code) TYPE string.
+***    METHODS generate_code_methods RETURNING value(re_code) TYPE string.
+***    METHODS generate_code_method_param
+***      IMPORTING
+***        im_wa_method    TYPE seoo_method_r
+***    RETURNING value(re_code) TYPE string.
+***
+***    METHODS generate_code_events RETURNING value(re_code) TYPE string.
+***    METHODS generate_code_inheritance     RETURNING value(re_code) TYPE string.
+***    METHODS generate_code_implementations RETURNING value(re_code) TYPE string.
+***
+***ENDCLASS.                    &quot;zcl_yuml_class DEFINITION
+***
+****----------------------------------------------------------------------*
+****       CLASS zcl_yuml_class IMPLEMENTATION
+****----------------------------------------------------------------------*
+****
+****----------------------------------------------------------------------*
+***CLASS zcl_yuml_class IMPLEMENTATION.
+***
+***  METHOD constructor.
+***    me-&gt;o_class = im_wb_class.
+***
+***    me-&gt;set_code_settings(
+***        im_show_attributes      = abap_true
+***        im_show_attr_types      = abap_true
+***        im_show_methods         = abap_true
+***        im_show_meth_param      = abap_false
+***        im_show_events          = abap_false
+***        im_show_inherintance    = abap_true
+***        im_show_implementations = abap_true
+***    ).
+***
+***  ENDMETHOD.                    &quot;constructor
+***
+***  METHOD zif_yuml_concept~generate_code.
+***    DATA lv_attributes_code TYPE string.
+***    DATA lv_methods_code TYPE string.
+***    DATA lv_events_code TYPE string.
+***    DATA lv_inheritance_code TYPE string.
+***    DATA lv_implementings_code TYPE string.
+***
+***    IF me-&gt;code_setting_show_attributes = abap_true.
+***      lv_attributes_code  = me-&gt;generate_code_attributes( ).
+***    ENDIF.
+***
+***    IF me-&gt;code_setting_show_methods = abap_true.
+***      lv_methods_code     = me-&gt;generate_code_methods( ).
+***    ENDIF.
+***
+***    IF me-&gt;code_setting_show_events = abap_true.
+***      lv_events_code      = me-&gt;generate_code_events( ).
+***    ENDIF.
+***
+***    IF me-&gt;code_setting_show_inhe = abap_true.
+***      lv_inheritance_code = me-&gt;generate_code_inheritance( ).
+***    ENDIF.
+***
+***    IF me-&gt;code_setting_show_impl = abap_true.
+***      lv_implementings_code = me-&gt;generate_code_implementations( ).
+***    ENDIF.
+***
+***    CONCATENATE:
+***    `[`
+***     me-&gt;o_class-&gt;class-clsname &quot; Class name
+***     lv_attributes_code
+***     lv_methods_code
+***     lv_events_code
+***     `]`
+***     INTO re_code.
+***
+***    IF lv_inheritance_code IS NOT INITIAL.
+***      CONCATENATE re_code lv_inheritance_code INTO re_code SEPARATED BY &apos;,&apos;.
+***    ENDIF.
+***
+***    IF lv_implementings_code IS NOT INITIAL.
+***      CONCATENATE re_code lv_implementings_code INTO re_code SEPARATED BY &apos;,&apos;.
+***    ENDIF.
+***
+***  ENDMETHOD.                    &quot;zif_yuml_concept
+***
+***  METHOD set_code_settings.
+***
+***    me-&gt;code_setting_show_attributes  = im_show_attributes.
+***    me-&gt;code_setting_show_attr_types  = im_show_attr_types.
+***    me-&gt;code_setting_show_methods     = im_show_methods.
+***    me-&gt;code_setting_show_meth_param  = im_show_meth_param.
+***    me-&gt;code_setting_show_events      = im_show_events.
+***    me-&gt;code_setting_show_inhe        = im_show_inherintance.
+***    me-&gt;code_setting_show_impl        = im_show_implementations.
+***
+***  ENDMETHOD.                    &quot;set_code_settings
+***
+***  METHOD generate_code_attributes.
+***    DATA lv_wa_attribute  TYPE seoo_attribute_r.
+***    DATA lv_exposure_code TYPE string.
+***    DATA lv_attr_type     TYPE string. &quot; Code of attribute types
+***
+***    IF me-&gt;code_setting_show_attributes = abap_true.
+***      re_code = &apos;|&apos;.
+***      LOOP AT me-&gt;o_class-&gt;attributes INTO lv_wa_attribute.
+***        CASE lv_wa_attribute-exposure.
+***          WHEN 0.
+***            lv_exposure_code = &apos;-&apos;.
+***          WHEN 1.
+***            lv_exposure_code = &apos;#&apos;.
+***          WHEN 2.
+***            lv_exposure_code = &apos;+&apos;.
+***        ENDCASE.
+***
+***        IF me-&gt;code_setting_show_attr_types = abap_true.
+***          lv_attr_type = me-&gt;generate_code_attr_types( lv_wa_attribute ).
+***        ENDIF.
+***
+***        CONCATENATE: re_code lv_exposure_code lv_wa_attribute-cmpname lv_attr_type &apos;;&apos; INTO re_code.
+***
+***      ENDLOOP.
+***
+***    ENDIF.
+***
+***  ENDMETHOD.                    &quot;generate_code_attributes
+***
+***  METHOD generate_code_attr_types.
+***    CONCATENATE &apos; : (&apos; im_wa_attribute-type &apos;)&apos; INTO re_code.
+***  ENDMETHOD.                    &quot;generate_code_attr_types
+***
+***  METHOD generate_code_methods.
+***
+***    DATA lv_wa_method TYPE seoo_method_r.
+***    DATA lv_exposure_code TYPE string.
+***    DATA lv_meth_param TYPE string. &quot; Code of method parameters
+***
+***    IF me-&gt;code_setting_show_methods = abap_true.
+***      re_code = &apos;|&apos;.
+***      LOOP AT me-&gt;o_class-&gt;methods INTO lv_wa_method.
+***        CASE lv_wa_method-exposure.
+***          WHEN 0.
+***            lv_exposure_code = &apos;-&apos;.
+***          WHEN 1.
+***            lv_exposure_code = &apos;#&apos;.
+***          WHEN 2.
+***            lv_exposure_code = &apos;+&apos;.
+***        ENDCASE.
+***
+***        IF me-&gt;code_setting_show_meth_param = abap_true.
+***          lv_meth_param = me-&gt;generate_code_method_param( lv_wa_method ).
+***        ENDIF.
+***
+***        CONCATENATE: re_code lv_exposure_code lv_wa_method-cmpname lv_meth_param &apos;;&apos; INTO re_code.
+***
+***      ENDLOOP.
+***
+***    ENDIF.
+***
+***  ENDMETHOD.                    &quot;generate_code_methods
+***
+***  METHOD generate_code_method_param.
+***    DATA lv_wa_parameter TYPE vseoparam.
+***    DATA lv_param_code   TYPE string.
+***
+***    LOOP AT me-&gt;o_class-&gt;parameters INTO lv_wa_parameter WHERE cmpname = im_wa_method-cmpname.
+***      CONCATENATE lv_param_code lv_wa_parameter-sconame lv_wa_parameter-type INTO lv_param_code SEPARATED BY space.
+***    ENDLOOP.
+***
+***    IF lv_param_code IS NOT INITIAL.
+***      CONCATENATE &apos; : (&apos; lv_param_code &apos;)&apos; INTO re_code.
+***    ELSE.
+***      re_code = &apos;()&apos;.
+***    ENDIF.
+***
+***  ENDMETHOD.                    &quot;generate_code_method_param
+***
+***
+***  METHOD generate_code_events.
+***
+***    DATA lv_wa_event TYPE seoo_event_r.
+***    DATA lv_exposure_code TYPE string.
+***
+***    IF me-&gt;code_setting_show_events = abap_true.
+***      re_code = &apos;|&apos;.
+***      LOOP AT me-&gt;o_class-&gt;events INTO lv_wa_event.
+***        CASE lv_wa_event-exposure.
+***          WHEN 0.
+***            lv_exposure_code = &apos;-&apos;.
+***          WHEN 1.
+***            lv_exposure_code = &apos;#&apos;.
+***          WHEN 2.
+***            lv_exposure_code = &apos;+&apos;.
+***        ENDCASE.
+***
+***        CONCATENATE: re_code lv_exposure_code lv_wa_event-cmpname &apos;;&apos; INTO re_code.
+***      ENDLOOP.
+***
+***    ENDIF.
+***
+***  ENDMETHOD.                    &quot;generate_code_events
+***
+***  METHOD generate_code_inheritance.
+***    IF me-&gt;o_class-&gt;inheritance-refclsname IS NOT INITIAL.
+***      CONCATENATE &apos;[&apos; me-&gt;o_class-&gt;inheritance-clsname &apos;]-^[&apos; me-&gt;o_class-&gt;inheritance-refclsname &apos;]&apos; INTO re_code.
+***    ENDIF.
+***
+***  ENDMETHOD.                    &quot;generate_code_inheritance
+***
+***  METHOD generate_code_implementations.
+***    DATA lv_wa_implementings TYPE vseoimplem.
+***    DATA lv_implementations_code TYPE string.
+***
+***    IF me-&gt;o_class-&gt;implementings IS NOT INITIAL.
+***      LOOP AT me-&gt;o_class-&gt;implementings INTO lv_wa_implementings.
+***        CONCATENATE &apos;[&apos; lv_wa_implementings-clsname &apos;]-.-^[&apos; lv_wa_implementings-refclsname &apos;]&apos; INTO lv_implementations_code.
+***        CONCATENATE re_code &apos;,&apos; lv_implementations_code INTO re_code.
+***      ENDLOOP.
+***
+***    ENDIF.
+***
+***  ENDMETHOD.                    &quot;generate_code_implementations
+***
+***ENDCLASS.                    &quot;zcl_yuml_class IMPLEMENTATION</source>
+ </PROG>
+ <PROG NAME="ZYUML_CLASS_DIAGRAM_BUILDER" VARCL="X" SUBC="1" RSTAT="K" RMAND="800" RLOAD="E" FIXPT="X" UCCHECK="X">
+  <textPool>
+   <language SPRAS="E">
+    <textElement ID="I" KEY="100" ENTRY="Object selection" LENGTH="16 "/>
+    <textElement ID="I" KEY="800" ENTRY="Options" LENGTH="7 "/>
+    <textElement ID="I" KEY="900" ENTRY="Output" LENGTH="6 "/>
+    <textElement ID="R" ENTRY="Report Z_YUML_CLASS_DIAGRAM_BUILDER" LENGTH="35 "/>
+    <textElement ID="S" KEY="P_ADEF" ENTRY="        Show Attributes Types" LENGTH="29 "/>
+    <textElement ID="S" KEY="P_ATTR" ENTRY="        Show Attributes" LENGTH="23 "/>
+    <textElement ID="S" KEY="P_CLASS" ENTRY="D       ." LENGTH="9 "/>
+    <textElement ID="S" KEY="P_EVEN" ENTRY="        Show Events" LENGTH="19 "/>
+    <textElement ID="S" KEY="P_FILE" ENTRY="        Filename" LENGTH="16 "/>
+    <textElement ID="S" KEY="P_IMPL" ENTRY="        Show Implementations" LENGTH="28 "/>
+    <textElement ID="S" KEY="P_INHE" ENTRY="        Show Inheritances" LENGTH="25 "/>
+    <textElement ID="S" KEY="P_METH" ENTRY="        Show Methods" LENGTH="20 "/>
+    <textElement ID="S" KEY="P_MPAR" ENTRY="        Show Method Parameters" LENGTH="30 "/>
+    <textElement ID="S" KEY="P_PACK" ENTRY="D       ." LENGTH="15 "/>
+    <textElement ID="S" KEY="S_CLASS" ENTRY="        Class" LENGTH="13 "/>
+    <textElement ID="S" KEY="S_INTER" ENTRY="        Interface" LENGTH="17 "/>
+    <textElement ID="S" KEY="S_PACKA" ENTRY="D       ." LENGTH="15 "/>
+    <textElement ID="S" KEY="S_REPOR" ENTRY="        Report/Include" LENGTH="22 "/>
+   </language>
+  </textPool>
+  <source>*&amp;---------------------------------------------------------------------*
+*&amp; Report  Z_YUML_CLASS_DIAGRAM_BUILDER
+*&amp;
+*&amp;---------------------------------------------------------------------*
+*&amp;
+*&amp;
+*&amp;---------------------------------------------------------------------*
+
+REPORT  z_yuml_class_diagram_builder NO STANDARD PAGE HEADING LINE-SIZE 1023.
+
+DATA:
+      v_package TYPE tdevc-devclass,
+      v_class   TYPE seoclass-clsname,
+      v_inter   TYPE seoclass-clsname,
+      v_repor   TYPE reposrc-progname.
+
+SELECTION-SCREEN BEGIN OF BLOCK b1100 WITH FRAME TITLE text-100. &quot; Single Class
+PARAMETERS p_pack TYPE tdevc-devclass.
+
+PARAMETERS p_class TYPE seoclass-clsname .
+
+SELECT-OPTIONS s_packa FOR v_package.
+SELECT-OPTIONS s_repor FOR v_repor.
+SELECT-OPTIONS s_class FOR v_class MATCHCODE OBJECT zyuml_class_name.
+SELECT-OPTIONS s_inter FOR v_inter MATCHCODE OBJECT zyuml_class_name.
+
+SELECTION-SCREEN END OF BLOCK b1100.
+
+SELECTION-SCREEN BEGIN OF BLOCK b1800 WITH FRAME TITLE text-800. &quot; Options
+PARAMETERS p_attr AS CHECKBOX DEFAULT abap_true.
+PARAMETERS p_meth AS CHECKBOX DEFAULT abap_true.
+PARAMETERS p_even AS CHECKBOX DEFAULT abap_true.
+PARAMETERS p_adef AS CHECKBOX.
+PARAMETERS p_mpar AS CHECKBOX.
+PARAMETERS p_inhe AS CHECKBOX DEFAULT abap_true.
+PARAMETERS p_impl AS CHECKBOX DEFAULT abap_true.
+SELECTION-SCREEN END OF BLOCK b1800.
+
+SELECTION-SCREEN BEGIN OF BLOCK b1900 WITH FRAME TITLE text-900. &quot; Output
+PARAMETERS p_file TYPE string DEFAULT &apos;C:\TEMP\yUML\code.txt&apos;.
+SELECTION-SCREEN END OF BLOCK b1900.
+
+
+*INCLUDE zyuml_wb_collections.
+INCLUDE zyuml_wb_search.
+*INCLUDE zyuml_diagrams.
+*INCLUDE zyuml_wb_mass_loader.
+*INCLUDE zuyml_concepts.
+
+
+
+
+
+START-OF-SELECTION.
+
+
+* Map all WB search criteria from the selection screen into an YUML search criteria object
+  DATA o_yuml_search_criteria TYPE REF TO lcl_yuml_wb_search_criteria.
+  o_yuml_search_criteria ?= lcl_yuml_wb_search_criteria=&gt;zif_wb_search_criteria~factory(
+      im_packages        = s_packa[]
+      im_reports         = s_repor[]
+      im_classes         = s_class[]
+      im_interfaces      = s_inter[]
+  ).
+
+* Search for WB Objects related to ABAP Objects (mainly classes and interfaces)
+  DATA o_wb_searcher_oo         TYPE REF TO zcl_wb_searcher_oo.
+  CREATE OBJECT o_wb_searcher_oo TYPE zcl_wb_searcher_oo.
+  o_wb_searcher_oo-&gt;zif_wb_searcher~search_wb_objects( im_wb_search_criteria = o_yuml_search_criteria ).
+
+
+
+* Once all WB Objects are fetched, they must be loaded into memory using WB mass loader.
+  DATA o_wb_mass_loader_searcher TYPE REF TO zcl_wb_mass_loader_oo_searcher.
+  DATA o_wb_objects_set_itab TYPE REF TO zif_wb_set_itab.
+
+  CREATE OBJECT o_wb_mass_loader_searcher
+    EXPORTING
+      im_o_wb_oo_searcher = o_wb_searcher_oo.
+
+  o_wb_objects_set_itab = o_wb_mass_loader_searcher-&gt;zif_wb_mass_loader~mass_load( ).
+
+
+* After having loaded all WB objects into memory, yUML diagram can be draw
+  DATA o_yuml_class_diagram TYPE REF TO zcl_yuml_class_diagram.
+  DATA code TYPE string.
+
+
+  CREATE OBJECT o_yuml_class_diagram
+    EXPORTING
+      im_wb_object_set_itab = o_wb_objects_set_itab.
+  code = o_yuml_class_diagram-&gt;zif_yuml_diagram~generate_code( ).
+
+* Save on local file
+
+  DATA t_code TYPE table_of_strings.
+*  append code TO t_code.
+  SPLIT code AT &apos;,&apos; INTO TABLE t_code.
+
+  CALL FUNCTION &apos;GUI_DOWNLOAD&apos;
+    EXPORTING
+*     BIN_FILESIZE                    =
+      filename                        = p_file
+*     FILETYPE                        = &apos;ASC&apos;
+*     APPEND                          = &apos; &apos;
+*     WRITE_FIELD_SEPARATOR           = &apos; &apos;
+*     HEADER                          = &apos;00&apos;
+*     TRUNC_TRAILING_BLANKS           = &apos; &apos;
+*     WRITE_LF                        = &apos;X&apos;
+*     COL_SELECT                      = &apos; &apos;
+*     COL_SELECT_MASK                 = &apos; &apos;
+*     DAT_MODE                        = &apos; &apos;
+*     CONFIRM_OVERWRITE               = &apos; &apos;
+*     NO_AUTH_CHECK                   = &apos; &apos;
+*     CODEPAGE                        = &apos; &apos;
+*     IGNORE_CERR                     = ABAP_TRUE
+*     REPLACEMENT                     = &apos;#&apos;
+*     WRITE_BOM                       = &apos; &apos;
+*     TRUNC_TRAILING_BLANKS_EOL       = &apos;X&apos;
+*     WK1_N_FORMAT                    = &apos; &apos;
+*     WK1_N_SIZE                      = &apos; &apos;
+*     WK1_T_FORMAT                    = &apos; &apos;
+*     WK1_T_SIZE                      = &apos; &apos;
+*     WRITE_LF_AFTER_LAST_LINE        = ABAP_TRUE
+*     SHOW_TRANSFER_STATUS            = ABAP_TRUE
+*   IMPORTING
+*     FILELENGTH                      =
+    TABLES
+      data_tab                        = t_code
+*     FIELDNAMES                      =
+*   EXCEPTIONS
+*     FILE_WRITE_ERROR                = 1
+*     NO_BATCH                        = 2
+*     GUI_REFUSE_FILETRANSFER         = 3
+*     INVALID_TYPE                    = 4
+*     NO_AUTHORITY                    = 5
+*     UNKNOWN_ERROR                   = 6
+*     HEADER_NOT_ALLOWED              = 7
+*     SEPARATOR_NOT_ALLOWED           = 8
+*     FILESIZE_NOT_ALLOWED            = 9
+*     HEADER_TOO_LONG                 = 10
+*     DP_ERROR_CREATE                 = 11
+*     DP_ERROR_SEND                   = 12
+*     DP_ERROR_WRITE                  = 13
+*     UNKNOWN_DP_ERROR                = 14
+*     ACCESS_DENIED                   = 15
+*     DP_OUT_OF_MEMORY                = 16
+*     DISK_FULL                       = 17
+*     DP_TIMEOUT                      = 18
+*     FILE_NOT_FOUND                  = 19
+*     DATAPROVIDER_EXCEPTION          = 20
+*     CONTROL_FLUSH_ERROR             = 21
+*     OTHERS                          = 22
+            .
+  IF sy-subrc &lt;&gt; 0.
+* Implement suitable error handling here
+  ENDIF.
+
+*
+*  DATA o_class TYPE REF TO zcl_wb_class_global.
+*
+*  DATA lv_seoclskey TYPE seoclskey.
+*  lv_seoclskey-clsname = p_class.
+*  CREATE OBJECT o_class
+*    EXPORTING
+*      im_clskey                    = lv_seoclskey
+**     im_version                   = seoc_version_inactive
+**     im_state                     = &apos;1&apos;
+**     im_with_descriptions         = seox_true
+**     im_resolve_eventhandler_info = seox_false
+**     im_with_master_language      = seox_false
+**     im_with_enhancements         = seox_false
+**     im_read_active_enha          = seox_false
+**     im_enha_action               = seox_false
+**     im_ignore_switches           = &apos;x&apos;
+*  .
+*
+*  o_class-&gt;zif_wb_object~load( ).
+*
+*  CREATE OBJECT o_yuml_class
+*    EXPORTING
+*      im_wb_class = o_class.
+*
+*  o_yuml_class-&gt;set_code_settings(
+*    EXPORTING
+*      im_show_attributes      = p_attr
+*      im_show_attr_types      = p_adef
+*      im_show_methods         = p_meth
+*      im_show_meth_param      = p_mpar
+*      im_show_events          = p_even
+*      im_show_inherintance    = p_inhe
+*      im_show_implementations = p_impl
+*  ).</source>
+ </PROG>
+ <PROG NAME="ZYUML_DIAGRAMS" VARCL="X" SUBC="I" RMAND="001" RLOAD="E" UCCHECK="X">
+  <textPool>
+   <language SPRAS="E">
+    <textElement ID="R" ENTRY="Include ZYUML_DIAGRAMS" LENGTH="22 "/>
+   </language>
+  </textPool>
+  <source>****
+*****----------------------------------------------------------------------*
+*****       INTERFACE zif_yuml_diagram
+*****----------------------------------------------------------------------*
+*****
+*****----------------------------------------------------------------------*
+****INTERFACE zif_yuml_diagram.
+****
+****  DATA name TYPE string.
+****  METHODS generate_url RETURNING VALUE(re_url) TYPE string.
+****  METHODS generate_code RETURNING VALUE(re_code) TYPE string.
+****
+****ENDINTERFACE.                    &quot;zif_yuml_diagram
+****
+*****----------------------------------------------------------------------*
+*****       CLASS zcl_yuml_class_diagram DEFINITION
+*****----------------------------------------------------------------------*
+*****
+*****----------------------------------------------------------------------*
+****CLASS zcl_yuml_class_diagram DEFINITION.
+****  PUBLIC SECTION.
+****    INTERFACES zif_yuml_diagram.
+****
+****    METHODS constructor
+****      IMPORTING
+****        im_wb_object_set_itab TYPE REF TO zif_wb_set_itab.
+****
+****
+****  PROTECTED SECTION.
+****
+****    DATA o_wb_objects_set_itab TYPE REF TO zif_wb_set_itab.
+****
+****ENDCLASS.                    &quot;zcl_yuml_class_diagram DEFINITION
+****
+*****----------------------------------------------------------------------*
+*****       CLASS zcl_yuml_class_diagram IMPLEMENTATION
+*****----------------------------------------------------------------------*
+*****
+*****----------------------------------------------------------------------*
+****CLASS zcl_yuml_class_diagram IMPLEMENTATION.
+****
+****  METHOD constructor.
+****
+****    o_wb_objects_set_itab ?= im_wb_object_set_itab.
+****
+****  ENDMETHOD.                    &quot;constructor
+****
+****  METHOD zif_yuml_diagram~generate_url.
+****  ENDMETHOD.                    &quot;zif_yuml_diagram~generate_url
+****
+****  METHOD zif_yuml_diagram~generate_code.
+****
+****    DATA lo_wb_object TYPE REF TO zif_wb_object.
+****    LOOP AT me-&gt;o_wb_objects_set_itab-&gt;t_wb_objects INTO lo_wb_object.
+****
+****    ENDLOOP.
+****
+****  ENDMETHOD.                    &quot;zif_yuml_diagram~generate_code
+****
+****
+****ENDCLASS.                    &quot;zcl_yuml_class_diagram IMPLEMENTATION
+****
+*****----------------------------------------------------------------------*
+*****       CLASS zcl_yuml_activity_diagram DEFINITION
+*****----------------------------------------------------------------------*
+*****
+*****----------------------------------------------------------------------*
+****CLASS zcl_yuml_activity_diagram DEFINITION.
+****  PUBLIC SECTION.
+****    INTERFACES zif_yuml_diagram.
+****ENDCLASS.                    &quot;zcl_yuml_activity_diagram DEFINITION
+****
+*****----------------------------------------------------------------------*
+*****       CLASS zcl_yuml_activity_diagram IMPLEMENTATION
+*****----------------------------------------------------------------------*
+*****
+*****----------------------------------------------------------------------*
+****CLASS zcl_yuml_activity_diagram IMPLEMENTATION.
+****  METHOD zif_yuml_diagram~generate_url.
+****  ENDMETHOD.                    &quot;zif_yuml_diagram~generate_url
+****  METHOD zif_yuml_diagram~generate_code.
+****  ENDMETHOD.                    &quot;zif_yuml_diagram~generate_code
+****ENDCLASS.                    &quot;zcl_yuml_activity_diagram IMPLEMENTATION
+****
+*****----------------------------------------------------------------------*
+*****       CLASS zcl_yuml_usecase_diagram DEFINITION
+*****----------------------------------------------------------------------*
+*****
+*****----------------------------------------------------------------------*
+****CLASS zcl_yuml_usecase_diagram DEFINITION.
+****  PUBLIC SECTION.
+****    INTERFACES zif_yuml_diagram.
+****ENDCLASS.                    &quot;zcl_yuml_usecase_diagram DEFINITION
+****
+*****----------------------------------------------------------------------*
+*****       CLASS zcl_yuml_usecase_diagram IMPLEMENTATION
+*****----------------------------------------------------------------------*
+*****
+*****----------------------------------------------------------------------*
+****CLASS zcl_yuml_usecase_diagram IMPLEMENTATION.
+****  METHOD zif_yuml_diagram~generate_url.
+****  ENDMETHOD.                    &quot;zif_yuml_diagram~generate_url
+****  METHOD zif_yuml_diagram~generate_code.
+****  ENDMETHOD.                    &quot;zif_yuml_diagram~generate_code
+****ENDCLASS.                    &quot;zcl_yuml_usecase_diagram IMPLEMENTATION</source>
+ </PROG>
+ <PROG NAME="ZYUML_SINGLE_CLASS_DIAGRAM" VARCL="X" DBAPL="S" SUBC="1" RMAND="001" FIXPT="X" LDBNAME="D$S" UCCHECK="X">
+  <textPool>
+   <language SPRAS="E">
+    <textElement ID="I" KEY="100" ENTRY="Workbench Object Selection" LENGTH="132 "/>
+    <textElement ID="I" KEY="800" ENTRY="UML options" LENGTH="11 "/>
+    <textElement ID="I" KEY="900" ENTRY="Output file location" LENGTH="20 "/>
+    <textElement ID="R" ENTRY="Generate UML for a single class (no relationhips)" LENGTH="49 "/>
+    <textElement ID="S" KEY="P_ADEF" ENTRY="        Show attributes types" LENGTH="29 "/>
+    <textElement ID="S" KEY="P_ATTR" ENTRY="        Show attributes" LENGTH="29 "/>
+    <textElement ID="S" KEY="P_CLASS" ENTRY="D       ." LENGTH="23 "/>
+    <textElement ID="S" KEY="P_EVEN" ENTRY="        Show events" LENGTH="19 "/>
+    <textElement ID="S" KEY="P_FILE" ENTRY="        Full path" LENGTH="17 "/>
+    <textElement ID="S" KEY="P_IMPL" ENTRY="        Show interface implementations" LENGTH="38 "/>
+    <textElement ID="S" KEY="P_INHE" ENTRY="        Show inheritance" LENGTH="24 "/>
+    <textElement ID="S" KEY="P_METH" ENTRY="        Show methods" LENGTH="20 "/>
+    <textElement ID="S" KEY="P_MPAR" ENTRY="        Show methods parameters" LENGTH="31 "/>
+   </language>
+  </textPool>
+  <source>REPORT  zyuml_single_class_diagram.
+
+
+DATA:
+      v_class   TYPE seoclass-clsname.
+
+SELECTION-SCREEN BEGIN OF BLOCK b1100 WITH FRAME TITLE text-100. &quot; WB Object selection
+
+PARAMETERS p_class TYPE seoclass-clsname MATCHCODE OBJECT zyuml_class_name.
+
+SELECTION-SCREEN END OF BLOCK b1100.
+
+SELECTION-SCREEN BEGIN OF BLOCK b1800 WITH FRAME TITLE text-800. &quot; UML Options
+PARAMETERS p_attr AS CHECKBOX DEFAULT abap_true.
+PARAMETERS p_meth AS CHECKBOX DEFAULT abap_true.
+PARAMETERS p_even AS CHECKBOX DEFAULT abap_true.
+PARAMETERS p_adef AS CHECKBOX.
+PARAMETERS p_mpar AS CHECKBOX.
+PARAMETERS p_inhe AS CHECKBOX DEFAULT abap_true.
+PARAMETERS p_impl AS CHECKBOX DEFAULT abap_true.
+SELECTION-SCREEN END OF BLOCK b1800.
+
+SELECTION-SCREEN BEGIN OF BLOCK b1900 WITH FRAME TITLE text-900. &quot; Output
+PARAMETERS p_file TYPE string DEFAULT &apos;C:\TEMP\yUML\code.txt&apos;.
+SELECTION-SCREEN END OF BLOCK b1900.
+
+START-OF-SELECTION.
+
+  DATA lv_is_class TYPE abap_bool. &quot; class = X | interface = space
+
+  DATA lv_seoclskey TYPE seoclskey.
+  lv_seoclskey-clsname = p_class.
+
+
+* Try to load a class
+  DATA o_wb_class TYPE REF TO zcl_wb_class_global.
+  CREATE OBJECT o_wb_class
+    EXPORTING
+      im_clskey                    = lv_seoclskey
+*     im_version                   = seoc_version_inactive
+*     im_state                     = &apos;1&apos;
+*     im_with_descriptions         = seox_true
+*     im_resolve_eventhandler_info = seox_false
+*     im_with_master_language      = seox_false
+*     im_with_enhancements         = seox_false
+*     im_read_active_enha          = seox_false
+*     im_enha_action               = seox_false
+*     im_ignore_switches           = &apos;x&apos;
+    .
+
+  DATA o_wb_exception TYPE REF TO zcx_wb_objects.
+
+  TRY.
+      o_wb_class-&gt;zif_wb_object~load( ).
+      lv_is_class = abap_true.
+    CATCH zcx_wb_objects INTO o_wb_exception. &quot; Load failed for any reason
+
+      TRY. &quot; Check if the reason is that object is an interface
+          DATA o_is_interface TYPE REF TO zcx_is_interface.
+          o_is_interface ?= o_wb_exception.
+
+
+          &quot; It is an interface so loads it
+          DATA o_wb_interface TYPE REF TO zcl_wb_interface_global.
+          CREATE OBJECT o_wb_interface TYPE zcl_wb_interface_global
+            EXPORTING
+              im_intkey = lv_seoclskey.
+
+          TRY.
+              o_wb_interface-&gt;zif_wb_object~load( ).
+              lv_is_class = abap_false.
+            CATCH zcx_wb_objects INTO o_wb_exception.
+              MESSAGE &apos;Class/Interface do not exist&apos; TYPE &apos;S&apos; DISPLAY LIKE &apos;E&apos;.
+              STOP.
+          ENDTRY.
+
+        CATCH cx_sy_move_cast_error.
+          MESSAGE &apos;Class/Interface do not exist&apos; TYPE &apos;S&apos; DISPLAY LIKE &apos;E&apos;.
+          STOP.
+      ENDTRY.
+
+  ENDTRY.
+
+
+* generete yUML code
+  DATA code TYPE string.
+  IF lv_is_class = abap_true.
+    DATA o_yuml_class TYPE REF TO zcl_yuml_class.
+
+    CREATE OBJECT o_yuml_class
+      EXPORTING
+        im_wb_class = o_wb_class.
+
+    o_yuml_class-&gt;set_code_settings(
+      EXPORTING
+        im_show_attributes      = p_attr
+        im_show_attr_types      = p_adef
+        im_show_methods         = p_meth
+        im_show_meth_param      = p_mpar
+        im_show_events          = p_even
+        im_show_inherintance    = p_inhe
+        im_show_implementations = p_impl
+    ).
+
+    code = o_yuml_class-&gt;zif_yuml_concept~generate_code( ).
+
+  ELSE.
+    DATA o_yuml_interface TYPE REF TO zcl_yuml_interface.
+
+
+    CREATE OBJECT o_yuml_interface
+      EXPORTING
+        im_wb_interface = o_wb_interface.
+
+
+    o_yuml_interface-&gt;set_code_settings(
+    EXPORTING
+      im_show_attributes      = p_attr
+      im_show_attr_types      = p_adef
+      im_show_methods         = p_meth
+      im_show_meth_param      = p_mpar
+      im_show_events          = p_even
+      im_show_inherintance    = p_inhe
+      im_show_implementations = p_impl
+  ).
+
+    code = o_yuml_interface-&gt;zif_yuml_concept~generate_code( ).
+  ENDIF.
+
+* save generated code into a c
+  DATA t_code TYPE table_of_strings.
+  SPLIT code AT &apos;,&apos; INTO TABLE t_code.
+
+  CALL FUNCTION &apos;GUI_DOWNLOAD&apos;
+    EXPORTING
+*     BIN_FILESIZE                    =
+      filename                        = p_file
+*     FILETYPE                        = &apos;ASC&apos;
+*     APPEND                          = &apos; &apos;
+*     WRITE_FIELD_SEPARATOR           = &apos; &apos;
+*     HEADER                          = &apos;00&apos;
+*     TRUNC_TRAILING_BLANKS           = &apos; &apos;
+*     WRITE_LF                        = &apos;X&apos;
+*     COL_SELECT                      = &apos; &apos;
+*     COL_SELECT_MASK                 = &apos; &apos;
+*     DAT_MODE                        = &apos; &apos;
+*     CONFIRM_OVERWRITE               = &apos; &apos;
+*     NO_AUTH_CHECK                   = &apos; &apos;
+*     CODEPAGE                        = &apos; &apos;
+*     IGNORE_CERR                     = ABAP_TRUE
+*     REPLACEMENT                     = &apos;#&apos;
+*     WRITE_BOM                       = &apos; &apos;
+*     TRUNC_TRAILING_BLANKS_EOL       = &apos;X&apos;
+*     WK1_N_FORMAT                    = &apos; &apos;
+*     WK1_N_SIZE                      = &apos; &apos;
+*     WK1_T_FORMAT                    = &apos; &apos;
+*     WK1_T_SIZE                      = &apos; &apos;
+*     WRITE_LF_AFTER_LAST_LINE        = ABAP_TRUE
+*     SHOW_TRANSFER_STATUS            = ABAP_TRUE
+*   IMPORTING
+*     FILELENGTH                      =
+    TABLES
+      data_tab                        = t_code
+*     FIELDNAMES                      =
+   EXCEPTIONS
+     file_write_error                = 1
+     no_batch                        = 2
+     gui_refuse_filetransfer         = 3
+     invalid_type                    = 4
+     no_authority                    = 5
+     unknown_error                   = 6
+     header_not_allowed              = 7
+     separator_not_allowed           = 8
+     filesize_not_allowed            = 9
+     header_too_long                 = 10
+     dp_error_create                 = 11
+     dp_error_send                   = 12
+     dp_error_write                  = 13
+     unknown_dp_error                = 14
+     access_denied                   = 15
+     dp_out_of_memory                = 16
+     disk_full                       = 17
+     dp_timeout                      = 18
+     file_not_found                  = 19
+     dataprovider_exception          = 20
+     control_flush_error             = 21
+     OTHERS                          = 22
+            .
+  IF sy-subrc &lt;&gt; 0.
+    MESSAGE &apos;File could not be saved&apos; TYPE &apos;S&apos; DISPLAY LIKE &apos;E&apos;.
+    WRITE code.
+  ENDIF.</source>
+ </PROG>
+ <PROG NAME="ZYUML_WB_MASS_LOADER" VARCL="X" SUBC="I" RMAND="001" RLOAD="E" UCCHECK="X">
+  <textPool>
+   <language SPRAS="E">
+    <textElement ID="R" ENTRY="WB Mass loader" LENGTH="14 "/>
+   </language>
+  </textPool>
+  <source>***
+****----------------------------------------------------------------------*
+****       INTERFACE lif_wb_mass_loader
+****----------------------------------------------------------------------*
+**** This interface represents a kind of mass loader of WB objects in memory
+**** If you know which WB objects you want to load in memory and are thinking
+**** about creating a LOOP in some internal tables to do it, do it in a
+**** class which implements this interface.
+****----------------------------------------------------------------------*
+***INTERFACE lif_wb_mass_loader.
+***
+***  METHODS mass_load RETURNING value(re_wb_objects_set) TYPE REF TO zif_wb_set_itab.
+***
+***ENDINTERFACE.                    &quot;lif_wb_mass_loader
+***
+****----------------------------------------------------------------------*
+****       CLASS lcl_wb_loader_oo_searcher DEFINITION
+****----------------------------------------------------------------------*
+**** This class mass loads WB objects related to ABAP Objects based on a
+**** WB OO Searcher.
+****----------------------------------------------------------------------*
+***CLASS lcl_wb_loader_oo_searcher DEFINITION.
+***
+***  PUBLIC SECTION.
+***
+***    INTERFACES lif_wb_mass_loader.
+***
+***    METHODS constructor
+***      IMPORTING im_o_wb_oo_searcher TYPE REF TO lcl_wb_searcher_oo.
+***
+***  PROTECTED SECTION.
+***    DATA o_wb_oo_searcher TYPE REF TO lcl_wb_searcher_oo.
+***
+***    METHODS load_package_contents CHANGING ch_o_wb_object_set TYPE REF TO zif_wb_set_itab.
+***    METHODS load_programs CHANGING ch_o_wb_object_set TYPE REF TO zif_wb_set_itab.
+***    METHODS load_classes CHANGING ch_o_wb_object_set TYPE REF TO zif_wb_set_itab.
+***    METHODS load_interfaces CHANGING ch_o_wb_object_set TYPE REF TO zif_wb_set_itab.
+***
+***
+***ENDCLASS.                    &quot;lcl_wb_loader_oo_searcher DEFINITION
+***
+****----------------------------------------------------------------------*
+****       CLASS lcl_wb_loader_oo_searcher IMPLEMENTATION
+****----------------------------------------------------------------------*
+****
+****----------------------------------------------------------------------*
+***CLASS lcl_wb_loader_oo_searcher IMPLEMENTATION.
+***
+***
+***  METHOD constructor.
+***    me-&gt;o_wb_oo_searcher = im_o_wb_oo_searcher.
+***  ENDMETHOD.                    &quot;constructor
+***
+***  METHOD lif_wb_mass_loader~mass_load.
+***
+***    CREATE OBJECT re_wb_objects_set
+***      TYPE zcl_wb_set_itab.
+***
+***    me-&gt;load_package_contents( CHANGING ch_o_wb_object_set = re_wb_objects_set ).
+***    me-&gt;load_programs( CHANGING ch_o_wb_object_set = re_wb_objects_set ).
+***    me-&gt;load_classes( CHANGING ch_o_wb_object_set = re_wb_objects_set ).
+***    me-&gt;load_interfaces( CHANGING ch_o_wb_object_set = re_wb_objects_set ).
+***
+***  ENDMETHOD.                    &quot;lif_wb_object_set~list_object_set
+***
+***  METHOD load_package_contents.
+***
+***    DATA lwa_package TYPE lcl_wb_searcher_oo=&gt;ty_package.
+***    LOOP AT me-&gt;o_wb_oo_searcher-&gt;t_packages INTO lwa_package.
+***
+***    ENDLOOP.
+***
+***  ENDMETHOD.                    &quot;load_package_contents
+***
+***  METHOD load_programs.
+***
+***    DATA lwa_program TYPE lcl_wb_searcher_oo=&gt;ty_program.
+***
+***    LOOP AT me-&gt;o_wb_oo_searcher-&gt;t_programs INTO lwa_program.
+***
+***    ENDLOOP.
+***
+***  ENDMETHOD.                    &quot;load_programs
+***
+***  METHOD load_classes.
+***
+***    DATA lwa_class TYPE lcl_wb_searcher_oo=&gt;ty_class.
+***    DATA lo_new_class TYPE REF TO zcl_wb_class_global.
+***    DATA lwa_seoclskey TYPE seoclskey.
+***    LOOP AT me-&gt;o_wb_oo_searcher-&gt;t_classes INTO lwa_class.
+***
+***      lwa_seoclskey-clsname = lwa_class-clsname.
+***
+***      CREATE OBJECT lo_new_class
+***        EXPORTING
+***          im_clskey                    = lwa_seoclskey
+****         im_version                   = SEOC_VERSION_INACTIVE
+****         im_state                     = &apos;1&apos;
+****         im_with_descriptions         = SEOX_TRUE
+****         im_resolve_eventhandler_info = SEOX_FALSE
+****         im_with_master_language      = SEOX_FALSE
+****         im_with_enhancements         = SEOX_FALSE
+****         im_read_active_enha          = SEOX_FALSE
+****         im_enha_action               = SEOX_FALSE
+****         im_ignore_switches           = &apos;X&apos;
+***        .
+***
+****      APPEND lo_new_class TO ch_o_wb_object_set-&gt;
+***    ENDLOOP.
+***
+***  ENDMETHOD.                    &quot;load_classes
+***
+***  METHOD load_interfaces.
+***
+***    DATA lwa_interface TYPE lcl_wb_searcher_oo=&gt;ty_interface.
+***    DATA lo_new_interface TYPE REF TO zcl_wb_interface_global.
+***    DATA lwa_seoclskey TYPE seoclskey.
+***
+***    LOOP AT me-&gt;o_wb_oo_searcher-&gt;t_interfaces INTO lwa_interface.
+***
+***      lwa_seoclskey-clsname = lwa_interface-intname.
+***      CREATE OBJECT lo_new_interface
+***        EXPORTING
+***          im_intkey               = lwa_seoclskey
+****         im_version              = SEOC_VERSION_INACTIVE
+****         im_state                = &apos;1&apos;
+****         im_with_master_language = SEOX_FALSE
+****         im_with_enhancements    = SEOX_FALSE
+****         im_read_active_enha     = SEOX_FALSE
+****         im_enha_action          = SEOX_FALSE
+****         im_ignore_switches      = &apos;X&apos;
+***        .
+***
+***    ENDLOOP.
+***
+***  ENDMETHOD.                    &quot;load_interfaces
+***
+***ENDCLASS.                    &quot;lcl_wb_loader_oo_searcher IMPLEMENTATION</source>
+ </PROG>
+ <PROG NAME="ZYUML_WB_SEARCH" VARCL="X" SUBC="I" RMAND="001" RLOAD="E" UCCHECK="X">
+  <textPool>
+   <language SPRAS="E">
+    <textElement ID="R" ENTRY="Include ZYUML_WB_SEARCH" LENGTH="23 "/>
+   </language>
+  </textPool>
+  <source>INCLUDE zyuml_wb_search_criteria.
+
+*INCLUDE zyuml_wb_search_searcher.</source>
+ </PROG>
+ <PROG NAME="ZYUML_WB_SEARCH_CRITERIA" VARCL="X" SUBC="I" LEVL="731" RMAND="001" RLOAD="E" UCCHECK="X">
+  <textPool>
+   <language SPRAS="E">
+    <textElement ID="R" ENTRY="Search Criteria" LENGTH="15 "/>
+   </language>
+  </textPool>
+  <source>*
+**----------------------------------------------------------------------*
+**       INTERFACE lif_wb_search_criteria
+**----------------------------------------------------------------------*
+** This interface represents
+**----------------------------------------------------------------------*
+*INTERFACE lif_wb_search_criteria.
+*
+*  TYPES:
+*    ty_ra_packages    TYPE RANGE OF tdevc-devclass,
+*    ty_ra_reports     TYPE RANGE OF reposrc-progname,
+*    ty_ra_classes     TYPE RANGE OF seoclass-clsname,
+*    ty_ra_interfaces  TYPE RANGE OF seoclass-clsname.
+*
+*  DATA r_packages     TYPE ty_ra_packages.
+*  DATA r_reports      TYPE ty_ra_reports.
+*  DATA r_classes      TYPE ty_ra_classes.
+*  DATA r_interfaces   TYPE ty_ra_interfaces.
+*
+*  CLASS-METHODS factory
+*    IMPORTING
+*      im_packages TYPE ty_ra_packages OPTIONAL
+*      im_reports TYPE ty_ra_reports OPTIONAL
+*      im_classes TYPE ty_ra_classes OPTIONAL
+*      im_interfaces TYPE ty_ra_interfaces OPTIONAL
+*     RETURNING
+*      value(re_search_criteria) TYPE REF TO lif_wb_search_criteria.
+*
+*ENDINTERFACE.                    &quot;lif_wb_search_criteria
+
+
+*----------------------------------------------------------------------*
+*       CLASS lcl_yuml_wb_search_criteria DEFINITION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS lcl_yuml_wb_search_criteria DEFINITION CREATE PRIVATE.
+
+  PUBLIC SECTION.
+    INTERFACES zif_wb_search_criteria.
+
+ENDCLASS.                    &quot;lcl_yuml_wb_search_criteria DEFINITION
+
+*----------------------------------------------------------------------*
+*       CLASS lcl_yuml_wb_search_criteria IMPLEMENTATION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS lcl_yuml_wb_search_criteria IMPLEMENTATION.
+
+  METHOD zif_wb_search_criteria~factory.
+    CREATE OBJECT re_search_criteria TYPE lcl_yuml_wb_search_criteria.
+
+    re_search_criteria-&gt;r_packages = im_packages.
+    re_search_criteria-&gt;r_reports = im_reports.
+    re_search_criteria-&gt;r_classes = im_classes.
+    re_search_criteria-&gt;r_interfaces = im_interfaces.
+
+  ENDMETHOD.                    &quot;lif_wb_search_criteria~factory
+
+ENDCLASS.                    &quot;lcl_yuml_wb_search_criteria IMPLEMENTATION
+
+
+*----------------------------------------------------------------------*
+*       CLASS lcl_yuml_wb_search_criteriat DEFINITION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS lcl_yuml_wb_search_criteriat DEFINITION FOR TESTING RISK LEVEL HARMLESS DURATION SHORT.
+  PUBLIC SECTION.
+    METHODS factory_returnbound FOR TESTING.
+ENDCLASS.                    &quot;lcl_yuml_wb_search_criteriat DEFINITION
+
+
+*----------------------------------------------------------------------*
+*       CLASS lcl_yuml_wb_search_criteriat IMPLEMENTATION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS lcl_yuml_wb_search_criteriat IMPLEMENTATION.
+
+  METHOD factory_returnbound.
+    DATA r_seach_criteria TYPE REF TO lcl_yuml_wb_search_criteria.
+
+    r_seach_criteria ?= lcl_yuml_wb_search_criteria=&gt;zif_wb_search_criteria~factory(
+*      im_packages        =
+*      im_reports         =
+*      im_classes         =
+*      im_interfaces      =
+    ).
+
+    cl_abap_unit_assert=&gt;assert_bound(
+        act              =  r_seach_criteria
+      msg              = &apos;UYML search criteria not created&apos;
+*      level            = IF_AUNIT_CONSTANTS=&gt;CRITICAL
+*      quit             = IF_AUNIT_CONSTANTS=&gt;METHOD
+  ).
+
+
+  ENDMETHOD.                    &quot;factory_returnbound
+
+ENDCLASS.                    &quot;lcl_yuml_wb_search_criteriat IMPLEMENTATION
+
+
+*----------------------------------------------------------------------*
+*       CLASS lcl_yuml_search_criteria_stub DEFINITION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS lcl_yuml_search_criteria_stub DEFINITION.
+  PUBLIC SECTION.
+    INTERFACES zif_wb_search_criteria.
+ENDCLASS.                    &quot;lcl_yuml_search_criteria_stub DEFINITION
+
+
+*----------------------------------------------------------------------*
+*       CLASS lcl_yuml_search_criteria_stub IMPLEMENTATION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS lcl_yuml_search_criteria_stub IMPLEMENTATION.
+  METHOD zif_wb_search_criteria~factory.
+    CREATE OBJECT re_search_criteria TYPE lcl_yuml_search_criteria_stub.
+  ENDMETHOD.                    &quot;lif_wb_search_criteria~factory
+ENDCLASS.                    &quot;lcl_yuml_search_criteria_stub IMPLEMENTATION</source>
+ </PROG>
+ <PROG NAME="ZYUML_WB_SEARCH_SEARCHER" VARCL="X" SUBC="I" RMAND="001" RLOAD="E" UCCHECK="X">
+  <textPool>
+   <language SPRAS="E">
+    <textElement ID="R" ENTRY="WB Searcher" LENGTH="11 "/>
+   </language>
+  </textPool>
+  <source>***
+****----------------------------------------------------------------------*
+****       INTERFACE lif_wb_searcher IMPLEMENTATION
+****----------------------------------------------------------------------*
+****
+****----------------------------------------------------------------------*
+***INTERFACE lif_wb_searcher.
+***  METHODS search_wb_objects IMPORTING im_wb_search_criteria TYPE REF TO zif_wb_search_criteria.
+***ENDINTERFACE.                    &quot;lif_wb_searcher IMPLEMENTATION
+***
+****----------------------------------------------------------------------*
+****       CLASS lcl_wb_searcher DEFINITION
+****----------------------------------------------------------------------*
+****
+****----------------------------------------------------------------------*
+***CLASS lcl_wb_searcher DEFINITION.
+***
+***  PUBLIC SECTION.
+***    TYPES: BEGIN OF ty_package,
+***          devclass TYPE tdevc-devclass,
+***          text    TYPE tdevct-ctext,
+***      END OF ty_package,
+***      tt_packages TYPE STANDARD TABLE OF ty_package WITH UNIQUE SORTED KEY devclass COMPONENTS devclass.
+***
+***    TYPES: BEGIN OF ty_program,
+***          progname  TYPE reposrc-progname,
+***          text      TYPE trdirt-text,
+***      END OF ty_program,
+***      tt_programs TYPE STANDARD TABLE OF ty_program WITH UNIQUE SORTED KEY progname COMPONENTS progname.
+***
+***    TYPES: BEGIN OF ty_class,
+***      clsname TYPE seoclass-clsname,
+***      text    TYPE seoclasstx-descript,
+***      END OF ty_class,
+***      tt_classes TYPE STANDARD TABLE OF ty_class WITH UNIQUE SORTED KEY clsname COMPONENTS clsname.
+***
+***    TYPES: BEGIN OF ty_interface,
+***      intname TYPE seoclass-clsname,
+***      text    TYPE seoclasstx-descript,
+***      END OF ty_interface,
+***      tt_interfaces TYPE STANDARD TABLE OF ty_interface WITH UNIQUE SORTED KEY intname COMPONENTS intname.
+***
+***
+***    METHODS constructor.
+***    INTERFACES lif_wb_searcher.
+***
+***  PROTECTED SECTION.
+***    DATA o_wb_search_criteria TYPE REF TO zif_wb_search_criteria.
+***
+***    METHODS search_packages CHANGING ch_t_packages TYPE tt_packages.
+***    METHODS search_programs CHANGING ch_t_programs TYPE tt_programs.
+***    METHODS search_classes CHANGING ch_t_classes TYPE tt_classes.
+***    METHODS search_interfaces CHANGING ch_t_interfaces TYPE tt_interfaces.
+***    METHODS search_function_groups.
+***    METHODS search_function_modules.
+***    METHODS search_type_pools.
+***    METHODS search_tables.
+***    METHODS search_views.
+***    METHODS search_domains.
+***    METHODS search_data_elements.
+***    METHODS search_structures.
+***    METHODS search_table_types.
+***    METHODS search_lock_objects.
+***    METHODS search_search_helps.
+***
+***
+***  PRIVATE SECTION.
+***    DATA t_packages TYPE tt_packages.
+***    DATA t_programs TYPE tt_programs.
+***    DATA t_classes  TYPE tt_classes.
+***    DATA t_interfaces TYPE tt_interfaces.
+***
+***ENDCLASS.                    &quot;lcl_wb_searcher DEFINITION
+***
+****----------------------------------------------------------------------*
+****       CLASS lcl_wb_searcher IMPLEMENTATION
+****----------------------------------------------------------------------*
+****
+****----------------------------------------------------------------------*
+***CLASS lcl_wb_searcher IMPLEMENTATION.
+***
+***  METHOD constructor.
+***
+***  ENDMETHOD.                    &quot;constructor
+***
+***  METHOD lif_wb_searcher~search_wb_objects.
+***    me-&gt;o_wb_search_criteria = im_wb_search_criteria.
+***
+***    me-&gt;search_packages( CHANGING ch_t_packages = me-&gt;t_packages ).
+***    me-&gt;search_programs( CHANGING ch_t_programs = me-&gt;t_programs ).
+***    me-&gt;search_classes( CHANGING ch_t_classes = me-&gt;t_classes ).
+***    me-&gt;search_interfaces( CHANGING ch_t_interfaces = me-&gt;t_interfaces ).
+***    me-&gt;search_function_groups( ).
+***    me-&gt;search_function_modules( ).
+***    me-&gt;search_type_pools( ).
+***    me-&gt;search_tables( ).
+***    me-&gt;search_views( ).
+***    me-&gt;search_domains( ).
+***    me-&gt;search_data_elements( ).
+***    me-&gt;search_structures( ).
+***    me-&gt;search_table_types( ).
+***    me-&gt;search_lock_objects( ).
+***    me-&gt;search_search_helps( ).
+***
+***  ENDMETHOD.                    &quot;lif_wb_searcher~search_wb_objects
+***
+***  METHOD search_packages.
+***
+***    IF me-&gt;o_wb_search_criteria-&gt;r_packages IS NOT INITIAL.
+***
+***      SELECT
+***          devclass
+***          ctext
+***        FROM
+***          tdevct
+***        INTO TABLE
+***          ch_t_packages
+***        WHERE
+***          devclass IN me-&gt;o_wb_search_criteria-&gt;r_packages AND
+***          spras = sy-langu.
+***
+***    ENDIF.
+***
+***  ENDMETHOD.                    &quot;search_packages
+***
+***  METHOD search_programs.
+***
+***    IF me-&gt;o_wb_search_criteria-&gt;r_reports IS NOT INITIAL.
+***
+***      SELECT
+***        progname
+***        text
+***        FROM
+***          reposrc AS repo JOIN
+***          trdirt  AS rtext
+***        ON
+***          repo~progname = rtext~name
+***        INTO TABLE
+***          ch_t_programs
+***        WHERE
+***          progname IN me-&gt;o_wb_search_criteria-&gt;r_reports AND
+***          r3state = &apos;A&apos; AND &quot; Active programs/includes
+***          sprsl = sy-langu.
+***
+***    ENDIF.
+***
+***  ENDMETHOD.                    &quot;search_programs
+***
+***  METHOD search_classes.
+***
+***    IF me-&gt;o_wb_search_criteria-&gt;r_classes IS NOT INITIAL.
+***
+***      SELECT
+***          class~clsname
+***          ctext~descript
+***        FROM
+***          seoclass AS class JOIN
+***          seoclasstx AS ctext
+***        ON
+***          class~clsname = ctext~clsname
+***        INTO TABLE
+***          ch_t_classes
+***        WHERE
+***          class~clsname IN me-&gt;o_wb_search_criteria-&gt;r_classes AND
+***          class~clstype = &apos;0&apos; AND &quot; Classes
+***          langu   = sy-langu.
+***
+***    ENDIF.
+***
+***  ENDMETHOD.                    &quot;search_classes
+***
+***  METHOD search_interfaces.
+***
+***    IF me-&gt;o_wb_search_criteria-&gt;r_interfaces IS NOT INITIAL.
+***
+***      SELECT
+***          inter~clsname
+***          ctext~descript
+***        FROM
+***          seoclass AS inter JOIN
+***          seoclasstx AS ctext
+***        ON
+***          inter~clsname = ctext~clsname
+***        INTO TABLE
+***          ch_t_interfaces
+***        WHERE
+***          inter~clsname IN me-&gt;o_wb_search_criteria-&gt;r_interfaces AND
+***          inter~clstype = &apos;1&apos; AND &quot; Interfaces
+***          langu   = sy-langu.
+***
+***    ENDIF.
+***
+***  ENDMETHOD.                    &quot;search_interfaces
+***
+***  METHOD search_function_groups.
+***  ENDMETHOD.                    &quot;search_function_groups
+***
+***  METHOD search_function_modules.
+***  ENDMETHOD.                    &quot;search_function_modules
+***
+***  METHOD search_type_pools.
+***  ENDMETHOD.                    &quot;search_type_pools
+***
+***  METHOD search_tables.
+***  ENDMETHOD.                    &quot;search_tables
+***
+***  METHOD search_views.
+***  ENDMETHOD.                    &quot;search_views
+***
+***  METHOD search_domains.
+***  ENDMETHOD.                    &quot;search_domains
+***
+***  METHOD search_data_elements.
+***  ENDMETHOD.                    &quot;search_data_elements
+***
+***  METHOD search_structures.
+***  ENDMETHOD.                    &quot;search_structures
+***
+***  METHOD search_table_types.
+***  ENDMETHOD.                    &quot;search_table_types
+***
+***  METHOD search_lock_objects.
+***  ENDMETHOD.                    &quot;search_lock_objects
+***
+***  METHOD search_search_helps.
+***  ENDMETHOD.                    &quot;search_search_helps
+***
+***ENDCLASS.                    &quot;lcl_wb_searcher IMPLEMENTATION
+***
+***
+****----------------------------------------------------------------------*
+****       CLASS lcl_wb_searcher_stub DEFINITION
+****----------------------------------------------------------------------*
+****
+****----------------------------------------------------------------------*
+***CLASS lcl_wb_searcher_stub DEFINITION.
+***  PUBLIC SECTION.
+***    METHODS constructor.
+***    INTERFACES lif_wb_searcher.
+***
+***ENDCLASS.                    &quot;lcl_wb_searcher_stub DEFINITION
+***
+****----------------------------------------------------------------------*
+****       CLASS lcl_wb_searcher_stub IMPLEMENTATION
+****----------------------------------------------------------------------*
+****
+****----------------------------------------------------------------------*
+***CLASS lcl_wb_searcher_stub IMPLEMENTATION.
+***  METHOD constructor.
+***
+***  ENDMETHOD.                    &quot;constructor
+***
+***
+***  METHOD lif_wb_searcher~search_wb_objects.
+***  ENDMETHOD.                    &quot;lif_wb_searcher~search_wb_objects
+***
+***ENDCLASS.                    &quot;lcl_wb_searcher_stub IMPLEMENTATION
+***
+***
+****----------------------------------------------------------------------*
+****       CLASS lcl_wb_searcher_test DEFINITION
+****----------------------------------------------------------------------*
+****
+****----------------------------------------------------------------------*
+***CLASS lcl_wb_searcher_test DEFINITION FOR TESTING RISK LEVEL HARMLESS DURATION SHORT.
+***
+***
+***ENDCLASS.                    &quot;lcl_wb_searcher_test DEFINITION
+***
+***
+****----------------------------------------------------------------------*
+****       CLASS lcl_wb_searcher_test IMPLEMENTATION
+****----------------------------------------------------------------------*
+****
+****----------------------------------------------------------------------*
+***CLASS lcl_wb_searcher_test IMPLEMENTATION.
+***
+***
+***ENDCLASS.                    &quot;lcl_wb_searcher_test IMPLEMENTATION
+***
+***
+***
+****----------------------------------------------------------------------*
+****       CLASS lcl_wb_searcher_oo DEFINITION
+****----------------------------------------------------------------------*
+****
+****----------------------------------------------------------------------*
+***CLASS lcl_wb_searcher_oo DEFINITION INHERITING FROM lcl_wb_searcher FINAL.
+***  PUBLIC SECTION.
+***    METHODS lif_wb_searcher~search_wb_objects REDEFINITION.
+***
+***    DATA t_packages   TYPE lcl_wb_searcher=&gt;tt_packages READ-ONLY.
+***    DATA t_programs   TYPE lcl_wb_searcher=&gt;tt_programs READ-ONLY.
+***    DATA t_classes    TYPE lcl_wb_searcher=&gt;tt_classes READ-ONLY.
+***    DATA t_interfaces TYPE lcl_wb_searcher=&gt;tt_interfaces READ-ONLY.
+***
+***ENDCLASS.                    &quot;lcl_wb_searcher_oo DEFINITION
+***
+****----------------------------------------------------------------------*
+****       CLASS lcl_wb_searcher_oo IMPLEMENTATION
+****----------------------------------------------------------------------*
+****
+****----------------------------------------------------------------------*
+***CLASS lcl_wb_searcher_oo IMPLEMENTATION.
+***
+***  METHOD lif_wb_searcher~search_wb_objects.
+***    me-&gt;o_wb_search_criteria = im_wb_search_criteria.
+***
+***    me-&gt;search_packages( CHANGING ch_t_packages = me-&gt;t_packages ).
+***    me-&gt;search_programs( CHANGING ch_t_programs = me-&gt;t_programs ).
+***    me-&gt;search_classes( CHANGING ch_t_classes = me-&gt;t_classes ).
+***    me-&gt;search_interfaces( CHANGING ch_t_interfaces = me-&gt;t_interfaces ).
+***
+***  ENDMETHOD.                    &quot;lif_wb_searcher~search_wb_objects
+***
+***ENDCLASS.                    &quot;lcl_wb_searcher_oo IMPLEMENTATION</source>
+ </PROG>
+ <SHLP SHLPNAME="ZYUML_CLASS" DDLANGUAGE="E" DDTEXT="Class Names" ISSIMPLE="X" SELMETHOD="SEOCLASS" SELMTYPE="X" TEXTTAB="SEOCLASSTX" DIALOGTYPE="D">
+  <dd32p SHLPNAME="ZYUML_CLASS" FIELDNAME="CLSNAME" FLPOSITION="0001" ROLLNAME="SEOCLSNAME" SHLPINPUT="X" SHLPOUTPUT="X" SHLPSELPOS="01" SHLPLISPOS="01" DOMNAME="SEOCLSNAME" HEADLEN="30" SCRLEN1="10" SCRLEN2="15" SCRLEN3="20" DATATYPE="CHAR" LENG="000030" OUTPUTLEN="000030" DECIMALS="000000"/>
+  <dd32p SHLPNAME="ZYUML_CLASS" FIELDNAME="DESCRIPT" FLPOSITION="0002" ROLLNAME="SEODESCR" SHLPINPUT="X" SHLPSELPOS="02" SHLPLISPOS="02" DOMNAME="AS4TEXT" HEADLEN="60" SCRLEN1="10" SCRLEN2="15" SCRLEN3="20" DATATYPE="CHAR" LENG="000060" OUTPUTLEN="000060" DECIMALS="000000" LOWERCASE="X"/>
+ </SHLP>
+</nugget>
