@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<nugget name="YUML_ABAP-V-1.0">
+<nugget name="YUML_ABAP-V-1.1">
  <CLAS CLSNAME="ZCL_YUML_ACTIVITY_DIAGRAM" VERSION="1" LANGU="E" DESCRIPT="ZCL_YUML_ACTIVITY_DIAGRAM" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" CLSCCINCL="X" FIXPT="X" UNICODE="X" CLSBCCAT="00" DURATION_TYPE="0 " RISK_LEVEL="0 ">
   <implementing CLSNAME="ZCL_YUML_ACTIVITY_DIAGRAM" REFCLSNAME="ZIF_YUML_DIAGRAM" VERSION="1" EXPOSURE="2" STATE="1" RELTYPE="1" EDITORDER="0 "/>
   <localImplementation>*&quot;* use this source file for the definition and implementation of
@@ -110,7 +110,6 @@ CLASS zcl_yuml_class_attribute_test DEFINITION FOR TESTING
 
 
     DATA o_yuml_class TYPE REF TO zcl_yuml_class.
-*    DATA o_exception TYPE REF TO zcx_.
 
 ************************************************
 * Unit test context
@@ -172,7 +171,6 @@ CLASS zcl_yuml_class_attribute_test IMPLEMENTATION.
 ************************************************
 
   METHOD gca_instance_public.
-  break-point.
     given_visibility_public( ).
     given_level_instance( ).
     when_generate_code_attributes( ).
@@ -313,8 +311,8 @@ CLASS zcl_yuml_class_attribute_test IMPLEMENTATION.
       EXPORTING
         im_wb_class = lo_wb_class.
 
-    me-&gt;o_yuml_class-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_attributes = abap_true.
-    me-&gt;o_yuml_class-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_attr_types = abap_false.
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_attributes = abap_true.
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_attr_types = abap_false.
 
     v_yuml_code =  me-&gt;o_yuml_class-&gt;generate_code_attributes( ).
 
@@ -764,8 +762,8 @@ CLASS zcl_yuml_class_many_att_test IMPLEMENTATION.
       EXPORTING
         im_wb_class = lo_wb_class.
 
-    me-&gt;o_yuml_class-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_attributes = abap_true.
-    me-&gt;o_yuml_class-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_attr_types = abap_false.
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_attributes = abap_true.
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_attr_types = abap_false.
 
     v_yuml_code =  me-&gt;o_yuml_class-&gt;generate_code_attributes( ).
 
@@ -1046,8 +1044,8 @@ CLASS zcl_yuml_class_attr_type_test IMPLEMENTATION.
       EXPORTING
         im_wb_class = lo_wb_class.
 
-    me-&gt;o_yuml_class-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_attributes = abap_false.
-    me-&gt;o_yuml_class-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_attr_types = me-&gt;v_show_att_types.
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_attributes = abap_false.
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_attr_types = me-&gt;v_show_att_types.
 
 
     DATA lwa_attribute TYPE seoo_attribute_r.
@@ -1189,7 +1187,6 @@ ENDCLASS.                    &quot;zcl_yuml_class_attr_type_test IMPLEMENTATION
 
 
 
-
 CLASS zcl_yuml_class_methods_test DEFINITION DEFERRED.
 CLASS zcl_yuml_class DEFINITION LOCAL FRIENDS zcl_yuml_class_methods_test.
 *----------------------------------------------------------------------*
@@ -1249,7 +1246,6 @@ CLASS zcl_yuml_class_methods_test DEFINITION FOR TESTING
 
 
     DATA o_yuml_class TYPE REF TO zcl_yuml_class.
-*    DATA o_exception TYPE REF TO zcx_.
 
 ************************************************
 * Unit test context
@@ -1403,8 +1399,8 @@ CLASS zcl_yuml_class_methods_test IMPLEMENTATION.
       EXPORTING
         im_wb_class = lo_wb_class.
 
-    me-&gt;o_yuml_class-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_methods = abap_true.
-    me-&gt;o_yuml_class-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_meth_param = abap_false.
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_methods = abap_true.
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_meth_param = abap_false.
 
     v_yuml_code =  me-&gt;o_yuml_class-&gt;generate_code_methods( ).
 
@@ -1678,8 +1674,8 @@ CLASS zcl_yuml_class_many_met_test IMPLEMENTATION.
       EXPORTING
         im_wb_class = lo_wb_class.
 
-    me-&gt;o_yuml_class-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_methods = abap_true.
-    me-&gt;o_yuml_class-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_meth_param = abap_false.
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_methods = abap_true.
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_meth_param = abap_false.
 
     v_yuml_code =  me-&gt;o_yuml_class-&gt;generate_code_methods( ).
 
@@ -1904,6 +1900,7 @@ CLASS zcl_yuml_class_meth_param_test IMPLEMENTATION.
     DATA lwa_method_parameter TYPE seos_parameter_r.
     lwa_method_parameter-typtype = 1.
     lwa_method_parameter-type = &apos;I&apos;.
+    lwa_method_parameter-cmptype = 1.
     APPEND lwa_method_parameter TO me-&gt;t_method_parameters.
   ENDMETHOD.                    &quot;given_METH_PARAM_primitive
 
@@ -1911,6 +1908,7 @@ CLASS zcl_yuml_class_meth_param_test IMPLEMENTATION.
     DATA lwa_method_parameter TYPE seos_parameter_r.
     lwa_method_parameter-typtype = 1.
     lwa_method_parameter-type = &apos;DTEL&apos;.
+    lwa_method_parameter-cmptype = 1.
     APPEND lwa_method_parameter TO me-&gt;t_method_parameters.
   ENDMETHOD.                    &quot;GIVEN_METH_PARAM_DATA_ELEMENT
 
@@ -1918,6 +1916,7 @@ CLASS zcl_yuml_class_meth_param_test IMPLEMENTATION.
     DATA lwa_method_parameter TYPE seos_parameter_r.
     lwa_method_parameter-typtype = 1.
     lwa_method_parameter-type = &apos;STRU&apos;.
+    lwa_method_parameter-cmptype = 1.
     APPEND lwa_method_parameter TO me-&gt;t_method_parameters.
   ENDMETHOD.                    &quot;given_METH_PARAM_structure
 
@@ -1925,6 +1924,7 @@ CLASS zcl_yuml_class_meth_param_test IMPLEMENTATION.
     DATA lwa_method_parameter TYPE seos_parameter_r.
     lwa_method_parameter-typtype = 1.
     lwa_method_parameter-type = &apos;TTYP&apos;.
+    lwa_method_parameter-cmptype = 1.
     APPEND lwa_method_parameter TO me-&gt;t_method_parameters.
   ENDMETHOD.                    &quot;given_METH_PARAM_table_type
 
@@ -1932,6 +1932,7 @@ CLASS zcl_yuml_class_meth_param_test IMPLEMENTATION.
     DATA lwa_method_parameter TYPE seos_parameter_r.
     lwa_method_parameter-typtype = 3.
     lwa_method_parameter-type = &apos;CL_A&apos;.
+    lwa_method_parameter-cmptype = 1.
     APPEND lwa_method_parameter TO me-&gt;t_method_parameters.
   ENDMETHOD.                    &quot;given_METH_PARAM_reference
 
@@ -1939,6 +1940,7 @@ CLASS zcl_yuml_class_meth_param_test IMPLEMENTATION.
     DATA lwa_method_parameter TYPE seos_parameter_r.
     lwa_method_parameter-typtype = 3.
     lwa_method_parameter-type = &apos;DATA&apos;.
+    lwa_method_parameter-cmptype = 1.
     APPEND lwa_method_parameter TO me-&gt;t_method_parameters.
   ENDMETHOD.                    &quot;given_METH_PARAM_generic
 
@@ -1965,7 +1967,7 @@ CLASS zcl_yuml_class_meth_param_test IMPLEMENTATION.
       EXPORTING
         im_wb_class = lo_wb_class.
 
-    me-&gt;o_yuml_class-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_meth_param = me-&gt;v_show_meth_param.
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_meth_param = me-&gt;v_show_meth_param.
     v_yuml_code = me-&gt;o_yuml_class-&gt;generate_code_method_param( im_wa_method = lwa_method ).
 
   ENDMETHOD.                    &quot;when_mut1
@@ -2100,11 +2102,6 @@ CLASS zcl_yuml_class_meth_param_test IMPLEMENTATION.
 ENDCLASS.                    &quot;zcl_yuml_class_meth_param_test IMPLEMENTATION
 
 
-*****
-****
-****
-
-
 CLASS zcl_yuml_class_many_methp_test DEFINITION DEFERRED.
 CLASS zcl_yuml_class DEFINITION LOCAL FRIENDS zcl_yuml_class_many_methp_test.
 
@@ -2219,6 +2216,7 @@ CLASS zcl_yuml_class_many_methp_test IMPLEMENTATION.
     DATA lwa_method_parameter TYPE seos_parameter_r.
     lwa_method_parameter-typtype = 1.
     lwa_method_parameter-type = &apos;DTEL&apos;.
+    lwa_method_parameter-cmptype = 1.
     APPEND lwa_method_parameter TO me-&gt;t_method_parameters.
   ENDMETHOD.                    &quot;GIVEN_1_MET_PARAM
 
@@ -2228,6 +2226,7 @@ CLASS zcl_yuml_class_many_methp_test IMPLEMENTATION.
     DATA lwa_method_parameter TYPE seos_parameter_r.
     lwa_method_parameter-typtype = 3.
     lwa_method_parameter-type = &apos;CL_A&apos;.
+    lwa_method_parameter-cmptype = 1.
     APPEND lwa_method_parameter TO me-&gt;t_method_parameters.
   ENDMETHOD.                    &quot;GIVEN_2_MET_PARAM
 
@@ -2236,6 +2235,7 @@ CLASS zcl_yuml_class_many_methp_test IMPLEMENTATION.
     DATA lwa_method_parameter TYPE seos_parameter_r.
     lwa_method_parameter-typtype = 1.
     lwa_method_parameter-type = &apos;TTYP&apos;.
+    lwa_method_parameter-cmptype = 1.
     APPEND lwa_method_parameter TO me-&gt;t_method_parameters.
   ENDMETHOD.                    &quot;GIVEN_3_MET_PARAM
 
@@ -2262,7 +2262,7 @@ CLASS zcl_yuml_class_many_methp_test IMPLEMENTATION.
       EXPORTING
         im_wb_class = lo_wb_class.
 
-    me-&gt;o_yuml_class-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_meth_param = me-&gt;v_show_meth_param.
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_meth_param = me-&gt;v_show_meth_param.
     v_yuml_code = me-&gt;o_yuml_class-&gt;generate_code_method_param( im_wa_method = lwa_method ).
 
   ENDMETHOD.                    &quot;when_mut1
@@ -2339,7 +2339,835 @@ CLASS zcl_yuml_class_many_methp_test IMPLEMENTATION.
 
   ENDMETHOD.                    &quot;THEN_3_met_SHOWN
 
-ENDCLASS.                    &quot;zcl_yuml_class_many_att_test IMPLEMENTATION</localTestClasses>
+ENDCLASS.                    &quot;zcl_yuml_class_many_att_test IMPLEMENTATION
+
+
+
+
+
+CLASS zcl_yuml_class_events_test DEFINITION DEFERRED.
+CLASS zcl_yuml_class DEFINITION LOCAL FRIENDS zcl_yuml_class_events_test.
+
+*----------------------------------------------------------------------*
+*       CLASS zcl_yuml_class_events_test DEFINITION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS zcl_yuml_class_events_test DEFINITION FOR TESTING
+  FINAL
+  CREATE PUBLIC
+  DURATION SHORT
+  RISK LEVEL HARMLESS FRIENDS zcl_yuml_class.
+
+  PUBLIC SECTION.
+
+    METHODS gce_instance_public FOR TESTING.
+    METHODS gce_instance_protected FOR TESTING.
+    METHODS gce_instance_private FOR TESTING.
+
+    METHODS gce_static_public FOR TESTING.
+    METHODS gce_static_protected FOR TESTING.
+    METHODS gce_static_private FOR TESTING.
+
+  PROTECTED SECTION.
+
+*  GIVEN
+
+    METHODS given_level
+      IMPORTING
+        !im_level TYPE i.
+    METHODS given_level_instance.
+    METHODS given_level_static.
+
+    METHODS given_visibility
+      IMPORTING
+        !im_visibility TYPE i.
+    METHODS given_visibility_public.
+    METHODS given_visibility_protected.
+    METHODS given_visibility_private.
+
+*  WHEN
+    METHODS when_generate_code_events.
+
+*  THEN
+    METHODS then_eve_instance_public.
+    METHODS then_eve_instance_protected.
+    METHODS then_eve_instance_private.
+
+    METHODS then_eve_static_public.
+    METHODS then_eve_static_protected.
+    METHODS then_eve_static_private.
+
+  PRIVATE SECTION.
+    METHODS setup.
+    METHODS teardown.
+
+
+    DATA o_yuml_class TYPE REF TO zcl_yuml_class.
+
+************************************************
+* Unit test context
+
+* Level
+* 0 - Instance
+* 1 - Static
+* 2 - Constant
+    DATA v_level TYPE seoattdecl.
+
+* Visibility
+* 0 - private
+* 1 - protected
+* 2 - public
+    DATA v_visibility TYPE seoexpose.
+
+
+* yUML dml (code) representing wb object
+    DATA v_yuml_code TYPE string.
+************************************************
+
+ENDCLASS.                    &quot;zcl_yuml_class_events_test DEFINITION
+
+*----------------------------------------------------------------------*
+*       CLASS zcl_yuml_class_events_test IMPLEMENTATION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS zcl_yuml_class_events_test IMPLEMENTATION.
+
+  METHOD setup.
+    CLEAR me-&gt;o_yuml_class.
+    CLEAR me-&gt;v_level.
+    CLEAR me-&gt;v_visibility.
+    CLEAR me-&gt;v_yuml_code.
+  ENDMETHOD.       &quot;setup
+
+
+  METHOD teardown.
+
+  ENDMETHOD.       &quot;teardown
+
+
+************************************************
+* Methods Under Test
+************************************************
+
+  METHOD gce_instance_public.
+    given_visibility_public( ).
+    given_level_instance( ).
+    when_generate_code_events( ).
+    then_eve_instance_public( ).
+  ENDMETHOD.                    &quot;gce_instance_public
+
+  METHOD gce_instance_protected.
+    given_visibility_protected( ).
+    given_level_instance( ).
+    when_generate_code_events( ).
+    then_eve_instance_protected( ).
+  ENDMETHOD.                    &quot;gce_instance_protected
+
+  METHOD gce_instance_private.
+    given_visibility_private( ).
+    given_level_instance( ).
+    when_generate_code_events( ).
+    then_eve_instance_private( ).
+  ENDMETHOD.                    &quot;gce_instance_private
+
+  METHOD gce_static_public.
+    given_visibility_public( ).
+    given_level_static( ).
+    when_generate_code_events( ).
+    then_eve_static_public( ).
+  ENDMETHOD.                    &quot;gce_static_public
+
+  METHOD gce_static_protected.
+    given_visibility_protected( ).
+    given_level_static( ).
+    when_generate_code_events( ).
+    then_eve_static_protected( ).
+
+  ENDMETHOD.                    &quot;gce_static_protected
+
+  METHOD gce_static_private.
+    given_visibility_private( ).
+    given_level_static( ).
+    when_generate_code_events( ).
+    then_eve_static_private( ).
+
+  ENDMETHOD.                    &quot;gce_static_private
+
+
+
+************************************************
+* GIVEN
+************************************************
+
+  METHOD given_level.
+    me-&gt;v_level = im_level.
+  ENDMETHOD.                    &quot;given_level
+
+  METHOD given_level_instance.
+    given_level( im_level = 0 ).
+  ENDMETHOD.                    &quot;given_level_instance
+
+  METHOD given_level_static.
+    given_level( im_level = 1 ).
+  ENDMETHOD.                    &quot;given_level_static
+
+  METHOD given_visibility.
+    me-&gt;v_visibility = im_visibility.
+  ENDMETHOD.                    &quot;given_visibility
+
+  METHOD given_visibility_private.
+    given_visibility( im_visibility = 0 ).
+  ENDMETHOD.                    &quot;given_visibility_private
+
+  METHOD given_visibility_protected.
+    given_visibility( im_visibility = 1 ).
+  ENDMETHOD.                    &quot;given_visibility_protected
+
+  METHOD given_visibility_public.
+    given_visibility( im_visibility = 2 ).
+  ENDMETHOD.                    &quot;given_visibility_public
+
+************************************************
+* WHEN
+************************************************
+
+  METHOD when_generate_code_events.
+
+    TYPE-POOLS seoo.
+    DATA lo_wb_class TYPE REF TO zcl_wb_class.
+    DATA lo_mocker TYPE REF TO zif_mocka_mocker.
+
+    DATA lt_events TYPE seoo_events_r.
+    DATA lwa_event TYPE seoo_event_r.
+
+
+    lwa_event-cmpname = &apos;EVENT&apos;.
+    lwa_event-exposure = me-&gt;v_visibility.
+    lwa_event-evtdecltyp = me-&gt;v_level.
+    APPEND lwa_event TO lt_events.
+
+    lo_mocker = zcl_mocka_mocker=&gt;zif_mocka_mocker~mock( iv_interface = &apos;ZCL_WB_CLASS&apos; ).
+
+    lo_mocker-&gt;attribute( iv_attribute = &apos;EVENTS&apos; )-&gt;returns( i_return = lt_events  ).
+
+    lo_wb_class ?= lo_mocker-&gt;generate_mockup( ).
+
+    CREATE OBJECT me-&gt;o_yuml_class
+      EXPORTING
+        im_wb_class = lo_wb_class.
+
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_events = abap_true.
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_events_param = abap_false.
+
+    v_yuml_code =  me-&gt;o_yuml_class-&gt;generate_code_events( ).
+
+  ENDMETHOD.                    &quot;when_generate_code_attributes
+
+************************************************
+* THEN
+************************************************
+  METHOD then_eve_instance_public.
+
+    cl_aunit_assert=&gt;assert_equals(
+      EXPORTING
+        exp                  = &apos;|+EVENT;&apos;     &quot; Data Object with Expected Type
+        act                  = v_yuml_code    &quot; Data Object with Current Value
+*    msg                  =     &quot; Message in Case of Error
+*    level                = CRITICAL    &quot; Error Severity
+*    tol                  =     &quot; Tolerance Range for Floating Point Numbers
+*    quit                 = METHOD    &quot; Flow Control in Case of Error
+*    ignore_hash_sequence = ABAP_FALSE    &quot; Ignore change sequence in hash tables
+*  RECEIVING
+*    assertion_failed     =     &quot; Condition not met
+    ).
+
+  ENDMETHOD.                    &quot;then_eve_INSTANCE_PUBLIC
+
+  METHOD then_eve_instance_protected.
+
+    cl_aunit_assert=&gt;assert_equals(
+      EXPORTING
+        exp                  = &apos;|+-EVENT;&apos;     &quot; Data Object with Expected Type
+        act                  = v_yuml_code    &quot; Data Object with Current Value
+*    msg                  =     &quot; Message in Case of Error
+*    level                = CRITICAL    &quot; Error Severity
+*    tol                  =     &quot; Tolerance Range for Floating Point Numbers
+*    quit                 = METHOD    &quot; Flow Control in Case of Error
+*    ignore_hash_sequence = ABAP_FALSE    &quot; Ignore change sequence in hash tables
+*  RECEIVING
+*    assertion_failed     =     &quot; Condition not met
+    ).
+
+
+  ENDMETHOD.                    &quot;then_eve_instance_protected
+
+  METHOD then_eve_instance_private.
+
+    cl_aunit_assert=&gt;assert_equals(
+      EXPORTING
+        exp                  = &apos;|-EVENT;&apos;     &quot; Data Object with Expected Type
+        act                  = v_yuml_code    &quot; Data Object with Current Value
+*    msg                  =     &quot; Message in Case of Error
+*    level                = CRITICAL    &quot; Error Severity
+*    tol                  =     &quot; Tolerance Range for Floating Point Numbers
+*    quit                 = METHOD    &quot; Flow Control in Case of Error
+*    ignore_hash_sequence = ABAP_FALSE    &quot; Ignore change sequence in hash tables
+*  RECEIVING
+*    assertion_failed     =     &quot; Condition not met
+    ).
+
+
+  ENDMETHOD.                    &quot;then_eve_instance_private
+
+  METHOD then_eve_static_public.
+
+    cl_aunit_assert=&gt;assert_equals(
+      EXPORTING
+        exp                  = &apos;|+_EVENT_;&apos;     &quot; Data Object with Expected Type
+        act                  = v_yuml_code    &quot; Data Object with Current Value
+*    msg                  =     &quot; Message in Case of Error
+*    level                = CRITICAL    &quot; Error Severity
+*    tol                  =     &quot; Tolerance Range for Floating Point Numbers
+*    quit                 = METHOD    &quot; Flow Control in Case of Error
+*    ignore_hash_sequence = ABAP_FALSE    &quot; Ignore change sequence in hash tables
+*  RECEIVING
+*    assertion_failed     =     &quot; Condition not met
+    ).
+
+  ENDMETHOD.                    &quot;then_eve_static_public
+
+  METHOD then_eve_static_protected.
+
+    cl_aunit_assert=&gt;assert_equals(
+      EXPORTING
+        exp                  = &apos;|+-_EVENT_;&apos;     &quot; Data Object with Expected Type
+        act                  = v_yuml_code    &quot; Data Object with Current Value
+*    msg                  =     &quot; Message in Case of Error
+*    level                = CRITICAL    &quot; Error Severity
+*    tol                  =     &quot; Tolerance Range for Floating Point Numbers
+*    quit                 = METHOD    &quot; Flow Control in Case of Error
+*    ignore_hash_sequence = ABAP_FALSE    &quot; Ignore change sequence in hash tables
+*  RECEIVING
+*    assertion_failed     =     &quot; Condition not met
+    ).
+
+
+  ENDMETHOD.                    &quot;then_eve_static_protected
+
+  METHOD then_eve_static_private.
+
+    cl_aunit_assert=&gt;assert_equals(
+      EXPORTING
+        exp                  = &apos;|-_EVENT_;&apos;     &quot; Data Object with Expected Type
+        act                  = v_yuml_code    &quot; Data Object with Current Value
+*    msg                  =     &quot; Message in Case of Error
+*    level                = CRITICAL    &quot; Error Severity
+*    tol                  =     &quot; Tolerance Range for Floating Point Numbers
+*    quit                 = METHOD    &quot; Flow Control in Case of Error
+*    ignore_hash_sequence = ABAP_FALSE    &quot; Ignore change sequence in hash tables
+*  RECEIVING
+*    assertion_failed     =     &quot; Condition not met
+    ).
+
+
+  ENDMETHOD.                    &quot;then_eve_static_private
+
+ENDCLASS.                    &quot;zcl_yuml_class_events_test IMPLEMENTATION
+
+
+CLASS zcl_yuml_class_many_eve_test DEFINITION DEFERRED.
+CLASS zcl_yuml_class DEFINITION LOCAL FRIENDS zcl_yuml_class_many_eve_test.
+
+*----------------------------------------------------------------------*
+*       CLASS zcl_yuml_class_many_eve_test DEFINITION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS zcl_yuml_class_many_eve_test DEFINITION FOR TESTING
+  FINAL
+  CREATE PUBLIC
+  DURATION SHORT
+  RISK LEVEL HARMLESS
+.
+  PUBLIC SECTION.
+
+    METHODS gce_0_eve FOR TESTING .
+    METHODS gce_1_eve FOR TESTING .
+    METHODS gce_2_eve FOR TESTING .
+    METHODS gce_3_eve FOR TESTING .
+
+  PROTECTED SECTION.
+
+*  GIVEN
+    METHODS given_0_eve.
+    METHODS given_1_eve.
+    METHODS given_2_eve.
+    METHODS given_3_eve.
+
+*  WHEN
+    METHODS when_generate_code_events.
+
+*  THEN
+    METHODS then_0_eve_shown.
+    METHODS then_1_eve_shown.
+    METHODS then_2_eve_shown.
+    METHODS then_3_eve_shown.
+
+  PRIVATE SECTION.
+    METHODS setup.
+    METHODS teardown.
+
+    DATA o_yuml_class TYPE REF TO zcl_yuml_class.
+
+* Mocked classes Attributes
+    DATA t_events TYPE  seoo_events_r.
+
+* yUML dml (code) representing wb object
+    DATA v_yuml_code TYPE string.
+
+ENDCLASS.                    &quot;zcl_yuml_class_many_eve_test DEFINITION
+
+
+*----------------------------------------------------------------------*
+*       CLASS zcl_yuml_class_many_eve_test IMPLEMENTATION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS zcl_yuml_class_many_eve_test IMPLEMENTATION.
+
+  METHOD setup.
+    CLEAR me-&gt;o_yuml_class.
+  ENDMETHOD.       &quot;setup
+
+
+  METHOD teardown.
+
+  ENDMETHOD.       &quot;teardown
+
+
+************************************************
+* Methods Under Test
+************************************************
+
+  METHOD gce_0_eve.
+    given_0_eve( ).
+    when_generate_code_events( ).
+    then_0_eve_shown( ).
+  ENDMETHOD.                    &quot;gce_0_met
+
+  METHOD gce_1_eve.
+    given_1_eve( ).
+    when_generate_code_events( ).
+    then_1_eve_shown( ).
+  ENDMETHOD.                    &quot;gce_1_met
+
+  METHOD gce_2_eve.
+    given_2_eve( ).
+    when_generate_code_events( ).
+    then_2_eve_shown( ).
+  ENDMETHOD.                    &quot;gce_2_met
+
+  METHOD gce_3_eve.
+    given_3_eve( ).
+    when_generate_code_events( ).
+    then_3_eve_shown( ).
+  ENDMETHOD.                    &quot;gce_3_met
+
+
+************************************************
+* GIVEN
+************************************************
+
+  METHOD given_0_eve.
+    REFRESH me-&gt;t_events.
+  ENDMETHOD.                    &quot;GIVEN_0_eve
+
+  METHOD given_1_eve.
+    DATA lwa_event TYPE seoo_event_r.
+    lwa_event-cmpname = &apos;EVENT1&apos;.
+    lwa_event-exposure = 0.
+    lwa_event-evtdecltyp = 0.
+    APPEND lwa_event TO me-&gt;t_events.
+  ENDMETHOD.                    &quot;GIVEN_1_eve
+
+  METHOD given_2_eve.
+    given_1_eve( ).
+    DATA lwa_event TYPE seoo_event_r.
+    lwa_event-cmpname = &apos;EVENT2&apos;.
+    lwa_event-exposure = 1.
+    lwa_event-evtdecltyp = 1.
+    APPEND lwa_event TO me-&gt;t_events.
+  ENDMETHOD.                    &quot;GIVEN_2_eve
+
+  METHOD given_3_eve.
+    given_2_eve( ).
+    DATA lwa_event TYPE seoo_event_r.
+    lwa_event-cmpname = &apos;EVENT3&apos;.
+    lwa_event-exposure = 2.
+    lwa_event-evtdecltyp = 0.
+    APPEND lwa_event TO me-&gt;t_events.
+  ENDMETHOD.                    &quot;GIVEN_3_eve
+
+
+************************************************
+* WHEN
+************************************************
+
+  METHOD when_generate_code_events.
+
+    TYPE-POOLS seoo.
+    DATA lo_wb_class TYPE REF TO zcl_wb_class.
+    DATA lo_mocker TYPE REF TO zif_mocka_mocker.
+
+    lo_mocker = zcl_mocka_mocker=&gt;zif_mocka_mocker~mock( iv_interface = &apos;ZCL_WB_CLASS&apos; ).
+
+    lo_mocker-&gt;attribute( iv_attribute = &apos;EVENTS&apos; )-&gt;returns( i_return = me-&gt;t_events ).
+
+    lo_wb_class ?= lo_mocker-&gt;generate_mockup( ).
+    CREATE OBJECT me-&gt;o_yuml_class
+      EXPORTING
+        im_wb_class = lo_wb_class.
+
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_events = abap_true.
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_events_param = abap_false.
+
+    v_yuml_code =  me-&gt;o_yuml_class-&gt;generate_code_events( ).
+
+  ENDMETHOD.                    &quot;when_generate_code_events
+
+************************************************
+* THEN
+************************************************
+
+  METHOD then_0_eve_shown.
+
+    cl_aunit_assert=&gt;assert_equals(
+      EXPORTING
+        exp                  = &apos;|;&apos;     &quot; Data Object with Expected Type
+        act                  = me-&gt;v_yuml_code    &quot; Data Object with Current Value
+*    msg                  =     &quot; Message in Case of Error
+*    level                = CRITICAL    &quot; Error Severity
+*    tol                  =     &quot; Tolerance Range for Floating Point Numbers
+*    quit                 = METHOD    &quot; Flow Control in Case of Error
+*    ignore_hash_sequence = ABAP_FALSE    &quot; Ignore change sequence in hash tables
+*  RECEIVING
+*    assertion_failed     =     &quot; Condition not met
+    ).
+
+  ENDMETHOD.                    &quot;THEN_0_eve_shOWN
+
+  METHOD then_1_eve_shown.
+
+    cl_aunit_assert=&gt;assert_equals(
+      EXPORTING
+        exp                  = &apos;|-EVENT1;&apos;     &quot; Data Object with Expected Type
+        act                  = me-&gt;v_yuml_code    &quot; Data Object with Current Value
+*    msg                  =     &quot; Message in Case of Error
+*    level                = CRITICAL    &quot; Error Severity
+*    tol                  =     &quot; Tolerance Range for Floating Point Numbers
+*    quit                 = METHOD    &quot; Flow Control in Case of Error
+*    ignore_hash_sequence = ABAP_FALSE    &quot; Ignore change sequence in hash tables
+*  RECEIVING
+*    assertion_failed     =     &quot; Condition not met
+    ).
+
+  ENDMETHOD.                    &quot;THEN_1_eve_shOWN
+
+  METHOD then_2_eve_shown.
+
+    cl_aunit_assert=&gt;assert_equals(
+      EXPORTING
+        exp                  = &apos;|-EVENT1;+-_EVENT2_;&apos;     &quot; Data Object with Expected Type
+        act                  = me-&gt;v_yuml_code    &quot; Data Object with Current Value
+*    msg                  =     &quot; Message in Case of Error
+*    level                = CRITICAL    &quot; Error Severity
+*    tol                  =     &quot; Tolerance Range for Floating Point Numbers
+*    quit                 = METHOD    &quot; Flow Control in Case of Error
+*    ignore_hash_sequence = ABAP_FALSE    &quot; Ignore change sequence in hash tables
+*  RECEIVING
+*    assertion_failed     =     &quot; Condition not met
+    ).
+
+  ENDMETHOD.                    &quot;THEN_2_eve_shOWN
+
+  METHOD then_3_eve_shown.
+
+    cl_aunit_assert=&gt;assert_equals(
+      EXPORTING
+        exp                  = &apos;|-EVENT1;+-_EVENT2_;+EVENT3;&apos;     &quot; Data Object with Expected Type
+        act                  = me-&gt;v_yuml_code    &quot; Data Object with Current Value
+*    msg                  =     &quot; Message in Case of Error
+*    level                = CRITICAL    &quot; Error Severity
+*    tol                  =     &quot; Tolerance Range for Floating Point Numbers
+*    quit                 = METHOD    &quot; Flow Control in Case of Error
+*    ignore_hash_sequence = ABAP_FALSE    &quot; Ignore change sequence in hash tables
+*  RECEIVING
+*    assertion_failed     =     &quot; Condition not met
+    ).
+
+  ENDMETHOD.                    &quot;THEN_3_eve_SHOWN
+
+ENDCLASS.                    &quot;zcl_yuml_class_many_eve_test IMPLEMENTATION
+
+
+
+**
+**
+**
+**
+**
+**
+**
+**
+**
+**
+**
+**
+**
+**
+
+
+
+CLASS zcl_yuml_class_many_evep_test DEFINITION DEFERRED.
+CLASS zcl_yuml_class DEFINITION LOCAL FRIENDS zcl_yuml_class_many_evep_test.
+
+*----------------------------------------------------------------------*
+*       CLASS zcl_yuml_class_many_evep_test DEFINITION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS zcl_yuml_class_many_evep_test DEFINITION FOR TESTING
+  FINAL
+  CREATE PUBLIC
+  DURATION SHORT
+  RISK LEVEL HARMLESS
+.
+  PUBLIC SECTION.
+
+    METHODS gcep_0_eve_param FOR TESTING .
+    METHODS gcep_1_eve_param FOR TESTING .
+    METHODS gcep_2_eve_param FOR TESTING .
+    METHODS gcep_3_eve_param FOR TESTING .
+
+  PROTECTED SECTION.
+
+*  GIVEN
+    METHODS given_0_eve_param.
+    METHODS given_1_eve_param.
+    METHODS given_2_eve_param.
+    METHODS given_3_eve_param.
+
+*  WHEN
+    METHODS when_generate_code_events_para.
+
+*  THEN
+    METHODS then_0_eve_param_shown.
+    METHODS then_1_eve_param_shown.
+    METHODS then_2_eve_param_shown.
+    METHODS then_3_eve_param_shown.
+
+  PRIVATE SECTION.
+    METHODS setup.
+    METHODS teardown.
+
+    DATA o_yuml_class TYPE REF TO zcl_yuml_class.
+
+* yUML dml (code) representing wb object
+    DATA v_yuml_code TYPE string.
+
+* Mocked classes event parameters
+    DATA t_event_parameters TYPE seos_parameters_r.
+
+    DATA v_show_event_param TYPE abap_bool VALUE abap_true.
+
+ENDCLASS.                    &quot;zcl_yuml_class_many_evep_test DEFINITION
+
+
+*----------------------------------------------------------------------*
+*       CLASS zcl_yuml_class_many_evep_test IMPLEMENTATION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS zcl_yuml_class_many_evep_test IMPLEMENTATION.
+
+  METHOD setup.
+    CLEAR me-&gt;o_yuml_class.
+  ENDMETHOD.       &quot;setup
+
+
+  METHOD teardown.
+
+  ENDMETHOD.       &quot;teardown
+
+
+************************************************
+* Methods Under Test
+************************************************
+
+  METHOD gcep_0_eve_param.
+    given_0_eve_param( ).
+    when_generate_code_events_para( ).
+    then_0_eve_param_shown( ).
+  ENDMETHOD.                    &quot;gcep_0_eve_PARAM
+
+  METHOD gcep_1_eve_param.
+    given_1_eve_param( ).
+    when_generate_code_events_para( ).
+    then_1_eve_param_shown( ).
+  ENDMETHOD.                    &quot;gcep_1_eve_PARAM
+
+  METHOD gcep_2_eve_param.
+    given_2_eve_param( ).
+    when_generate_code_events_para( ).
+    then_2_eve_param_shown( ).
+  ENDMETHOD.                    &quot;gcep_2_eve_PARAM
+
+  METHOD gcep_3_eve_param.
+    given_3_eve_param( ).
+    when_generate_code_events_para( ).
+    then_3_eve_param_shown( ).
+  ENDMETHOD.                    &quot;gcep_3_eve_PARAM
+
+
+************************************************
+* GIVEN
+************************************************
+
+  METHOD given_0_eve_param.
+    REFRESH me-&gt;t_event_parameters.
+  ENDMETHOD.                    &quot;GIVEN_0_eve_PARAM
+
+  METHOD given_1_eve_param.
+    DATA lwa_event_parameter TYPE seos_parameter_r.
+    lwa_event_parameter-typtype = 1.
+    lwa_event_parameter-type = &apos;DTEL&apos;.
+    lwa_event_parameter-cmptype = 2. &quot; event
+    APPEND lwa_event_parameter TO me-&gt;t_event_parameters.
+  ENDMETHOD.                    &quot;GIVEN_1_eve_PARAM
+
+  METHOD given_2_eve_param.
+    given_1_eve_param( ).
+    DATA lwa_event_parameter TYPE seos_parameter_r.
+    lwa_event_parameter-typtype = 3.
+    lwa_event_parameter-type = &apos;CL_A&apos;.
+    lwa_event_parameter-cmptype = 2.
+    APPEND lwa_event_parameter TO me-&gt;t_event_parameters.
+  ENDMETHOD.                    &quot;GIVEN_2_eve_PARAM
+
+  METHOD given_3_eve_param.
+    given_2_eve_param( ).
+    DATA lwa_event_parameter TYPE seos_parameter_r.
+    lwa_event_parameter-typtype = 1.
+    lwa_event_parameter-type = &apos;TTYP&apos;.
+    lwa_event_parameter-cmptype = 2.
+    APPEND lwa_event_parameter TO me-&gt;t_event_parameters.
+  ENDMETHOD.                    &quot;GIVEN_3_eve_PARAM
+
+************************************************
+* WHEN
+************************************************
+
+  METHOD when_generate_code_events_para.
+
+    TYPE-POOLS seoo.
+    DATA lo_wb_class TYPE REF TO zcl_wb_class.
+    DATA lo_mocker TYPE REF TO zif_mocka_mocker.
+
+    DATA lt_events TYPE seoo_events_r.
+    DATA lwa_event TYPE seoo_event_r.
+    APPEND lwa_event TO lt_events.
+
+    lo_mocker = zcl_mocka_mocker=&gt;zif_mocka_mocker~mock( iv_interface = &apos;ZCL_WB_CLASS&apos; ).
+    lo_mocker-&gt;attribute( iv_attribute = &apos;EVENTS&apos; )-&gt;returns( i_return = lt_events  ).
+    lo_mocker-&gt;attribute( iv_attribute = &apos;PARAMETERS&apos; )-&gt;returns( i_return = me-&gt;t_event_parameters  ).
+
+    lo_wb_class ?= lo_mocker-&gt;generate_mockup( ).
+
+    CREATE OBJECT me-&gt;o_yuml_class
+      EXPORTING
+        im_wb_class = lo_wb_class.
+
+
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_events_param = me-&gt;v_show_event_param.
+    v_yuml_code = me-&gt;o_yuml_class-&gt;generate_code_events_param( im_wa_event = lwa_event ).
+
+  ENDMETHOD.                    &quot;when_mut1
+
+************************************************
+* THEN
+************************************************
+
+  METHOD then_0_eve_param_shown.
+
+    cl_aunit_assert=&gt;assert_equals(
+      EXPORTING
+        exp                  = &apos;( )&apos;     &quot; Data Object with Expected Type
+        act                  = me-&gt;v_yuml_code    &quot; Data Object with Current Value
+*    msg                  =     &quot; Message in Case of Error
+*    level                = CRITICAL    &quot; Error Severity
+*    tol                  =     &quot; Tolerance Range for Floating Point Numbers
+*    quit                 = METHOD    &quot; Flow Control in Case of Error
+*    ignore_hash_sequence = ABAP_FALSE    &quot; Ignore change sequence in hash tables
+*  RECEIVING
+*    assertion_failed     =     &quot; Condition not met
+    ).
+
+  ENDMETHOD.                    &quot;THEN_0_eve_shOWN
+
+  METHOD then_1_eve_param_shown.
+
+    cl_aunit_assert=&gt;assert_equals(
+      EXPORTING
+        exp                  = &apos;( DTEL )&apos;     &quot; Data Object with Expected Type
+        act                  = me-&gt;v_yuml_code    &quot; Data Object with Current Value
+*    msg                  =     &quot; Message in Case of Error
+*    level                = CRITICAL    &quot; Error Severity
+*    tol                  =     &quot; Tolerance Range for Floating Point Numbers
+*    quit                 = METHOD    &quot; Flow Control in Case of Error
+*    ignore_hash_sequence = ABAP_FALSE    &quot; Ignore change sequence in hash tables
+*  RECEIVING
+*    assertion_failed     =     &quot; Condition not met
+    ).
+
+  ENDMETHOD.                    &quot;THEN_1_eve_shOWN
+
+  METHOD then_2_eve_param_shown.
+
+    cl_aunit_assert=&gt;assert_equals(
+      EXPORTING
+        exp                  = &apos;( DTEL; REF CL_A )&apos;     &quot; Data Object with Expected Type
+        act                  = me-&gt;v_yuml_code    &quot; Data Object with Current Value
+*    msg                  =     &quot; Message in Case of Error
+*    level                = CRITICAL    &quot; Error Severity
+*    tol                  =     &quot; Tolerance Range for Floating Point Numbers
+*    quit                 = METHOD    &quot; Flow Control in Case of Error
+*    ignore_hash_sequence = ABAP_FALSE    &quot; Ignore change sequence in hash tables
+*  RECEIVING
+*    assertion_failed     =     &quot; Condition not met
+    ).
+
+  ENDMETHOD.                    &quot;THEN_2_eve_shOWN
+
+  METHOD then_3_eve_param_shown.
+
+    cl_aunit_assert=&gt;assert_equals(
+      EXPORTING
+        exp                  = &apos;( DTEL; REF CL_A; TTYP )&apos;     &quot; Data Object with Expected Type
+        act                  = me-&gt;v_yuml_code    &quot; Data Object with Current Value
+*    msg                  =     &quot; Message in Case of Error
+*    level                = CRITICAL    &quot; Error Severity
+*    tol                  =     &quot; Tolerance Range for Floating Point Numbers
+*    quit                 = METHOD    &quot; Flow Control in Case of Error
+*    ignore_hash_sequence = ABAP_FALSE    &quot; Ignore change sequence in hash tables
+*  RECEIVING
+*    assertion_failed     =     &quot; Condition not met
+    ).
+
+  ENDMETHOD.                    &quot;THEN_3_eve_shOWN
+
+ENDCLASS.                    &quot;zcl_yuml_class_many_evep_test IMPLEMENTATION</localTestClasses>
   <attribute CLSNAME="ZCL_YUML_CLASS" CMPNAME="O_CLASS" VERSION="1" LANGU="E" DESCRIPT="O_CLASS" EXPOSURE="1" STATE="1" EDITORDER="1 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="3" TYPE="ZCL_WB_CLASS" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
   <attribute CLSNAME="ZCL_YUML_CLASS" CMPNAME="O_CONFIGURATION" VERSION="1" LANGU="E" EXPOSURE="1" STATE="1" EDITORDER="2 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="3" TYPE="ZIF_YUML_CONFIGURATION_CLASS" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
   <interfaceMethod CLSNAME="ZCL_YUML_CLASS" CPDNAME="ZIF_YUML_CONCEPT~GENERATE_CODE">
@@ -2351,15 +3179,15 @@ ENDCLASS.                    &quot;zcl_yuml_class_many_att_test IMPLEMENTATION</
     DATA lv_inheritance_code TYPE string.
     DATA lv_implementings_code TYPE string.
 
-    IF me-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_attributes = abap_true.
+    IF me-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_attributes = abap_true.
       lv_attributes_code  = me-&gt;generate_code_attributes( ).
     ENDIF.
 
-    IF me-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_methods = abap_true.
+    IF me-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_methods = abap_true.
       lv_methods_code     = me-&gt;generate_code_methods( ).
     ENDIF.
 
-    IF me-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_events = abap_true.
+    IF me-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_events = abap_true.
       lv_events_code      = me-&gt;generate_code_events( ).
     ENDIF.
 
@@ -2367,7 +3195,7 @@ ENDCLASS.                    &quot;zcl_yuml_class_many_att_test IMPLEMENTATION</
       lv_inheritance_code = me-&gt;generate_code_inheritance( ).
     ENDIF.
 
-    IF me-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_implementations = abap_true.
+    IF me-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_implementations = abap_true.
       lv_implementings_code = me-&gt;generate_code_implementations( ).
     ENDIF.
 
@@ -2439,7 +3267,7 @@ ENDCLASS.                    &quot;zcl_yuml_class_many_att_test IMPLEMENTATION</
         ENDCASE.
 
 
-        IF me-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_attr_types = abap_true.
+        IF me-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_attr_types = abap_true.
           lv_attr_type = me-&gt;generate_code_attr_types( lv_wa_attribute ).
         ENDIF.
 
@@ -2487,8 +3315,15 @@ ENDCLASS.                    &quot;zcl_yuml_class_many_att_test IMPLEMENTATION</
 
     DATA lv_wa_event TYPE seoo_event_r.
     DATA lv_exposure_code TYPE string.
+    DATA lv_event_param TYPE string. &quot; Code of events parameters
 
-    IF me-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_events = abap_true.
+    IF me-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_events = abap_true.
+
+      IF me-&gt;o_class-&gt;events IS INITIAL.
+        re_code = &apos;|;&apos;.
+        RETURN.
+      ENDIF.
+
       re_code = &apos;|&apos;.
       LOOP AT me-&gt;o_class-&gt;events INTO lv_wa_event.
         CASE lv_wa_event-exposure.
@@ -2500,15 +3335,73 @@ ENDCLASS.                    &quot;zcl_yuml_class_many_att_test IMPLEMENTATION</
             lv_exposure_code = &apos;+&apos;.
         ENDCASE.
 
-        CONCATENATE: re_code lv_exposure_code lv_wa_event-cmpname &apos;;&apos; INTO re_code.
+        lv_event_param = me-&gt;generate_code_events_param( lv_wa_event ).
+
+        CASE lv_wa_event-evtdecltyp.
+          WHEN 0. &quot; instance attribute
+            CONCATENATE: re_code lv_exposure_code lv_wa_event-cmpname lv_event_param &apos;;&apos; INTO re_code.
+          WHEN 1. &quot; static
+            CONCATENATE: re_code lv_exposure_code &apos;_&apos; lv_wa_event-cmpname &apos;_&apos; lv_event_param &apos;;&apos; INTO re_code.
+        ENDCASE.
+
       ENDLOOP.
 
     ENDIF.
 
-
   ENDMETHOD.                    &quot;GENERATE_CODE_EVENTS</source>
   </method>
-  <method CLSNAME="ZCL_YUML_CLASS" CMPNAME="GENERATE_CODE_IMPLEMENTATIONS" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE_IMPLEMENTATIONS" EXPOSURE="1" STATE="1" EDITORDER="7 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+  <method CLSNAME="ZCL_YUML_CLASS" CMPNAME="GENERATE_CODE_EVENTS_PARAM" VERSION="1" LANGU="E" EXPOSURE="1" STATE="1" EDITORDER="6 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="GENERATE_CODE_EVENTS_PARAM" SCONAME="IM_WA_EVENT" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="SEOO_EVENT_R"/>
+   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="GENERATE_CODE_EVENTS_PARAM" SCONAME="RE_CODE" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+   <source>METHOD generate_code_events_param.
+
+    DATA lv_wa_parameter TYPE vseoparam.
+    DATA lv_param_code   TYPE string.
+    DATA lv_number_of_parameters TYPE i.
+    DATA lv_new_param TYPE string.
+    DATA lt_events_parameters LIKE me-&gt;o_class-&gt;parameters.
+
+    IF me-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_events_param = abap_true.
+
+      lt_events_parameters = me-&gt;o_class-&gt;parameters.
+      DELETE lt_events_parameters WHERE cmptype &lt;&gt; 2.
+
+      lv_number_of_parameters = lines( lt_events_parameters ) .
+      IF lv_number_of_parameters = 1.
+
+        LOOP AT lt_events_parameters INTO lv_wa_parameter WHERE cmpname = im_wa_event-cmpname.
+          IF lv_wa_parameter-typtype = 3. &quot; Reference
+            CONCATENATE &apos;REF&apos; lv_wa_parameter-type INTO lv_param_code SEPARATED BY &apos; &apos;.
+          ELSE.
+            lv_param_code = lv_wa_parameter-type.
+          ENDIF.
+        ENDLOOP.
+
+      ELSE. &quot; 2 or more parameters = separete them by semicolon
+
+        LOOP AT lt_events_parameters INTO lv_wa_parameter WHERE cmpname = im_wa_event-cmpname.
+          IF lv_wa_parameter-typtype = 3. &quot; Reference
+            CONCATENATE &apos;REF&apos; lv_wa_parameter-type INTO lv_new_param SEPARATED BY &apos; &apos;.
+            CONCATENATE lv_param_code lv_new_param &apos;; &apos; INTO lv_param_code RESPECTING BLANKS.
+          ELSE.
+            lv_new_param = lv_wa_parameter-type.
+            CONCATENATE lv_param_code lv_new_param &apos;; &apos; INTO lv_param_code RESPECTING BLANKS.
+          ENDIF.
+        ENDLOOP.
+
+      ENDIF.
+
+      IF lv_param_code IS NOT INITIAL.
+        CONCATENATE &apos;( &apos; lv_param_code &apos; )&apos; INTO re_code RESPECTING BLANKS.
+        REPLACE FIRST OCCURRENCE OF &apos;;  )&apos; IN re_code WITH &apos; )&apos;. &quot; remove , from the last parameter
+      ELSE.
+        re_code = &apos;( )&apos;.
+      ENDIF.
+    ENDIF.
+
+  ENDMETHOD.                    &quot;GENERATE_CODE_EVENTS_PARAM</source>
+  </method>
+  <method CLSNAME="ZCL_YUML_CLASS" CMPNAME="GENERATE_CODE_IMPLEMENTATIONS" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE_IMPLEMENTATIONS" EXPOSURE="1" STATE="1" EDITORDER="8 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
    <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="GENERATE_CODE_IMPLEMENTATIONS" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
    <source>METHOD generate_code_implementations.
 
@@ -2526,7 +3419,7 @@ ENDCLASS.                    &quot;zcl_yuml_class_many_att_test IMPLEMENTATION</
 
   ENDMETHOD.                    &quot;GENERATE_CODE_IMPLEMENTATIONS</source>
   </method>
-  <method CLSNAME="ZCL_YUML_CLASS" CMPNAME="GENERATE_CODE_INHERITANCE" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE_INHERITANCE" EXPOSURE="1" STATE="1" EDITORDER="6 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+  <method CLSNAME="ZCL_YUML_CLASS" CMPNAME="GENERATE_CODE_INHERITANCE" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE_INHERITANCE" EXPOSURE="1" STATE="1" EDITORDER="7 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
    <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="GENERATE_CODE_INHERITANCE" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
    <source>METHOD generate_code_inheritance.
 
@@ -2545,7 +3438,7 @@ ENDCLASS.                    &quot;zcl_yuml_class_many_att_test IMPLEMENTATION</
     DATA lv_exposure_code TYPE string.
     DATA lv_meth_param TYPE string. &quot; Code of method parameters
 
-    IF me-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_methods = abap_true.
+    IF me-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_methods = abap_true.
 
       IF me-&gt;o_class-&gt;methods IS INITIAL.
         re_code = &apos;|;&apos;.
@@ -2563,9 +3456,7 @@ ENDCLASS.                    &quot;zcl_yuml_class_many_att_test IMPLEMENTATION</
             lv_exposure_code = &apos;+&apos;.
         ENDCASE.
 
-        IF me-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_meth_param = abap_true.
-          lv_meth_param = me-&gt;generate_code_method_param( lv_wa_method ).
-        ENDIF.
+        lv_meth_param = me-&gt;generate_code_method_param( lv_wa_method ).
 
         CASE lv_wa_method-mtddecltyp.
           WHEN 0. &quot; instance attribute
@@ -2589,23 +3480,29 @@ ENDCLASS.                    &quot;zcl_yuml_class_many_att_test IMPLEMENTATION</
     DATA lv_param_code   TYPE string.
     DATA lv_number_of_parameters TYPE i.
     DATA lv_new_param TYPE string.
+    DATA lt_method_parameters LIKE me-&gt;o_class-&gt;parameters.
 
-    IF me-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_meth_param = abap_true.
+    lt_method_parameters =  me-&gt;o_class-&gt;parameters.
 
-      lv_number_of_parameters = lines( me-&gt;o_class-&gt;parameters ).
+    DELETE lt_method_parameters WHERE cmptype &lt;&gt; 1.
+
+    IF me-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_meth_param = abap_false.
+      re_code = space.
+      RETURN.
+    ELSE.
+
+      lv_number_of_parameters = lines( lt_method_parameters ).
       IF lv_number_of_parameters = 1.
-
-        LOOP AT me-&gt;o_class-&gt;parameters INTO lv_wa_parameter WHERE cmpname = im_wa_method-cmpname.
-          IF lv_wa_parameter-typtype = 3. &quot; Reference
-            CONCATENATE &apos;REF&apos; lv_wa_parameter-type INTO lv_param_code SEPARATED BY &apos; &apos;.
-          ELSE.
-            lv_param_code = lv_wa_parameter-type.
-          ENDIF.
-        ENDLOOP.
+        READ TABLE lt_method_parameters INDEX 1 INTO lv_wa_parameter.
+        IF lv_wa_parameter-typtype = 3. &quot; Reference
+          CONCATENATE &apos;REF&apos; lv_wa_parameter-type INTO lv_param_code SEPARATED BY &apos; &apos;.
+        ELSE.
+          lv_param_code = lv_wa_parameter-type.
+        ENDIF.
 
       ELSE. &quot; 2 or more parameters = separete them by semicolon
 
-        LOOP AT me-&gt;o_class-&gt;parameters INTO lv_wa_parameter WHERE cmpname = im_wa_method-cmpname.
+        LOOP AT lt_method_parameters INTO lv_wa_parameter WHERE cmpname = im_wa_method-cmpname.
           IF lv_wa_parameter-typtype = 3. &quot; Reference
             CONCATENATE &apos;REF&apos; lv_wa_parameter-type INTO lv_new_param SEPARATED BY &apos; &apos;.
             CONCATENATE lv_param_code lv_new_param &apos;; &apos; INTO lv_param_code RESPECTING BLANKS.
@@ -2631,14 +3528,6 @@ ENDCLASS.                    &quot;zcl_yuml_class_many_att_test IMPLEMENTATION</
    <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="SET_CONFIGURATION" SCONAME="IM_CONFIGURATION" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="3" TYPE="ZIF_YUML_CONFIGURATION_CLASS"/>
    <source>METHOD set_configuration.
     me-&gt;o_configuration = im_configuration.
-*    me-&gt;code_setting_show_attributes  = im_show_attributes.
-*    me-&gt;code_setting_show_attr_types  = im_show_attr_types.
-*    me-&gt;code_setting_show_methods     = im_show_methods.
-*    me-&gt;code_setting_show_meth_param  = im_show_meth_param.
-*    me-&gt;code_setting_show_events      = im_show_events.
-*    me-&gt;code_setting_show_inhe        = im_show_inherintance.
-*    me-&gt;code_setting_show_impl        = im_show_implementations.
-
   ENDMETHOD.                    &quot;SET_CONFIGURATION</source>
   </method>
  </CLAS>
@@ -3912,16 +4801,6 @@ START-OF-SELECTION.
       EXPORTING
         im_wb_class = o_wb_class.
 
-    o_yuml_class-&gt;set_code_settings(
-      EXPORTING
-        im_show_attributes      = p_attr
-        im_show_attr_types      = p_adef
-        im_show_methods         = p_meth
-        im_show_meth_param      = p_mpar
-        im_show_events          = p_even
-        im_show_inherintance    = p_inhe
-        im_show_implementations = p_impl
-    ).
 
     code = o_yuml_class-&gt;zif_yuml_concept~generate_code( ).
 
@@ -3932,18 +4811,6 @@ START-OF-SELECTION.
     CREATE OBJECT o_yuml_interface
       EXPORTING
         im_wb_interface = o_wb_interface.
-
-
-    o_yuml_interface-&gt;set_code_settings(
-    EXPORTING
-      im_show_attributes      = p_attr
-      im_show_attr_types      = p_adef
-      im_show_methods         = p_meth
-      im_show_meth_param      = p_mpar
-      im_show_events          = p_even
-      im_show_inherintance    = p_inhe
-      im_show_implementations = p_impl
-  ).
 
     code = o_yuml_interface-&gt;zif_yuml_concept~generate_code( ).
   ENDIF.
@@ -4662,6 +5529,7 @@ ENDCLASS.                    &quot;lcl_yuml_search_criteria_stub IMPLEMENTATION<
         im_chk_show_methods         = im_chk_show_methods
         im_chk_show_meth_param      = im_chk_show_meth_param
         im_chk_show_events          = im_chk_show_events
+        im_chk_show_events_param    = im_chk_show_events_param
         im_chk_show_implementations = im_chk_show_implementations
     ).
 
@@ -4681,6 +5549,7 @@ ENDCLASS.                    &quot;lcl_yuml_search_criteria_stub IMPLEMENTATION<
         im_chk_show_methods         = abap_true
         im_chk_show_meth_param      = abap_false
         im_chk_show_events          = abap_true
+        im_chk_show_events_param    = abap_false
         im_chk_show_implementations = abap_false &quot; once implementations works perfectly, change this to TRUE
     ).
 
@@ -4707,6 +5576,7 @@ ENDCLASS.                    &quot;lcl_yuml_search_criteria_stub IMPLEMENTATION<
     me-&gt;zif_yuml_configuration_cl_if~v_chk_show_methods = im_chk_show_methods.
     me-&gt;zif_yuml_configuration_cl_if~v_chk_show_meth_param = im_chk_show_meth_param.
     me-&gt;zif_yuml_configuration_cl_if~v_chk_show_events = im_chk_show_events.
+    me-&gt;zif_yuml_configuration_cl_if~v_chk_show_events_param = im_chk_show_events_param.
     me-&gt;zif_yuml_configuration_cl_if~v_chk_show_implementations = im_chk_show_implementations.
 
   ENDMETHOD.                    &quot;zif_yuml_configuration_cl_if~create_configuration</source>
@@ -4722,6 +5592,7 @@ ENDCLASS.                    &quot;lcl_yuml_search_criteria_stub IMPLEMENTATION<
         im_chk_show_methods         = abap_true
         im_chk_show_meth_param      = abap_false
         im_chk_show_events          = abap_true
+        im_chk_show_events_param    = abap_false
         im_chk_show_implementations = abap_false &quot; once implementations works perfectly, change this to TRUE
     ).
 
@@ -4752,6 +5623,7 @@ ENDCLASS.                    &quot;lcl_yuml_search_criteria_stub IMPLEMENTATION<
         im_chk_show_methods         = abap_true
         im_chk_show_meth_param      = abap_false
         im_chk_show_events          = abap_true
+        im_chk_show_events_param    = abap_false
         im_chk_show_implementations = abap_false &quot; once implementations works perfectly, change this to TRUE
     ).
 
@@ -4771,7 +5643,8 @@ ENDCLASS.                    &quot;lcl_yuml_search_criteria_stub IMPLEMENTATION<
   <attribute CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="V_CHK_SHOW_ATTRIBUTES" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="1 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
   <attribute CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="V_CHK_SHOW_ATTR_TYPES" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="2 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
   <attribute CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="V_CHK_SHOW_EVENTS" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="5 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
-  <attribute CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="V_CHK_SHOW_IMPLEMENTATIONS" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="6 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="V_CHK_SHOW_EVENTS_PARAM" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="6 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="V_CHK_SHOW_IMPLEMENTATIONS" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="7 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
   <attribute CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="V_CHK_SHOW_METHODS" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="3 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
   <attribute CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="V_CHK_SHOW_METH_PARAM" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="4 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
   <method CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="CREATE_CONFIGURATION" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="1 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
@@ -4780,7 +5653,8 @@ ENDCLASS.                    &quot;lcl_yuml_search_criteria_stub IMPLEMENTATION<
    <parameter CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="CREATE_CONFIGURATION" SCONAME="IM_CHK_SHOW_METHODS" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL"/>
    <parameter CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="CREATE_CONFIGURATION" SCONAME="IM_CHK_SHOW_METH_PARAM" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="4 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL"/>
    <parameter CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="CREATE_CONFIGURATION" SCONAME="IM_CHK_SHOW_EVENTS" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="5 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL"/>
-   <parameter CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="CREATE_CONFIGURATION" SCONAME="IM_CHK_SHOW_IMPLEMENTATIONS" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="6 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL"/>
+   <parameter CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="CREATE_CONFIGURATION" SCONAME="IM_CHK_SHOW_EVENTS_PARAM" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="6 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL"/>
+   <parameter CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="CREATE_CONFIGURATION" SCONAME="IM_CHK_SHOW_IMPLEMENTATIONS" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="7 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL"/>
   </method>
  </INTF>
  <INTF CLSNAME="ZIF_YUML_CONFIGURATION_INTER" VERSION="1" LANGU="E" DESCRIPT="Configuration of an interface" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" UNICODE="X">
