@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<nugget name="YUML_ABAP-V-1.1">
+<nugget name="YUML_ABAP-V-1.0">
  <CLAS CLSNAME="ZCL_YUML_ACTIVITY_DIAGRAM" VERSION="1" LANGU="E" DESCRIPT="ZCL_YUML_ACTIVITY_DIAGRAM" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" CLSCCINCL="X" FIXPT="X" UNICODE="X" CLSBCCAT="00" DURATION_TYPE="0 " RISK_LEVEL="0 ">
   <implementing CLSNAME="ZCL_YUML_ACTIVITY_DIAGRAM" REFCLSNAME="ZIF_YUML_DIAGRAM" VERSION="1" EXPOSURE="2" STATE="1" RELTYPE="1" EDITORDER="0 "/>
   <localImplementation>*&quot;* use this source file for the definition and implementation of
@@ -172,6 +172,7 @@ CLASS zcl_yuml_class_attribute_test IMPLEMENTATION.
 ************************************************
 
   METHOD gca_instance_public.
+  break-point.
     given_visibility_public( ).
     given_level_instance( ).
     when_generate_code_attributes( ).
@@ -312,8 +313,8 @@ CLASS zcl_yuml_class_attribute_test IMPLEMENTATION.
       EXPORTING
         im_wb_class = lo_wb_class.
 
-    me-&gt;o_yuml_class-&gt;code_setting_show_attributes = abap_true.
-    me-&gt;o_yuml_class-&gt;code_setting_show_attr_types = abap_false.
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_attributes = abap_true.
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_attr_types = abap_false.
 
     v_yuml_code =  me-&gt;o_yuml_class-&gt;generate_code_attributes( ).
 
@@ -763,8 +764,8 @@ CLASS zcl_yuml_class_many_att_test IMPLEMENTATION.
       EXPORTING
         im_wb_class = lo_wb_class.
 
-    me-&gt;o_yuml_class-&gt;code_setting_show_attributes = abap_true.
-    me-&gt;o_yuml_class-&gt;code_setting_show_attr_types = abap_false.
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_attributes = abap_true.
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_attr_types = abap_false.
 
     v_yuml_code =  me-&gt;o_yuml_class-&gt;generate_code_attributes( ).
 
@@ -1045,8 +1046,8 @@ CLASS zcl_yuml_class_attr_type_test IMPLEMENTATION.
       EXPORTING
         im_wb_class = lo_wb_class.
 
-    me-&gt;o_yuml_class-&gt;code_setting_show_attributes = abap_false.
-    me-&gt;o_yuml_class-&gt;code_setting_show_attr_types = me-&gt;v_show_att_types.
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_attributes = abap_false.
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_attr_types = me-&gt;v_show_att_types.
 
 
     DATA lwa_attribute TYPE seoo_attribute_r.
@@ -1402,8 +1403,8 @@ CLASS zcl_yuml_class_methods_test IMPLEMENTATION.
       EXPORTING
         im_wb_class = lo_wb_class.
 
-    me-&gt;o_yuml_class-&gt;code_setting_show_methods = abap_true.
-    me-&gt;o_yuml_class-&gt;code_setting_show_meth_param = abap_false.
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_methods = abap_true.
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_meth_param = abap_false.
 
     v_yuml_code =  me-&gt;o_yuml_class-&gt;generate_code_methods( ).
 
@@ -1677,8 +1678,8 @@ CLASS zcl_yuml_class_many_met_test IMPLEMENTATION.
       EXPORTING
         im_wb_class = lo_wb_class.
 
-    me-&gt;o_yuml_class-&gt;code_setting_show_methods = abap_true.
-    me-&gt;o_yuml_class-&gt;code_setting_show_meth_param = abap_false.
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_methods = abap_true.
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_meth_param = abap_false.
 
     v_yuml_code =  me-&gt;o_yuml_class-&gt;generate_code_methods( ).
 
@@ -1964,7 +1965,7 @@ CLASS zcl_yuml_class_meth_param_test IMPLEMENTATION.
       EXPORTING
         im_wb_class = lo_wb_class.
 
-    me-&gt;o_yuml_class-&gt;code_setting_show_meth_param = me-&gt;v_show_meth_param.
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_meth_param = me-&gt;v_show_meth_param.
     v_yuml_code = me-&gt;o_yuml_class-&gt;generate_code_method_param( im_wa_method = lwa_method ).
 
   ENDMETHOD.                    &quot;when_mut1
@@ -2195,14 +2196,12 @@ CLASS zcl_yuml_class_many_methp_test IMPLEMENTATION.
 
   METHOD gcmp_2_met_param.
     given_2_met_param( ).
-    break-point.
     when_generate_code_meth_param( ).
     then_2_met_param_shown( ).
   ENDMETHOD.                    &quot;GCMP_2_MET_PARAM
 
   METHOD gcmp_3_met_param.
     given_3_met_param( ).
-        break-point.
     when_generate_code_meth_param( ).
     then_3_met_param_shown( ).
   ENDMETHOD.                    &quot;GCMP_3_MET_PARAM
@@ -2263,7 +2262,7 @@ CLASS zcl_yuml_class_many_methp_test IMPLEMENTATION.
       EXPORTING
         im_wb_class = lo_wb_class.
 
-    me-&gt;o_yuml_class-&gt;code_setting_show_meth_param = me-&gt;v_show_meth_param.
+    me-&gt;o_yuml_class-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_meth_param = me-&gt;v_show_meth_param.
     v_yuml_code = me-&gt;o_yuml_class-&gt;generate_code_method_param( im_wa_method = lwa_method ).
 
   ENDMETHOD.                    &quot;when_mut1
@@ -2341,14 +2340,8 @@ CLASS zcl_yuml_class_many_methp_test IMPLEMENTATION.
   ENDMETHOD.                    &quot;THEN_3_met_SHOWN
 
 ENDCLASS.                    &quot;zcl_yuml_class_many_att_test IMPLEMENTATION</localTestClasses>
-  <attribute CLSNAME="ZCL_YUML_CLASS" CMPNAME="CODE_SETTING_SHOW_ATTRIBUTES" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_ATTRIBUTES" EXPOSURE="1" STATE="1" EDITORDER="2 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
-  <attribute CLSNAME="ZCL_YUML_CLASS" CMPNAME="CODE_SETTING_SHOW_ATTR_TYPES" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_ATTR_TYPES" EXPOSURE="1" STATE="1" EDITORDER="3 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
-  <attribute CLSNAME="ZCL_YUML_CLASS" CMPNAME="CODE_SETTING_SHOW_EVENTS" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_EVENTS" EXPOSURE="1" STATE="1" EDITORDER="6 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
-  <attribute CLSNAME="ZCL_YUML_CLASS" CMPNAME="CODE_SETTING_SHOW_IMPL" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_IMPL" EXPOSURE="1" STATE="1" EDITORDER="8 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
-  <attribute CLSNAME="ZCL_YUML_CLASS" CMPNAME="CODE_SETTING_SHOW_INHE" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_INHE" EXPOSURE="1" STATE="1" EDITORDER="7 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
-  <attribute CLSNAME="ZCL_YUML_CLASS" CMPNAME="CODE_SETTING_SHOW_METHODS" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_METHODS" EXPOSURE="1" STATE="1" EDITORDER="4 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
-  <attribute CLSNAME="ZCL_YUML_CLASS" CMPNAME="CODE_SETTING_SHOW_METH_PARAM" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_METH_PARAM" EXPOSURE="1" STATE="1" EDITORDER="5 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
   <attribute CLSNAME="ZCL_YUML_CLASS" CMPNAME="O_CLASS" VERSION="1" LANGU="E" DESCRIPT="O_CLASS" EXPOSURE="1" STATE="1" EDITORDER="1 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="3" TYPE="ZCL_WB_CLASS" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_YUML_CLASS" CMPNAME="O_CONFIGURATION" VERSION="1" LANGU="E" EXPOSURE="1" STATE="1" EDITORDER="2 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="3" TYPE="ZIF_YUML_CONFIGURATION_CLASS" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
   <interfaceMethod CLSNAME="ZCL_YUML_CLASS" CPDNAME="ZIF_YUML_CONCEPT~GENERATE_CODE">
    <source>METHOD zif_yuml_concept~generate_code.
 
@@ -2358,23 +2351,23 @@ ENDCLASS.                    &quot;zcl_yuml_class_many_att_test IMPLEMENTATION</
     DATA lv_inheritance_code TYPE string.
     DATA lv_implementings_code TYPE string.
 
-    IF me-&gt;code_setting_show_attributes = abap_true.
+    IF me-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_attributes = abap_true.
       lv_attributes_code  = me-&gt;generate_code_attributes( ).
     ENDIF.
 
-    IF me-&gt;code_setting_show_methods = abap_true.
+    IF me-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_methods = abap_true.
       lv_methods_code     = me-&gt;generate_code_methods( ).
     ENDIF.
 
-    IF me-&gt;code_setting_show_events = abap_true.
+    IF me-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_events = abap_true.
       lv_events_code      = me-&gt;generate_code_events( ).
     ENDIF.
 
-    IF me-&gt;code_setting_show_inhe = abap_true.
+    IF me-&gt;o_configuration-&gt;v_chk_show_inherintance = abap_true.
       lv_inheritance_code = me-&gt;generate_code_inheritance( ).
     ENDIF.
 
-    IF me-&gt;code_setting_show_impl = abap_true.
+    IF me-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_implementations = abap_true.
       lv_implementings_code = me-&gt;generate_code_implementations( ).
     ENDIF.
 
@@ -2400,20 +2393,22 @@ ENDCLASS.                    &quot;zcl_yuml_class_many_att_test IMPLEMENTATION</
   </interfaceMethod>
   <method CLSNAME="ZCL_YUML_CLASS" CMPNAME="CONSTRUCTOR" VERSION="1" LANGU="E" DESCRIPT="CONSTRUCTOR" EXPOSURE="2" STATE="1" EDITORDER="1 " DISPID="0 " MTDTYPE="2" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
    <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="CONSTRUCTOR" SCONAME="IM_WB_CLASS" VERSION="1" LANGU="E" DESCRIPT="IM_WB_CLASS" CMPTYPE="1" MTDTYPE="2" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="3" TYPE="ZCL_WB_CLASS"/>
+   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="CONSTRUCTOR" SCONAME="IM_CONFIGURATION" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="2" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="3" TYPE="ZIF_YUML_CONFIGURATION_CLASS" PAROPTIONL="X"/>
    <source>METHOD constructor.
 
     me-&gt;o_class = im_wb_class.
 
-    me-&gt;set_code_settings(
-        im_show_attributes      = abap_true
-        im_show_attr_types      = abap_true
-        im_show_methods         = abap_true
-        im_show_meth_param      = abap_false
-        im_show_events          = abap_false
-        im_show_inherintance    = abap_true
-        im_show_implementations = abap_false
-    ).
+    IF im_configuration IS SUPPLIED.
+      me-&gt;o_configuration = im_configuration.
+    ELSE.
 
+      DATA lo_default_configuration TYPE REF TO zif_yuml_configuration_class.
+
+      CREATE OBJECT lo_default_configuration
+        TYPE zcl_yuml_configuration_class.
+
+      me-&gt;set_configuration( im_configuration = lo_default_configuration ).
+    ENDIF.
 
   ENDMETHOD.                    &quot;CONSTRUCTOR</source>
   </method>
@@ -2425,7 +2420,7 @@ ENDCLASS.                    &quot;zcl_yuml_class_many_att_test IMPLEMENTATION</
     DATA lv_exposure_code TYPE string.
     DATA lv_attr_type     TYPE string. &quot; Code of attribute types
 
-    IF me-&gt;code_setting_show_attributes = abap_true.
+    IF me-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_attributes = abap_true.
       IF me-&gt;o_class-&gt;attributes IS INITIAL.
         re_code = &apos;|;&apos;.
         RETURN.
@@ -2444,7 +2439,7 @@ ENDCLASS.                    &quot;zcl_yuml_class_many_att_test IMPLEMENTATION</
         ENDCASE.
 
 
-        IF me-&gt;code_setting_show_attr_types = abap_true. &quot; move this to inside the responsible method
+        IF me-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_attr_types = abap_true.
           lv_attr_type = me-&gt;generate_code_attr_types( lv_wa_attribute ).
         ENDIF.
 
@@ -2493,7 +2488,7 @@ ENDCLASS.                    &quot;zcl_yuml_class_many_att_test IMPLEMENTATION</
     DATA lv_wa_event TYPE seoo_event_r.
     DATA lv_exposure_code TYPE string.
 
-    IF me-&gt;code_setting_show_events = abap_true.
+    IF me-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_events = abap_true.
       re_code = &apos;|&apos;.
       LOOP AT me-&gt;o_class-&gt;events INTO lv_wa_event.
         CASE lv_wa_event-exposure.
@@ -2550,7 +2545,7 @@ ENDCLASS.                    &quot;zcl_yuml_class_many_att_test IMPLEMENTATION</
     DATA lv_exposure_code TYPE string.
     DATA lv_meth_param TYPE string. &quot; Code of method parameters
 
-    IF me-&gt;code_setting_show_methods = abap_true.
+    IF me-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_methods = abap_true.
 
       IF me-&gt;o_class-&gt;methods IS INITIAL.
         re_code = &apos;|;&apos;.
@@ -2568,7 +2563,7 @@ ENDCLASS.                    &quot;zcl_yuml_class_many_att_test IMPLEMENTATION</
             lv_exposure_code = &apos;+&apos;.
         ENDCASE.
 
-        IF me-&gt;code_setting_show_meth_param = abap_true.
+        IF me-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_meth_param = abap_true.
           lv_meth_param = me-&gt;generate_code_method_param( lv_wa_method ).
         ENDIF.
 
@@ -2595,7 +2590,7 @@ ENDCLASS.                    &quot;zcl_yuml_class_many_att_test IMPLEMENTATION</
     DATA lv_number_of_parameters TYPE i.
     DATA lv_new_param TYPE string.
 
-    IF me-&gt;code_setting_show_meth_param = abap_true.
+    IF me-&gt;o_configuration-&gt;ZIF_YUML_CONFIGURATION_CL_IF~v_chk_show_meth_param = abap_true.
 
       lv_number_of_parameters = lines( me-&gt;o_class-&gt;parameters ).
       IF lv_number_of_parameters = 1.
@@ -2632,25 +2627,19 @@ ENDCLASS.                    &quot;zcl_yuml_class_many_att_test IMPLEMENTATION</
 
   ENDMETHOD.                    &quot;GENERATE_CODE_METHOD_PARAM</source>
   </method>
-  <method CLSNAME="ZCL_YUML_CLASS" CMPNAME="SET_CODE_SETTINGS" VERSION="1" LANGU="E" DESCRIPT="SET_CODE_SETTINGS" EXPOSURE="2" STATE="1" EDITORDER="2 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
-   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_ATTRIBUTES" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_ATTRIBUTES" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_TRUE"/>
-   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_ATTR_TYPES" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_ATTR_TYPES" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_TRUE"/>
-   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_METHODS" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_METHODS" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_TRUE"/>
-   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_METH_PARAM" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_METH_PARAM" CMPTYPE="1" MTDTYPE="0" EDITORDER="4 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_FALSE"/>
-   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_EVENTS" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_EVENTS" CMPTYPE="1" MTDTYPE="0" EDITORDER="5 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_FALSE"/>
-   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_INHERINTANCE" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_INHERINTANCE" CMPTYPE="1" MTDTYPE="0" EDITORDER="6 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_TRUE"/>
-   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_IMPLEMENTATIONS" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_IMPLEMENTATIONS" CMPTYPE="1" MTDTYPE="0" EDITORDER="7 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_TRUE"/>
-   <source>METHOD set_code_settings.
+  <method CLSNAME="ZCL_YUML_CLASS" CMPNAME="SET_CONFIGURATION" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="2 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_YUML_CLASS" CMPNAME="SET_CONFIGURATION" SCONAME="IM_CONFIGURATION" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="3" TYPE="ZIF_YUML_CONFIGURATION_CLASS"/>
+   <source>METHOD set_configuration.
+    me-&gt;o_configuration = im_configuration.
+*    me-&gt;code_setting_show_attributes  = im_show_attributes.
+*    me-&gt;code_setting_show_attr_types  = im_show_attr_types.
+*    me-&gt;code_setting_show_methods     = im_show_methods.
+*    me-&gt;code_setting_show_meth_param  = im_show_meth_param.
+*    me-&gt;code_setting_show_events      = im_show_events.
+*    me-&gt;code_setting_show_inhe        = im_show_inherintance.
+*    me-&gt;code_setting_show_impl        = im_show_implementations.
 
-    me-&gt;code_setting_show_attributes  = im_show_attributes.
-    me-&gt;code_setting_show_attr_types  = im_show_attr_types.
-    me-&gt;code_setting_show_methods     = im_show_methods.
-    me-&gt;code_setting_show_meth_param  = im_show_meth_param.
-    me-&gt;code_setting_show_events      = im_show_events.
-    me-&gt;code_setting_show_inhe        = im_show_inherintance.
-    me-&gt;code_setting_show_impl        = im_show_implementations.
-
-  ENDMETHOD.                    &quot;SET_CODE_SETTINGS</source>
+  ENDMETHOD.                    &quot;SET_CONFIGURATION</source>
   </method>
  </CLAS>
  <CLAS CLSNAME="ZCL_YUML_CLASS_DIAGRAM" VERSION="1" LANGU="E" DESCRIPT="ZCL_YUML_CLASS_DIAGRAM" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" CLSCCINCL="X" FIXPT="X" UNICODE="X" CLSBCCAT="00" DURATION_TYPE="0 " RISK_LEVEL="0 ">
@@ -2887,16 +2876,10 @@ endmethod.</source>
 **
 **
 **ENDCLASS.                    &quot;zcl__test IMPLEMENTATION</localTestClasses>
-  <attribute CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="CODE_SETTING_SHOW_ATTRIBUTES" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_ATTRIBUTES" EXPOSURE="1" STATE="1" EDITORDER="2 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
-  <attribute CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="CODE_SETTING_SHOW_ATTR_TYPES" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_ATTR_TYPES" EXPOSURE="1" STATE="1" EDITORDER="3 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
-  <attribute CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="CODE_SETTING_SHOW_EVENTS" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_EVENTS" EXPOSURE="1" STATE="1" EDITORDER="6 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
-  <attribute CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="CODE_SETTING_SHOW_IMPL" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_IMPL" EXPOSURE="1" STATE="1" EDITORDER="8 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
-  <attribute CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="CODE_SETTING_SHOW_INHE" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_INHE" EXPOSURE="1" STATE="1" EDITORDER="7 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
-  <attribute CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="CODE_SETTING_SHOW_METHODS" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_METHODS" EXPOSURE="1" STATE="1" EDITORDER="4 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
-  <attribute CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="CODE_SETTING_SHOW_METH_PARAM" VERSION="1" LANGU="E" DESCRIPT="CODE_SETTING_SHOW_METH_PARAM" EXPOSURE="1" STATE="1" EDITORDER="5 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="O_CONFIGURATION" VERSION="1" LANGU="E" EXPOSURE="1" STATE="1" EDITORDER="2 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="3" TYPE="ZIF_YUML_CONFIGURATION_INTER" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
   <attribute CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="O_INTERFACE" VERSION="1" LANGU="E" DESCRIPT="O_CLASS" EXPOSURE="1" STATE="1" EDITORDER="1 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="3" TYPE="ZCL_WB_INTERFACE" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
   <interfaceMethod CLSNAME="ZCL_YUML_INTERFACE" CPDNAME="ZIF_YUML_CONCEPT~GENERATE_CODE">
-   <source>method ZIF_YUML_CONCEPT~GENERATE_CODE.
+   <source>METHOD zif_yuml_concept~generate_code.
 
     DATA lv_attributes_code TYPE string.
     DATA lv_methods_code TYPE string.
@@ -2904,23 +2887,19 @@ endmethod.</source>
     DATA lv_inheritance_code TYPE string.
     DATA lv_implementings_code TYPE string.
 
-    IF me-&gt;code_setting_show_attributes = abap_true.
+    IF me-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_attributes = abap_true.
       lv_attributes_code  = me-&gt;generate_code_attributes( ).
     ENDIF.
 
-    IF me-&gt;code_setting_show_methods = abap_true.
+    IF me-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_methods = abap_true.
       lv_methods_code     = me-&gt;generate_code_methods( ).
     ENDIF.
 
-    IF me-&gt;code_setting_show_events = abap_true.
+    IF me-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_events = abap_true.
       lv_events_code      = me-&gt;generate_code_events( ).
     ENDIF.
 
-    IF me-&gt;code_setting_show_inhe = abap_true.
-      lv_inheritance_code = me-&gt;generate_code_inheritance( ).
-    ENDIF.
-
-    IF me-&gt;code_setting_show_impl = abap_true.
+    IF me-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_implementations = abap_true.
       lv_implementings_code = me-&gt;generate_code_implementations( ).
     ENDIF.
 
@@ -2942,36 +2921,39 @@ endmethod.</source>
     ENDIF.
 
 
-endmethod.</source>
+  ENDMETHOD.                    &quot;ZIF_YUML_CONCEPT~GENERATE_CODE</source>
   </interfaceMethod>
   <method CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="CONSTRUCTOR" VERSION="1" LANGU="E" DESCRIPT="CONSTRUCTOR" EXPOSURE="2" STATE="1" EDITORDER="1 " DISPID="0 " MTDTYPE="2" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
    <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="CONSTRUCTOR" SCONAME="IM_WB_INTERFACE" VERSION="1" LANGU="E" DESCRIPT="Generic Interface" CMPTYPE="1" MTDTYPE="2" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="3" TYPE="ZCL_WB_INTERFACE"/>
-   <source>method CONSTRUCTOR.
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="CONSTRUCTOR" SCONAME="IM_CONFIGURATION" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="2" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="3" TYPE="ZIF_YUML_CONFIGURATION_INTER" PAROPTIONL="X"/>
+   <source>METHOD constructor.
 
     me-&gt;o_interface = im_wb_interface.
 
-    me-&gt;set_code_settings(
-        im_show_attributes      = abap_true
-        im_show_attr_types      = abap_true
-        im_show_methods         = abap_true
-        im_show_meth_param      = abap_false
-        im_show_events          = abap_false
-        im_show_inherintance    = abap_true
-        im_show_implementations = abap_true
-    ).
+    IF im_configuration IS SUPPLIED.
+      me-&gt;o_configuration = im_configuration.
+    ELSE.
 
+      DATA lo_default_configuration TYPE REF TO zif_yuml_configuration_inter.
 
-endmethod.</source>
+      CREATE OBJECT lo_default_configuration
+        TYPE zcl_yuml_configuration_inter.
+
+      me-&gt;set_configuration( im_configuration = lo_default_configuration ).
+
+    ENDIF.
+
+  ENDMETHOD.                    &quot;CONSTRUCTOR</source>
   </method>
   <method CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_ATTRIBUTES" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE_ATTRIBUTES" EXPOSURE="1" STATE="1" EDITORDER="1 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
-   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_ATTRIBUTES" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="9 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
-   <source>method GENERATE_CODE_ATTRIBUTES.
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_ATTRIBUTES" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+   <source>METHOD generate_code_attributes.
 
     DATA lv_wa_attribute  TYPE seoo_attribute_r.
     DATA lv_exposure_code TYPE string.
     DATA lv_attr_type     TYPE string. &quot; Code of attribute types
 
-    IF me-&gt;code_setting_show_attributes = abap_true.
+    IF me-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_attributes = abap_true.
       re_code = &apos;|&apos;.
       LOOP AT me-&gt;o_interface-&gt;attributes INTO lv_wa_attribute.
         CASE lv_wa_attribute-exposure.
@@ -2983,7 +2965,7 @@ endmethod.</source>
             lv_exposure_code = &apos;+&apos;.
         ENDCASE.
 
-        IF me-&gt;code_setting_show_attr_types = abap_true.
+        IF me-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_attr_types = abap_true.
           lv_attr_type = me-&gt;generate_code_attr_types( lv_wa_attribute ).
         ENDIF.
 
@@ -2994,26 +2976,26 @@ endmethod.</source>
     ENDIF.
 
 
-endmethod.</source>
+  ENDMETHOD.                    &quot;GENERATE_CODE_ATTRIBUTES</source>
   </method>
   <method CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_ATTR_TYPES" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE_ATTR_TYPES" EXPOSURE="1" STATE="1" EDITORDER="2 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
-   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_ATTR_TYPES" SCONAME="IM_WA_ATTRIBUTE" VERSION="1" LANGU="E" DESCRIPT="IM_WA_ATTRIBUTE" CMPTYPE="1" MTDTYPE="0" EDITORDER="11 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="SEOO_ATTRIBUTE_R"/>
-   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_ATTR_TYPES" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="12 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
-   <source>method GENERATE_CODE_ATTR_TYPES.
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_ATTR_TYPES" SCONAME="IM_WA_ATTRIBUTE" VERSION="1" LANGU="E" DESCRIPT="IM_WA_ATTRIBUTE" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="SEOO_ATTRIBUTE_R"/>
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_ATTR_TYPES" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+   <source>METHOD generate_code_attr_types.
 
     CONCATENATE &apos; : (&apos; im_wa_attribute-type &apos;)&apos; INTO re_code.
 
-endmethod.</source>
+  ENDMETHOD.                    &quot;GENERATE_CODE_ATTR_TYPES</source>
   </method>
   <method CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_EVENTS" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE_EVENTS" EXPOSURE="1" STATE="1" EDITORDER="5 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
-   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_EVENTS" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="19 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
-   <source>method GENERATE_CODE_EVENTS.
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_EVENTS" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+   <source>METHOD generate_code_events.
 
 
     DATA lv_wa_event TYPE seoo_event_r.
     DATA lv_exposure_code TYPE string.
 
-    IF me-&gt;code_setting_show_events = abap_true.
+    IF me-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_events = abap_true.
       re_code = &apos;|&apos;.
       LOOP AT me-&gt;o_interface-&gt;events INTO lv_wa_event.
         CASE lv_wa_event-exposure.
@@ -3031,11 +3013,11 @@ endmethod.</source>
     ENDIF.
 
 
-endmethod.</source>
+  ENDMETHOD.                    &quot;GENERATE_CODE_EVENTS</source>
   </method>
-  <method CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_IMPLEMENTATIONS" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE_IMPLEMENTATIONS" EXPOSURE="1" STATE="1" EDITORDER="7 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
-   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_IMPLEMENTATIONS" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="23 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
-   <source>method GENERATE_CODE_IMPLEMENTATIONS.
+  <method CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_IMPLEMENTATIONS" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE_IMPLEMENTATIONS" EXPOSURE="1" STATE="1" EDITORDER="6 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_IMPLEMENTATIONS" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+   <source>METHOD generate_code_implementations.
 
     DATA lv_wa_implementings TYPE vseoimplem.
     DATA lv_implementations_code TYPE string.
@@ -3049,28 +3031,18 @@ endmethod.</source>
 *    ENDIF.
 
 
-endmethod.</source>
-  </method>
-  <method CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_INHERITANCE" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE_INHERITANCE" EXPOSURE="1" STATE="1" EDITORDER="6 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
-   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_INHERITANCE" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="21 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
-   <source>method GENERATE_CODE_INHERITANCE.
-
-*    IF me-&gt;o_interface-&gt;inheritance-refclsname IS NOT INITIAL.
-*      CONCATENATE &apos;[&apos; me-&gt;o_class-&gt;inheritance-clsname &apos;]-^[&apos; me-&gt;o_class-&gt;inheritance-refclsname &apos;]&apos; INTO re_code.
-*    ENDIF.
-
-endmethod.</source>
+  ENDMETHOD.                    &quot;GENERATE_CODE_IMPLEMENTATIONS</source>
   </method>
   <method CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_METHODS" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE_METHODS" EXPOSURE="1" STATE="1" EDITORDER="3 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
-   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_METHODS" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="14 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
-   <source>method GENERATE_CODE_METHODS.
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_METHODS" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+   <source>METHOD generate_code_methods.
 
 
     DATA lv_wa_method TYPE seoo_method_r.
     DATA lv_exposure_code TYPE string.
     DATA lv_meth_param TYPE string. &quot; Code of method parameters
 
-    IF me-&gt;code_setting_show_methods = abap_true.
+    IF me-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_methods = abap_true.
       re_code = &apos;|&apos;.
       LOOP AT me-&gt;o_interface-&gt;methods INTO lv_wa_method.
         CASE lv_wa_method-exposure.
@@ -3082,7 +3054,7 @@ endmethod.</source>
             lv_exposure_code = &apos;+&apos;.
         ENDCASE.
 
-        IF me-&gt;code_setting_show_meth_param = abap_true.
+        IF me-&gt;o_configuration-&gt;zif_yuml_configuration_cl_if~v_chk_show_meth_param = abap_true.
           lv_meth_param = me-&gt;generate_code_method_param( lv_wa_method ).
         ENDIF.
 
@@ -3093,12 +3065,12 @@ endmethod.</source>
     ENDIF.
 
 
-endmethod.</source>
+  ENDMETHOD.                    &quot;GENERATE_CODE_METHODS</source>
   </method>
   <method CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_METHOD_PARAM" VERSION="1" LANGU="E" DESCRIPT="GENERATE_CODE_METHOD_PARAM" EXPOSURE="1" STATE="1" EDITORDER="4 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
-   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_METHOD_PARAM" SCONAME="IM_WA_METHOD" VERSION="1" LANGU="E" DESCRIPT="IM_WA_METHOD" CMPTYPE="1" MTDTYPE="0" EDITORDER="16 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="SEOO_METHOD_R"/>
-   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_METHOD_PARAM" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="17 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
-   <source>method GENERATE_CODE_METHOD_PARAM.
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_METHOD_PARAM" SCONAME="IM_WA_METHOD" VERSION="1" LANGU="E" DESCRIPT="IM_WA_METHOD" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="SEOO_METHOD_R"/>
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="GENERATE_CODE_METHOD_PARAM" SCONAME="RE_CODE" VERSION="1" LANGU="E" DESCRIPT="RE_CODE" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+   <source>METHOD generate_code_method_param.
 
     DATA lv_wa_parameter TYPE vseoparam.
     DATA lv_param_code   TYPE string.
@@ -3114,29 +3086,22 @@ endmethod.</source>
     ENDIF.
 
 
-endmethod.</source>
+  ENDMETHOD.                    &quot;GENERATE_CODE_METHOD_PARAM</source>
   </method>
-  <method CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="SET_CODE_SETTINGS" VERSION="1" LANGU="E" DESCRIPT="SET_CODE_SETTINGS" EXPOSURE="2" STATE="1" EDITORDER="2 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
-   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_ATTRIBUTES" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_ATTRIBUTES" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_TRUE"/>
-   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_ATTR_TYPES" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_ATTR_TYPES" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_TRUE"/>
-   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_METHODS" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_METHODS" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_TRUE"/>
-   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_METH_PARAM" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_METH_PARAM" CMPTYPE="1" MTDTYPE="0" EDITORDER="4 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_FALSE"/>
-   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_EVENTS" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_EVENTS" CMPTYPE="1" MTDTYPE="0" EDITORDER="5 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_FALSE"/>
-   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_INHERINTANCE" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_INHERINTANCE" CMPTYPE="1" MTDTYPE="0" EDITORDER="6 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_TRUE"/>
-   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="SET_CODE_SETTINGS" SCONAME="IM_SHOW_IMPLEMENTATIONS" VERSION="1" LANGU="E" DESCRIPT="IM_SHOW_IMPLEMENTATIONS" CMPTYPE="1" MTDTYPE="0" EDITORDER="7 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_TRUE"/>
-   <source>method SET_CODE_SETTINGS.
+  <method CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="SET_CONFIGURATION" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="2 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_YUML_INTERFACE" CMPNAME="SET_CONFIGURATION" SCONAME="IM_CONFIGURATION" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="3" TYPE="ZIF_YUML_CONFIGURATION_INTER"/>
+   <source>METHOD set_configuration.
 
+    me-&gt;o_configuration = im_configuration.
+*    me-&gt;code_setting_show_attributes  = im_show_attributes.
+*    me-&gt;code_setting_show_attr_types  = im_show_attr_types.
+*    me-&gt;code_setting_show_methods     = im_show_methods.
+*    me-&gt;code_setting_show_meth_param  = im_show_meth_param.
+*    me-&gt;code_setting_show_events      = im_show_events.
+*    me-&gt;code_setting_show_inhe        = im_show_inherintance.
+*    me-&gt;code_setting_show_impl        = im_show_implementations.
 
-    me-&gt;code_setting_show_attributes  = im_show_attributes.
-    me-&gt;code_setting_show_attr_types  = im_show_attr_types.
-    me-&gt;code_setting_show_methods     = im_show_methods.
-    me-&gt;code_setting_show_meth_param  = im_show_meth_param.
-    me-&gt;code_setting_show_events      = im_show_events.
-    me-&gt;code_setting_show_inhe        = im_show_inherintance.
-    me-&gt;code_setting_show_impl        = im_show_implementations.
-
-
-endmethod.</source>
+  ENDMETHOD.                    &quot;SET_Configuration</source>
   </method>
  </CLAS>
  <CLAS CLSNAME="ZCL_YUML_USECASE_DIAGRAM" VERSION="1" LANGU="E" DESCRIPT="ZCL_YUML_USECASE_DIAGRAM" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" CLSCCINCL="X" FIXPT="X" UNICODE="X" CLSBCCAT="00" DURATION_TYPE="0 " RISK_LEVEL="0 ">
@@ -4661,4 +4626,172 @@ ENDCLASS.                    &quot;lcl_yuml_search_criteria_stub IMPLEMENTATION<
   <dd32p SHLPNAME="ZYUML_CLASS" FIELDNAME="CLSNAME" FLPOSITION="0001" ROLLNAME="SEOCLSNAME" SHLPINPUT="X" SHLPOUTPUT="X" SHLPSELPOS="01" SHLPLISPOS="01" DOMNAME="SEOCLSNAME" HEADLEN="30" SCRLEN1="10" SCRLEN2="15" SCRLEN3="20" DATATYPE="CHAR" LENG="000030" OUTPUTLEN="000030" DECIMALS="000000"/>
   <dd32p SHLPNAME="ZYUML_CLASS" FIELDNAME="DESCRIPT" FLPOSITION="0002" ROLLNAME="SEODESCR" SHLPINPUT="X" SHLPSELPOS="02" SHLPLISPOS="02" DOMNAME="AS4TEXT" HEADLEN="60" SCRLEN1="10" SCRLEN2="15" SCRLEN3="20" DATATYPE="CHAR" LENG="000060" OUTPUTLEN="000060" DECIMALS="000000" LOWERCASE="X"/>
  </SHLP>
+ <CLAS CLSNAME="ZCL_YUML_CONFIGURATION" VERSION="1" LANGU="E" DESCRIPT="Abstract YUML Configuration" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" CLSFINAL="X" CLSCCINCL="X" FIXPT="X" UNICODE="X" CLSBCCAT="00" WITH_UNIT_TESTS="X" DURATION_TYPE="0 " RISK_LEVEL="0 ">
+  <implementing CLSNAME="ZCL_YUML_CONFIGURATION" REFCLSNAME="ZIF_YUML_CONFIGURATION" VERSION="1" EXPOSURE="2" STATE="1" RELTYPE="1" EDITORDER="1 "/>
+  <localImplementation>*&quot;* use this source file for the definition and implementation of
+*&quot;* local helper classes, interface definitions and type
+*&quot;* declarations</localImplementation>
+  <localTypes>*&quot;* use this source file for any type of declarations (class
+*&quot;* definitions, interfaces or type declarations) you need for
+*&quot;* components in the private section</localTypes>
+  <localMacros>*&quot;* use this source file for any macro definitions you need
+*&quot;* in the implementation part of the class</localMacros>
+  <localTestClasses>*&quot;* use this source file for your ABAP unit test classes</localTestClasses>
+ </CLAS>
+ <CLAS CLSNAME="ZCL_YUML_CONFIGURATION_CLASS" VERSION="1" LANGU="E" DESCRIPT="yUML Class configuration" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" CLSFINAL="X" CLSCCINCL="X" FIXPT="X" UNICODE="X" CLSBCCAT="00" WITH_UNIT_TESTS="X" DURATION_TYPE="0 " RISK_LEVEL="0 " REFCLSNAME="ZCL_YUML_CONFIGURATION_CL_IF">
+  <implementing CLSNAME="ZCL_YUML_CONFIGURATION_CLASS" REFCLSNAME="ZIF_YUML_CONFIGURATION_CLASS" VERSION="1" EXPOSURE="2" STATE="1" RELTYPE="1" EDITORDER="1 "/>
+  <localImplementation>*&quot;* use this source file for the definition and implementation of
+*&quot;* local helper classes, interface definitions and type
+*&quot;* declarations</localImplementation>
+  <localTypes>*&quot;* use this source file for any type of declarations (class
+*&quot;* definitions, interfaces or type declarations) you need for
+*&quot;* components in the private section</localTypes>
+  <localMacros>*&quot;* use this source file for any macro definitions you need
+*&quot;* in the implementation part of the class</localMacros>
+  <localTestClasses>*&quot;* use this source file for your ABAP unit test classes</localTestClasses>
+  <inheritance CLSNAME="ZCL_YUML_CONFIGURATION_CLASS" REFCLSNAME="ZCL_YUML_CONFIGURATION_CL_IF" VERSION="1" STATE="1">
+   <redefinition CLSNAME="ZCL_YUML_CONFIGURATION_CLASS" REFCLSNAME="ZCL_YUML_CONFIGURATION_CL_IF" VERSION="1" MTDNAME="ZIF_YUML_CONFIGURATION_CL_IF~CREATE_CONFIGURATION" EXPOSURE="0"/>
+  </inheritance>
+  <interfaceMethod CLSNAME="ZCL_YUML_CONFIGURATION_CLASS" CPDNAME="ZIF_YUML_CONFIGURATION_CL_IF~CREATE_CONFIGURATION">
+   <source>METHOD zif_yuml_configuration_cl_if~create_configuration.
+
+    super-&gt;zif_yuml_configuration_cl_if~create_configuration(
+      EXPORTING
+        im_chk_show_attributes      = im_chk_show_attributes
+        im_chk_show_attr_types      = im_chk_show_attr_types
+        im_chk_show_methods         = im_chk_show_methods
+        im_chk_show_meth_param      = im_chk_show_meth_param
+        im_chk_show_events          = im_chk_show_events
+        im_chk_show_implementations = im_chk_show_implementations
+    ).
+
+    me-&gt;zif_yuml_configuration_class~v_chk_show_inherintance = abap_false. &quot; once inheritance works perfectly, change this to TRUE
+
+
+  ENDMETHOD.                    &quot;zif_yuml_configuration_cl_if~create_configuration</source>
+  </interfaceMethod>
+  <method CLSNAME="ZCL_YUML_CONFIGURATION_CLASS" CMPNAME="CONSTRUCTOR" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="1 " DISPID="0 " MTDTYPE="2" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <source>METHOD constructor.
+    super-&gt;constructor( ).
+
+    me-&gt;zif_yuml_configuration_cl_if~create_configuration(
+      EXPORTING
+        im_chk_show_attributes      = abap_true
+        im_chk_show_attr_types      = abap_true
+        im_chk_show_methods         = abap_true
+        im_chk_show_meth_param      = abap_false
+        im_chk_show_events          = abap_true
+        im_chk_show_implementations = abap_false &quot; once implementations works perfectly, change this to TRUE
+    ).
+
+
+  ENDMETHOD.                    &quot;constructor</source>
+  </method>
+ </CLAS>
+ <CLAS CLSNAME="ZCL_YUML_CONFIGURATION_CL_IF" VERSION="1" LANGU="E" DESCRIPT="Default configuration for common parts of clas &amp; inte" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" CLSCCINCL="X" FIXPT="X" UNICODE="X" CLSBCCAT="00" WITH_UNIT_TESTS="X" DURATION_TYPE="0 " RISK_LEVEL="0 ">
+  <implementing CLSNAME="ZCL_YUML_CONFIGURATION_CL_IF" REFCLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" VERSION="1" EXPOSURE="2" STATE="1" RELTYPE="1" EDITORDER="1 "/>
+  <localImplementation>*&quot;* use this source file for the definition and implementation of
+*&quot;* local helper classes, interface definitions and type
+*&quot;* declarations</localImplementation>
+  <localTypes>*&quot;* use this source file for any type of declarations (class
+*&quot;* definitions, interfaces or type declarations) you need for
+*&quot;* components in the private section</localTypes>
+  <localMacros>*&quot;* use this source file for any macro definitions you need
+*&quot;* in the implementation part of the class</localMacros>
+  <localTestClasses>*&quot;* use this source file for your ABAP unit test classes</localTestClasses>
+  <interfaceMethod CLSNAME="ZCL_YUML_CONFIGURATION_CL_IF" CPDNAME="ZIF_YUML_CONFIGURATION_CL_IF~CREATE_CONFIGURATION">
+   <source>METHOD zif_yuml_configuration_cl_if~create_configuration.
+
+    me-&gt;zif_yuml_configuration_cl_if~v_chk_show_attributes = im_chk_show_attributes.
+    me-&gt;zif_yuml_configuration_cl_if~v_chk_show_attr_types = im_chk_show_attr_types.
+    me-&gt;zif_yuml_configuration_cl_if~v_chk_show_methods = im_chk_show_methods.
+    me-&gt;zif_yuml_configuration_cl_if~v_chk_show_meth_param = im_chk_show_meth_param.
+    me-&gt;zif_yuml_configuration_cl_if~v_chk_show_events = im_chk_show_events.
+    me-&gt;zif_yuml_configuration_cl_if~v_chk_show_implementations = im_chk_show_implementations.
+
+  ENDMETHOD.                    &quot;zif_yuml_configuration_cl_if~create_configuration</source>
+  </interfaceMethod>
+  <method CLSNAME="ZCL_YUML_CONFIGURATION_CL_IF" CMPNAME="CONSTRUCTOR" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="1 " DISPID="0 " MTDTYPE="2" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <source>METHOD constructor.
+    super-&gt;constructor( ).
+
+    me-&gt;zif_yuml_configuration_cl_if~create_configuration(
+      EXPORTING
+        im_chk_show_attributes      = abap_true
+        im_chk_show_attr_types      = abap_true
+        im_chk_show_methods         = abap_true
+        im_chk_show_meth_param      = abap_false
+        im_chk_show_events          = abap_true
+        im_chk_show_implementations = abap_false &quot; once implementations works perfectly, change this to TRUE
+    ).
+
+  ENDMETHOD.                    &quot;CONSTRUCTOR</source>
+  </method>
+ </CLAS>
+ <CLAS CLSNAME="ZCL_YUML_CONFIGURATION_INTER" VERSION="1" LANGU="E" DESCRIPT="yUML Interface Configuration" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" CLSCCINCL="X" FIXPT="X" UNICODE="X" CLSBCCAT="00" WITH_UNIT_TESTS="X" DURATION_TYPE="0 " RISK_LEVEL="0 " REFCLSNAME="ZCL_YUML_CONFIGURATION_CL_IF">
+  <implementing CLSNAME="ZCL_YUML_CONFIGURATION_INTER" REFCLSNAME="ZIF_YUML_CONFIGURATION_INTER" VERSION="1" EXPOSURE="2" STATE="1" RELTYPE="1" EDITORDER="1 "/>
+  <localImplementation>*&quot;* use this source file for the definition and implementation of
+*&quot;* local helper classes, interface definitions and type
+*&quot;* declarations</localImplementation>
+  <localTypes>*&quot;* use this source file for any type of declarations (class
+*&quot;* definitions, interfaces or type declarations) you need for
+*&quot;* components in the private section</localTypes>
+  <localMacros>*&quot;* use this source file for any macro definitions you need
+*&quot;* in the implementation part of the class</localMacros>
+  <localTestClasses>*&quot;* use this source file for your ABAP unit test classes</localTestClasses>
+  <inheritance CLSNAME="ZCL_YUML_CONFIGURATION_INTER" REFCLSNAME="ZCL_YUML_CONFIGURATION_CL_IF" VERSION="1" STATE="1"/>
+  <method CLSNAME="ZCL_YUML_CONFIGURATION_INTER" CMPNAME="CONSTRUCTOR" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="1 " DISPID="0 " MTDTYPE="2" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <source>METHOD constructor.
+
+    super-&gt;constructor( ).
+
+    me-&gt;zif_yuml_configuration_cl_if~create_configuration(
+      EXPORTING
+        im_chk_show_attributes      = abap_true
+        im_chk_show_attr_types      = abap_true
+        im_chk_show_methods         = abap_true
+        im_chk_show_meth_param      = abap_false
+        im_chk_show_events          = abap_true
+        im_chk_show_implementations = abap_false &quot; once implementations works perfectly, change this to TRUE
+    ).
+
+*    me-&gt;zif_yuml_configuration_inter~v_chk_show_xxxx = abap_false. &quot; interface specific configurations
+
+  ENDMETHOD.                    &quot;constructor</source>
+  </method>
+ </CLAS>
+ <INTF CLSNAME="ZIF_YUML_CONFIGURATION" VERSION="1" LANGU="E" DESCRIPT="dsds" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" UNICODE="X"/>
+ <INTF CLSNAME="ZIF_YUML_CONFIGURATION_CLASS" VERSION="1" LANGU="E" DESCRIPT="Configuration of a class" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" UNICODE="X">
+  <include CLSNAME="ZIF_YUML_CONFIGURATION_CLASS" REFCLSNAME="ZIF_YUML_CONFIGURATION" VERSION="1" STATE="1"/>
+  <include CLSNAME="ZIF_YUML_CONFIGURATION_CLASS" REFCLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" VERSION="1" STATE="1"/>
+  <attribute CLSNAME="ZIF_YUML_CONFIGURATION_CLASS" CMPNAME="V_CHK_SHOW_INHERINTANCE" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="1 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+ </INTF>
+ <INTF CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" VERSION="1" LANGU="E" DESCRIPT="Classes and Interfaces common configuration" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" UNICODE="X">
+  <include CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" REFCLSNAME="ZIF_YUML_CONFIGURATION" VERSION="1" STATE="1"/>
+  <attribute CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="V_CHK_SHOW_ATTRIBUTES" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="1 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="V_CHK_SHOW_ATTR_TYPES" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="2 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="V_CHK_SHOW_EVENTS" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="5 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="V_CHK_SHOW_IMPLEMENTATIONS" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="6 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="V_CHK_SHOW_METHODS" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="3 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="V_CHK_SHOW_METH_PARAM" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="4 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ABAP_BOOL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <method CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="CREATE_CONFIGURATION" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="1 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="CREATE_CONFIGURATION" SCONAME="IM_CHK_SHOW_ATTRIBUTES" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL"/>
+   <parameter CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="CREATE_CONFIGURATION" SCONAME="IM_CHK_SHOW_ATTR_TYPES" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL"/>
+   <parameter CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="CREATE_CONFIGURATION" SCONAME="IM_CHK_SHOW_METHODS" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL"/>
+   <parameter CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="CREATE_CONFIGURATION" SCONAME="IM_CHK_SHOW_METH_PARAM" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="4 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL"/>
+   <parameter CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="CREATE_CONFIGURATION" SCONAME="IM_CHK_SHOW_EVENTS" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="5 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL"/>
+   <parameter CLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" CMPNAME="CREATE_CONFIGURATION" SCONAME="IM_CHK_SHOW_IMPLEMENTATIONS" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="6 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL"/>
+  </method>
+ </INTF>
+ <INTF CLSNAME="ZIF_YUML_CONFIGURATION_INTER" VERSION="1" LANGU="E" DESCRIPT="Configuration of an interface" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" UNICODE="X">
+  <include CLSNAME="ZIF_YUML_CONFIGURATION_INTER" REFCLSNAME="ZIF_YUML_CONFIGURATION_CL_IF" VERSION="1" STATE="1"/>
+ </INTF>
+ <INTF CLSNAME="ZIF_YUML_CONSTANTS_CLASS_INTER" VERSION="1" LANGU="E" DESCRIPT="Constants for classes and interfaces" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" UNICODE="X">
+  <attribute CLSNAME="ZIF_YUML_CONSTANTS_CLASS_INTER" CMPNAME="LEVEL_CONSTANT" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="3 " ATTDECLTYP="2" ATTVALUE="2" ATTEXPVIRT="0" TYPTYPE="1" TYPE="SEOATTDECL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZIF_YUML_CONSTANTS_CLASS_INTER" CMPNAME="LEVEL_INSTANCE" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="1 " ATTDECLTYP="2" ATTVALUE="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="SEOATTDECL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZIF_YUML_CONSTANTS_CLASS_INTER" CMPNAME="LEVEL_STATIC" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="2 " ATTDECLTYP="2" ATTVALUE="1" ATTEXPVIRT="0" TYPTYPE="1" TYPE="SEOATTDECL" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZIF_YUML_CONSTANTS_CLASS_INTER" CMPNAME="VISIBILITY_PRIVATE" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="4 " ATTDECLTYP="2" ATTVALUE="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="SEOEXPOSE" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZIF_YUML_CONSTANTS_CLASS_INTER" CMPNAME="VISIBILITY_PROTECTED" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="5 " ATTDECLTYP="2" ATTVALUE="1" ATTEXPVIRT="0" TYPTYPE="1" TYPE="SEOEXPOSE" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZIF_YUML_CONSTANTS_CLASS_INTER" CMPNAME="VISIBILITY_PUBLIC" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="6 " ATTDECLTYP="2" ATTVALUE="2" ATTEXPVIRT="0" TYPTYPE="1" TYPE="SEOEXPOSE" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+ </INTF>
 </nugget>
